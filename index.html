@@ -310,9 +310,9 @@
     .about-kicker { margin-bottom: clamp(30px, 4vw, 52px); color: var(--accent); }
     .about-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(300px, .85fr);
-      gap: clamp(25px, 5vw, 76px);
-      align-items: stretch;
+      grid-template-columns: 1fr;
+      gap: clamp(35px, 5vw, 68px);
+      align-items: start;
     }
     .about-profile {
       display: grid;
@@ -376,6 +376,77 @@
       line-height: 1.9;
     }
     .about-bio strong { color: var(--text); font-weight: 600; }
+    .tech-stack {
+      padding: clamp(22px, 3vw, 38px);
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .tech-stack-heading {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 24px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid var(--line);
+    }
+    .tech-stack-kicker {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+    }
+    .tech-stack-kicker::before { width: 25px; height: 1px; background: currentColor; content: ""; }
+    .tech-stack-heading h2 {
+      margin: 17px 0 8px;
+      font-family: var(--body);
+      font-size: clamp(1.65rem, 3vw, 2.25rem);
+      font-weight: 750;
+      line-height: 1.1;
+      letter-spacing: -.04em;
+      text-transform: none;
+    }
+    .tech-stack-heading p { margin: 0; color: var(--muted); font-size: .88rem; line-height: 1.6; }
+    .tech-stack-mark { color: var(--accent); font-size: 1rem; }
+    .tech-stack-row {
+      display: grid;
+      grid-template-columns: minmax(155px, .75fr) 2.25fr;
+      gap: 25px;
+      align-items: start;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line);
+    }
+    .tech-stack-row:last-child { border-bottom: 0; padding-bottom: 2px; }
+    .tech-stack-row h3 {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 0;
+      font-size: .9rem;
+      font-weight: 750;
+    }
+    .stack-symbol {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      place-items: center;
+      background: var(--alt);
+      color: var(--muted);
+      font-size: 1rem;
+    }
+    .tech-stack-row ul {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px 22px;
+      margin: 5px 0 0;
+      padding: 0;
+      list-style: none;
+    }
+    .tech-stack-row li { color: #565156; font-size: .9rem; line-height: 1.4; }
+    .tech-stack-row li small { display: block; margin-top: 3px; color: var(--muted); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; }
     .about-facts {
       align-self: stretch;
       padding: clamp(23px, 3.2vw, 40px);
@@ -893,18 +964,34 @@
               <p>[ABOUT TEXT PLACEHOLDER]</p>
             </div>
           </div>
-          <aside class="about-facts" aria-labelledby="about-facts-title">
-            <div class="about-facts-top">
-              <span class="about-card-index">BM / TOOLKIT</span>
-              <span class="about-card-mark" aria-hidden="true">✳</span>
+          <section class="tech-stack" aria-labelledby="about-facts-title">
+            <div class="tech-stack-heading">
+              <div>
+                <div class="tech-stack-kicker">MY TECH STACK</div>
+                <h2 id="about-facts-title">Tools I work with</h2>
+                <p>Tools I use for design, development, organization, and everyday support.</p>
+              </div>
+              <span class="tech-stack-mark" aria-hidden="true">✳</span>
             </div>
-            <h2 id="about-facts-title">Skills &amp; Tech<br>Stack</h2>
-            <dl class="about-fact-list">
-              <div class="about-fact"><dt>Design</dt><dd>Canva, Figma, Photoshop <span class="skill-note">(learning)</span></dd></div>
-              <div class="about-fact"><dt>Productivity</dt><dd>Word, Excel, PowerPoint</dd></div>
-              <div class="about-fact"><dt>Development</dt><dd>C#, .NET, MySQL Workbench</dd></div>
-            </dl>
-          </aside>
+            <div class="tech-stack-rows">
+              <div class="tech-stack-row">
+                <h3><span class="stack-symbol">✳</span> Design</h3>
+                <ul><li>Canva</li><li>Figma</li><li>Photoshop <small>Learning</small></li><li>CapCut <small>Learning</small></li></ul>
+              </div>
+              <div class="tech-stack-row">
+                <h3><span class="stack-symbol">⌘</span> Development</h3>
+                <ul><li>C#</li><li>.NET</li><li>Visual Studio</li><li>Visual Studio Code</li><li>MySQL</li><li>MySQL Workbench</li></ul>
+              </div>
+              <div class="tech-stack-row">
+                <h3><span class="stack-symbol">▤</span> Productivity</h3>
+                <ul><li>Microsoft Word</li><li>Excel</li><li>PowerPoint</li><li>Google Sheets</li><li>Google Forms</li><li>Google Calendar</li><li>Google Docs</li></ul>
+              </div>
+              <div class="tech-stack-row">
+                <h3><span class="stack-symbol">✧</span> AI &amp; Workflow</h3>
+                <ul><li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Obsidian</li></ul>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </section>
