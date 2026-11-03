@@ -331,33 +331,24 @@
       border: 1px solid var(--line);
       background: var(--surface);
     }
-    .about-photo::before {
-      position: absolute;
-      top: 13%;
-      width: 72%;
-      aspect-ratio: 1;
-      border: 1px solid rgba(229,143,193,.5);
-      border-radius: 50%;
-      content: "";
-    }
-    .about-photo-shape {
-      position: absolute;
-      bottom: -8%;
-      width: 70%;
-      height: 68%;
-      border-radius: 48% 48% 0 0;
-      background: var(--accent);
-    }
-    .about-photo-shape::before {
-      position: absolute;
-      top: -38%;
-      left: 27%;
-      width: 46%;
+    .about-photo {
+      position: relative;
+      display: grid;
+      min-height: 340px;
       aspect-ratio: .8;
-      border-radius: 48% 48% 43% 43%;
+      place-items: center;
+      overflow: hidden;
+      border: 1px dashed rgba(20,20,20,.38);
       background: var(--surface);
-      content: "";
     }
+    .about-photo::after {
+      position: absolute;
+      inset: 12px;
+      border: 1px solid rgba(20,20,20,.12);
+      content: "";
+      pointer-events: none;
+    }
+    .about-photo-shape { display: none; }
     .placeholder-label {
       position: absolute;
       z-index: 2;
@@ -895,13 +886,11 @@
         <div class="eyebrow about-kicker">lemme tell you more about me</div>
         <div class="about-layout">
           <div class="about-profile">
-            <div class="about-photo" role="img" aria-label="Portrait placeholder for Beverlyn Manuel">
-              <span class="placeholder-label">PORTRAIT PLACEHOLDER</span>
-              <span class="about-photo-shape" aria-hidden="true"></span>
-              <span class="placeholder-bottom">ADD YOUR PHOTO</span>
+            <div class="about-photo" role="img" aria-label="Photo placeholder for Beverlyn Manuel">
+              <span class="placeholder-label">PHOTO PLACEHOLDER</span>
             </div>
             <div class="about-bio">
-              <p>I'm a <strong>BSIT graduate from Cagayan State University.</strong> I design e-books, templates, and social media content. As a student and gamer myself, I understand the interests and online spaces that shape those communities. I'm now building my path as a <strong>Social Media VA</strong>, combining creative work with practical support.</p>
+              <p>[ABOUT TEXT PLACEHOLDER]</p>
             </div>
           </div>
           <aside class="about-facts" aria-labelledby="about-facts-title">
@@ -911,10 +900,10 @@
             </div>
             <h2 id="about-facts-title">the boring but<br>important stuff</h2>
             <dl class="about-fact-list">
-              <div class="about-fact"><dt>Based in</dt><dd>Philippines</dd></div>
+              <div class="about-fact"><dt>Based in</dt><dd>Cagayan Valley, Philippines</dd></div>
               <div class="about-fact"><dt>Status</dt><dd>Open to full-time or part-time</dd></div>
-              <div class="about-fact"><dt>Usually found in</dt><dd>Canva, Photoshop, Figma</dd></div>
-              <div class="about-fact"><dt>Availability</dt><dd>Any time of day</dd></div>
+              <div class="about-fact"><dt>Usually found in</dt><dd>Canva, Figma</dd></div>
+              <div class="about-fact"><dt>Available</dt><dd>Any time of day</dd></div>
             </dl>
           </aside>
         </div>
