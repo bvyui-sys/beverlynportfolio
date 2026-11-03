@@ -11,12 +11,14 @@
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0D0D12;
-      --surface: #17171F;
-      --text: #F5F2EC;
-      --muted: #9A98A6;
-      --accent: #B79CFF;
-      --line: rgba(245,242,236,.18);
+      --bg: #D9D1D1;
+      --panel: #ECEAEF;
+      --surface: #F7F5F3;
+      --text: #141414;
+      --muted: #6F6A6C;
+      --accent: #E58FC1;
+      --sage: #9DAA94;
+      --line: rgba(20,20,20,.18);
       --display: "Anton", Impact, sans-serif;
       --body: "Inter", Arial, sans-serif;
       --page: min(1240px, calc(100% - 9vw));
@@ -134,131 +136,194 @@
       text-transform: uppercase;
     }
 
-    /* HERO */
+    /* HERO: calm editorial opening */
     .hero {
+      position: relative;
       display: flex;
       min-height: calc(100svh - 74px);
       align-items: center;
       overflow: hidden;
-      padding-block: clamp(48px, 7vh, 92px) 34px;
+      padding-block: clamp(46px, 6vh, 78px) 35px;
+      background: var(--bg);
+      isolation: isolate;
+    }
+    .hero::after {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+      opacity: .12;
+      content: "";
     }
     .hero-grid {
       position: relative;
       display: grid;
-      min-height: calc(100svh - 155px);
-      grid-template-columns: minmax(0, 1.18fr) minmax(280px, .82fr);
+      width: var(--page);
+      min-height: calc(100svh - 150px);
+      grid-template-columns: minmax(0, 1.16fr) minmax(290px, .84fr);
       align-items: center;
-      gap: clamp(20px, 4vw, 66px);
-      padding-bottom: 46px;
+      gap: clamp(20px, 4vw, 68px);
+      padding-bottom: 54px;
     }
     .hero-copy { position: relative; z-index: 2; }
-    .hero-role {
+    .hero-meta {
+      display: flex;
+      align-items: center;
+      gap: 14px;
       color: var(--muted);
-      font-size: .65rem;
+      font-size: .62rem;
       font-weight: 700;
-      letter-spacing: .19em;
+      letter-spacing: .17em;
       text-transform: uppercase;
     }
+    .hero-meta-number { color: var(--accent); }
+    .hero-rule {
+      width: 48px;
+      height: 1px;
+      background: var(--text);
+    }
     .hero h1 {
-      margin: 26px 0 20px;
+      position: relative;
+      width: fit-content;
+      margin: 28px 0 21px;
+      color: var(--text);
       font-family: var(--display);
-      font-size: clamp(6rem, 14.5vw, 13.8rem);
+      font-size: clamp(6.2rem, 14.6vw, 13.6rem);
       font-weight: 400;
       line-height: .78;
-      letter-spacing: -.025em;
+      letter-spacing: -.035em;
       text-transform: uppercase;
     }
     .hero h1 span { display: block; white-space: nowrap; }
-    .hero h1 span:last-child { color: var(--accent); }
-    .hero-lede {
-      max-width: 440px;
-      margin: 0;
-      color: #D3D0D9;
-      font-size: clamp(1rem, 1.4vw, 1.18rem);
-      line-height: 1.6;
+    .hero h1 span:last-child { position: relative; z-index: 0; }
+    .hero h1 span:last-child::after {
+      position: absolute;
+      z-index: -1;
+      right: -3%;
+      bottom: 5%;
+      width: 35%;
+      height: 16%;
+      background: var(--accent);
+      content: "";
     }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 11px; margin-top: 28px; }
+    .hero-role {
+      display: block;
+      margin-top: 23px;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+    .hero-lede {
+      max-width: 430px;
+      margin: 0;
+      color: #454144;
+      font-size: clamp(1rem, 1.35vw, 1.17rem);
+      line-height: 1.65;
+    }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
     .button {
       display: inline-flex;
       min-height: 48px;
       align-items: center;
       justify-content: center;
-      gap: 22px;
+      gap: 20px;
       padding: 0 18px;
-      border: 1px solid var(--accent);
-      border-radius: 2px;
-      background: var(--accent);
-      color: var(--bg);
-      font-size: .7rem;
+      border: 1px solid var(--text);
+      border-radius: 1px;
+      background: var(--text);
+      color: var(--surface);
+      font-size: .69rem;
       font-weight: 700;
       text-decoration: none;
-      transition: background .18s ease, color .18s ease, transform .18s ease;
+      transition: background .18s ease, color .18s ease, border-color .18s ease, transform .18s ease;
     }
-    .button:hover { transform: translateY(-2px); background: var(--text); border-color: var(--text); }
-    .button--outline { background: transparent; color: var(--text); border-color: var(--line); }
-    .button--outline:hover { background: var(--accent); color: var(--bg); border-color: var(--accent); }
+    .button:hover { transform: translateY(-2px); background: var(--accent); border-color: var(--accent); color: var(--text); }
+    .button--outline { background: transparent; color: var(--text); border-color: rgba(20,20,20,.42); }
+    .button--outline:hover { background: var(--accent); border-color: var(--accent); color: var(--text); }
     .hero-visual {
       position: relative;
       width: min(100%, 500px);
-      aspect-ratio: 1;
+      aspect-ratio: .9;
       justify-self: end;
       display: grid;
       place-items: center;
-      isolation: isolate;
+      padding: 8%;
+      background: var(--panel);
     }
-    .hero-circle {
+    .hero-visual::before {
       position: absolute;
-      z-index: -1;
-      inset: 8%;
-      border-radius: 50%;
+      top: 13%;
+      right: 9%;
+      width: 68%;
+      height: 65%;
       background: var(--accent);
+      content: "";
     }
     .hero-portrait {
-      position: absolute;
-      bottom: 7%;
-      width: 66%;
-      height: 79%;
+      position: relative;
+      z-index: 1;
+      width: 73%;
+      height: 88%;
+      align-self: end;
       overflow: hidden;
+      background: transparent;
     }
     .hero-portrait::before {
       position: absolute;
-      top: 8%;
+      z-index: 2;
+      top: 7%;
       left: 29%;
-      width: 44%;
+      width: 43%;
       aspect-ratio: .78;
-      border-radius: 48% 48% 43% 43%;
-      background: #17171F;
+      border-radius: 47% 47% 43% 43%;
+      background: #242126;
       content: "";
-      box-shadow: 0 -12px 0 4px #0D0D12;
+      box-shadow: 0 -10px 0 5px #141414;
     }
     .hero-portrait::after {
       position: absolute;
-      right: 0;
-      bottom: -7%;
-      left: 0;
-      height: 62%;
+      right: -2%;
+      bottom: -10%;
+      left: -2%;
+      height: 61%;
       border-radius: 48% 48% 0 0;
-      background: #17171F;
+      background: #242126;
       content: "";
     }
     .hero-placeholder-label {
       position: absolute;
-      top: 12%;
-      right: 2%;
-      color: var(--bg);
-      font-size: .56rem;
-      font-weight: 800;
+      z-index: 3;
+      right: 12px;
+      bottom: 12px;
+      padding: 7px 9px;
+      background: var(--surface);
+      color: var(--muted);
+      font-size: .52rem;
+      font-weight: 700;
+      letter-spacing: .13em;
+    }
+    .hero-visual-index {
+      position: absolute;
+      top: 12px;
+      left: 13px;
+      color: var(--text);
+      font-size: .58rem;
+      font-weight: 700;
       letter-spacing: .15em;
-      writing-mode: vertical-rl;
     }
     .hero-note {
       position: absolute;
       bottom: 0;
       left: 0;
       margin: 0;
+      padding-top: 14px;
+      border-top: 1px solid var(--line);
       color: var(--muted);
-      font-size: .62rem;
-      letter-spacing: .12em;
+      font-size: .6rem;
+      letter-spacing: .13em;
       text-transform: uppercase;
     }
 
@@ -293,7 +358,7 @@
       top: 13%;
       width: 72%;
       aspect-ratio: 1;
-      border: 1px solid rgba(183,156,255,.5);
+      border: 1px solid rgba(229,143,193,.5);
       border-radius: 50%;
       content: "";
     }
@@ -337,7 +402,7 @@
     }
     .about-bio p {
       margin: 0;
-      color: #CBC8D2;
+      color: #575153;
       font-size: clamp(.94rem, 1.18vw, 1.05rem);
       line-height: 1.9;
     }
@@ -438,8 +503,8 @@
     .service-icon { width: 37px; height: 37px; fill: none; stroke: var(--accent); stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
     .service-card-copy { max-width: 390px; }
     .service-card h3 { margin: 0 0 13px; font-family: var(--display); font-size: clamp(2.6rem, 4.3vw, 4.8rem); font-weight: 400; line-height: .91; text-transform: uppercase; }
-    .service-card p { max-width: 320px; margin: 0; color: #C1BEC9; font-size: .81rem; line-height: 1.65; }
-    .service-card-mark { position: absolute; right: 19px; bottom: 12px; color: rgba(183,156,255,.26); font-size: 2rem; line-height: 1; }
+    .service-card p { max-width: 320px; margin: 0; color: #575153; font-size: .81rem; line-height: 1.65; }
+    .service-card-mark { position: absolute; right: 19px; bottom: 12px; color: rgba(229,143,193,.26); font-size: 2rem; line-height: 1; }
     .service-quote {
       display: flex;
       align-items: center;
@@ -531,7 +596,7 @@
       display: grid;
       min-height: clamp(190px, 27vw, 330px);
       place-items: center;
-      border: 1px dashed rgba(183,156,255,.65);
+      border: 1px dashed rgba(229,143,193,.65);
       background: #111118;
       text-align: center;
     }
@@ -571,7 +636,7 @@
       bottom: 0;
       left: 50%;
       width: 1px;
-      background: rgba(183,156,255,.4);
+      background: rgba(229,143,193,.4);
       content: "";
     }
     .book-spread {
@@ -610,7 +675,7 @@
       border: 1px dashed #8F879C;
       text-align: center;
     }
-    .book-placeholder strong { color: #6F589E; font-family: var(--display); font-size: clamp(2rem, 5vw, 4.8rem); font-weight: 400; line-height: .88; }
+    .book-placeholder strong { color: #8B456D; font-family: var(--display); font-size: clamp(2rem, 5vw, 4.8rem); font-weight: 400; line-height: .88; }
     .book-placeholder span { display: block; margin-top: 16px; color: #56515F; font-size: .58rem; font-weight: 700; letter-spacing: .13em; }
     .study-pills { margin-top: 22px; }
 
@@ -660,7 +725,7 @@
       min-height: 370px;
       place-items: center;
       padding: 14px;
-      border: 1px dashed rgba(183,156,255,.8);
+      border: 1px dashed rgba(229,143,193,.8);
       background: #111118;
       text-align: center;
     }
@@ -674,7 +739,12 @@
       margin-top: clamp(55px, 8vw, 100px);
       border-top: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
+      background: #101010;
+      color: #F7F5F3;
     }
+    .contact .eyebrow { color: #B8B1B3; }
+    .contact-side p { color: #B8B1B3; }
+    .contact-placeholder { color: #F7F5F3; }
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(220px, .9fr);
@@ -685,7 +755,7 @@
     .contact h2 span { color: var(--accent); }
     .contact-side p { max-width: 390px; color: var(--muted); font-size: .9rem; }
     .contact-placeholder { display: inline-block; margin-top: 12px; padding-bottom: 5px; border-bottom: 1px solid var(--accent); color: var(--text); font-size: .73rem; }
-    .site-footer { padding-block: 22px; }
+    .site-footer { padding-block: 22px; background: var(--bg); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .64rem; letter-spacing: .05em; }
     .footer-inner a { color: var(--text); text-decoration: none; }
     .footer-inner a:hover { color: var(--accent); }
@@ -729,14 +799,13 @@
         background: var(--bg);
       }
       .nav-links.is-open { display: flex; }
-      .nav-links a { padding: 13px 2px; border-bottom: 1px solid rgba(245,242,236,.1); }
-      .hero { min-height: auto; padding-block: 54px 32px; }
-      .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 25px; padding-bottom: 43px; }
-      .hero h1 { margin-block: 20px 16px; font-size: clamp(4.7rem, 19.8vw, 7.2rem); }
-      .hero-visual { width: min(78%, 320px); justify-self: center; }
-      .hero-note { font-size: .55rem; }
-      .hero-actions { gap: 8px; }
-      .button { min-height: 46px; padding-inline: 13px; gap: 12px; font-size: .65rem; }
+      .nav-links a { padding: 13px 2px; border-bottom: 1px solid rgba(20,20,20,.12); }
+      .hero { min-height: auto; padding-block: 48px 30px; }
+      .hero-grid { min-height: auto; grid-template-columns: 1fr; gap: 26px; padding-bottom: 46px; }
+      .hero h1 { margin-block: 23px 15px; font-size: clamp(4.8rem, 20vw, 7.25rem); }
+      .hero-role { margin-top: 19px; }
+      .hero-visual { width: min(83%, 350px); justify-self: center; aspect-ratio: .95; }
+      .hero-note { font-size: .54rem; }
       .about-profile { grid-template-columns: 1fr; }
       .about-photo { width: min(100%, 310px); min-height: 330px; aspect-ratio: .9; }
       .about-facts { padding: 23px 19px; }
@@ -825,18 +894,19 @@
     <section class="hero" id="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="hero-role">GRAPHIC DESIGNER &amp; SOCIAL MEDIA VA</span>
+          <div class="hero-meta"><span class="hero-meta-number">01</span><span class="hero-rule" aria-hidden="true"></span><span>PORTFOLIO / 2026</span></div>
           <h1><span>BEVERLYN</span><span>MANUEL</span></h1>
+          <span class="hero-role">GRAPHIC DESIGNER &amp; SOCIAL MEDIA VA</span>
           <p class="hero-lede">I make content that looks good and gets read.</p>
           <div class="hero-actions">
             <a class="button" href="#work">See my work <span aria-hidden="true">↗</span></a>
             <a class="button button--outline" href="#contact">Let's work together <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Avatar placeholder for Beverlyn Manuel">
-          <span class="hero-circle" aria-hidden="true"></span>
+        <div class="hero-visual" role="img" aria-label="Portrait placeholder for Beverlyn Manuel">
+          <span class="hero-visual-index">BM / 01</span>
           <span class="hero-portrait" aria-hidden="true"></span>
-          <span class="hero-placeholder-label">PHOTO PLACEHOLDER</span>
+          <span class="hero-placeholder-label">YOUR PHOTO HERE</span>
         </div>
         <p class="hero-note">Based in the Philippines. Open to remote work.</p>
       </div>
