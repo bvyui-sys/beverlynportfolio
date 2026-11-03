@@ -6,20 +6,26 @@ https://github.com/bvyui-sys/beverlynportfolio
 ## Page
 Personal portfolio for Beverlyn Manuel, graphic designer and social media VA.
 
-## Visual direction
-- Background: #0D0D12
-- Surface: #17171F
-- Text: #F5F2EC
-- Muted text: #9A98A6
-- Single accent: #B79CFF
-- Anton display type with Inter body type
-- Flat color only. No gradients, glows, blur blobs, or glassmorphism.
-- Large condensed typography, asymmetrical project compositions, thin rules, and restrained motion.
-- No invented brand name.
+## Art direction
+- Main background: #D9D1D1
+- Alternate panel: #ECEAEF
+- Surface: #F7F5F3
+- Text: #141414
+- Muted text: #6F6A6C
+- Pink accent: #E58FC1
+- Tiny secondary sage: #9DAA94
+- Only the Contact section uses a dark #101010 background and off-white text.
+- Heavy display type in Anton, with Inter for body copy.
+- Editorial asymmetry, thin rules, restrained motion, subtle paper grain.
+- No gradients, glows, glassmorphism, or neon.
 
 ## Page structure
 Hero; About; What I love doing; Services; Work; Contact; footer.
-The What I love doing section is retained as requested and must not be altered unless Beverlyn explicitly asks.
+Build one section at a time and wait for Beverlyn's "next" before changing the next section.
+Keep the existing What I love doing markup and words unchanged unless Beverlyn explicitly requests otherwise.
+
+## Current section
+Hero now uses the soft editorial palette, oversized type, and a portrait placeholder over a flat pink shape. The main role line, short tagline, links, and location note are retained.
 
 ## Work to show
 1. Biometric desktop system. Monitor mockup with screenshot placeholder. Tool badges: C#, MySQL, VS Code. Project description and contribution pills remain explicit placeholders for Beverlyn to complete.
@@ -29,9 +35,9 @@ The What I love doing section is retained as requested and must not be altered u
 ## Honesty and content
 - No fake clients, testimonials, metrics, or project outcomes.
 - No stock photography. Portrait and project media remain clearly labeled placeholders until Beverlyn supplies real assets.
-- Keep copy limited to details supplied by Beverlyn or clear placeholders.
+- Use only copy supplied by Beverlyn or clearly marked placeholders.
 - Do not use em dashes in page copy.
-- Do not restore the Form Studio concept, the typography study, modal case studies, or the four-step process section.
+- Do not restore removed speculative projects, case-study modals, or the process section.
 
 ## Functionality
 - Responsive sticky navigation with active-section indication.
