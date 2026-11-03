@@ -882,6 +882,246 @@
       }
     }
 
+
+    /* SERVICES: asymmetric service index */
+    .services {
+      overflow: hidden;
+      background: var(--night);
+      color: var(--hero-text);
+      border-top: 1px solid rgba(245,242,236,.1);
+    }
+    .services-wrap { width: min(1240px, calc(100% - 9vw)); }
+    .services-kicker {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+      color: var(--hero-muted);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .17em;
+    }
+    .services-kicker span { color: var(--violet); }
+    .services-intro {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(220px, .55fr);
+      align-items: end;
+      gap: clamp(28px, 6vw, 88px);
+      margin-top: 34px;
+      margin-bottom: clamp(48px, 7vw, 88px);
+    }
+    .services-title {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(4.7rem, 11.5vw, 10.5rem);
+      font-weight: 400;
+      line-height: .82;
+      letter-spacing: -.025em;
+      text-transform: uppercase;
+    }
+    .services-title span { color: var(--violet); }
+    .services-intro p {
+      max-width: 330px;
+      margin: 0 0 7px;
+      color: var(--hero-muted);
+      font-size: .9rem;
+      line-height: 1.8;
+    }
+    .services-layout {
+      display: grid;
+      grid-template-columns: repeat(12, minmax(0, 1fr));
+      grid-template-areas:
+        "content content content content content content content design design design design design"
+        ". support support support support support web web web web web web";
+      grid-template-rows: minmax(280px, auto) minmax(270px, auto);
+      column-gap: 13px;
+      row-gap: 15px;
+      align-items: stretch;
+    }
+    .service-card {
+      position: relative;
+      display: flex;
+      min-width: 0;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(21px, 3vw, 36px);
+      overflow: hidden;
+      background: var(--surface);
+      border: 1px solid rgba(245,242,236,.13);
+      transition: border-color .2s ease, transform .2s ease, background .2s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--violet);
+      background: #1B1A25;
+    }
+    .service-card--content { grid-area: content; min-height: 320px; }
+    .service-card--design { grid-area: design; min-height: 280px; margin-top: 62px; }
+    .service-card--support { grid-area: support; min-height: 265px; margin-top: -36px; }
+    .service-card--web { grid-area: web; min-height: 290px; margin-top: 23px; }
+    .service-card-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .service-number {
+      color: var(--hero-muted);
+      font-size: .59rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+    .service-icon {
+      width: 37px;
+      height: 37px;
+      fill: none;
+      stroke: var(--violet);
+      stroke-width: 1.35;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .service-card-copy { position: relative; z-index: 1; max-width: 390px; }
+    .service-card h3 {
+      margin: 0 0 13px;
+      color: var(--hero-text);
+      font-family: var(--display);
+      font-size: clamp(2.6rem, 4.3vw, 4.8rem);
+      font-weight: 400;
+      line-height: .91;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+    }
+    .service-card p {
+      max-width: 320px;
+      margin: 0;
+      color: #C1BEC9;
+      font-size: .81rem;
+      line-height: 1.65;
+    }
+    .service-card-mark {
+      position: absolute;
+      right: 19px;
+      bottom: 12px;
+      color: rgba(183,156,255,.26);
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .service-quote {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      margin-top: clamp(40px, 6vw, 72px);
+      padding: 21px 0;
+      border-top: 1px solid rgba(245,242,236,.18);
+      border-bottom: 1px solid rgba(245,242,236,.18);
+      color: var(--hero-text);
+      text-decoration: none;
+      transition: color .2s ease, border-color .2s ease;
+      cursor: pointer;
+    }
+    .service-quote > span:first-child {
+      color: var(--hero-muted);
+      font-size: .7rem;
+    }
+    .service-quote strong {
+      font-family: var(--display);
+      font-size: clamp(1.55rem, 3vw, 2.4rem);
+      font-weight: 400;
+      line-height: 1;
+      text-transform: uppercase;
+      text-decoration: underline;
+      text-decoration-color: transparent;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 6px;
+      transition: text-decoration-color .2s ease;
+    }
+    .service-quote-arrow {
+      display: grid;
+      width: 36px;
+      height: 36px;
+      place-items: center;
+      margin-left: auto;
+      border: 1px solid rgba(245,242,236,.3);
+      border-radius: 50%;
+      font-size: 1rem;
+      transition: color .2s ease, background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .service-quote:hover { color: var(--violet); border-color: rgba(183,156,255,.55); }
+    .service-quote:hover strong { text-decoration-color: var(--violet); }
+    .service-quote:hover .service-quote-arrow {
+      color: var(--night);
+      background: var(--violet);
+      border-color: var(--violet);
+      transform: translate(2px, -2px);
+    }
+    @media (max-width: 900px) {
+      .services-intro { grid-template-columns: 1fr; gap: 22px; }
+      .services-intro p { max-width: 430px; }
+      .services-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+          "content content"
+          "design design"
+          "support web";
+        grid-template-rows: auto;
+      }
+      .service-card--content { min-height: 290px; }
+      .service-card--design { min-height: 250px; margin-top: 0; }
+      .service-card--support { min-height: 270px; margin-top: 0; }
+      .service-card--web { min-height: 270px; margin-top: 28px; }
+    }
+    @media (max-width: 640px) {
+      .services-wrap { width: calc(100% - 34px); }
+      .services-kicker { font-size: .55rem; letter-spacing: .12em; }
+      .services-intro { margin-top: 28px; margin-bottom: 38px; }
+      .services-title { font-size: clamp(4.3rem, 17.5vw, 6.6rem); }
+      .services-intro p { font-size: .84rem; }
+      .services-layout {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-areas:
+          "content design"
+          "support web";
+        gap: 9px;
+      }
+      .service-card,
+      .service-card--content,
+      .service-card--design,
+      .service-card--support,
+      .service-card--web {
+        min-height: 235px;
+        margin: 0;
+        padding: 15px 13px;
+      }
+      .service-number { font-size: .49rem; letter-spacing: .1em; }
+      .service-icon { width: 27px; height: 27px; }
+      .service-card h3 { font-size: clamp(1.7rem, 7vw, 2.5rem); margin-bottom: 10px; }
+      .service-card p { font-size: .68rem; line-height: 1.55; }
+      .service-card-mark { right: 10px; bottom: 7px; font-size: 1.4rem; }
+      .service-quote { flex-wrap: wrap; gap: 8px 14px; margin-top: 35px; padding-block: 18px; }
+      .service-quote > span:first-child { width: 100%; }
+      .service-quote strong { font-size: clamp(1.5rem, 7vw, 2rem); }
+      .service-quote-arrow { width: 31px; height: 31px; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .service-card, .service-quote, .service-quote-arrow, .service-quote strong {
+        transition: none;
+      }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      #services [data-service-reveal] {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity .55s ease, transform .55s ease;
+      }
+      #services [data-service-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      #services .service-card--design { transition-delay: .06s; }
+      #services .service-card--support { transition-delay: .1s; }
+      #services .service-card--web { transition-delay: .14s; }
+    }
+
   </style>
 </head>
 <body>
@@ -991,33 +1231,81 @@
 
     <!-- SECTION: SERVICES -->
     <section class="services section-space" id="services">
-      <div class="wrap">
-        <div class="services-head">
-          <h2 class="section-heading">What I bring<br>to help.</h2>
-          <p>Creative support for brands that want a clear visual presence and a more consistent way to show up.</p>
+      <div class="wrap services-wrap">
+        <div class="services-kicker"><span>(03)</span> SERVICES / CREATIVE + ADMIN SUPPORT</div>
+        <div class="services-intro">
+          <h2 class="services-title">WHAT I BRING<br>TO HELP YOU<span>.</span></h2>
+          <p>Good work needs both a thoughtful eye and someone who keeps the details moving. Here is where I can step in.</p>
         </div>
-        <div class="service-list">
-          <article class="service-row">
-            <span class="service-index">01</span>
-            <div><h3>Social media management</h3><div class="service-meta">Planning · Publishing · Page support</div></div>
-            <p>Content planning and day-to-day support that help your channels stay organized, consistent, and connected to your goals.</p>
+
+        <div class="services-layout">
+          <article class="service-card service-card--content" data-service-reveal>
+            <div class="service-card-top">
+              <span class="service-number">01 / CONTENT</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="9" y="8" width="22" height="29" rx="1"></rect>
+                <path d="M15 16h10M15 22h10M15 28h6M32 15l7 7v18H17"></path>
+                <path d="M32 15v7h7"></path>
+              </svg>
+            </div>
+            <div class="service-card-copy">
+              <h3>Social media<br>content</h3>
+              <p>Carousels, posts, captions.</p>
+            </div>
+            <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
-          <article class="service-row">
-            <span class="service-index">02</span>
-            <div><h3>Social media content design</h3><div class="service-meta">Posts · Carousels · Stories</div></div>
-            <p>Platform-ready visuals that carry your message, follow a recognizable style, and give your audience a reason to pause.</p>
+
+          <article class="service-card service-card--design" data-service-reveal>
+            <div class="service-card-top">
+              <span class="service-number">02 / VISUALS</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <path d="M8 34 28 8l12 9-20 26H8z"></path>
+                <path d="m23 15 12 9M8 34l12 9M8 34l-1 9 9-1"></path>
+              </svg>
+            </div>
+            <div class="service-card-copy">
+              <h3>Graphic<br>design</h3>
+              <p>E-books, templates, visuals.</p>
+            </div>
+            <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
-          <article class="service-row">
-            <span class="service-index">03</span>
-            <div><h3>Brand identity & visual branding</h3><div class="service-meta">Visual direction · Color · Typography</div></div>
-            <p>A cohesive visual foundation that helps your business look and feel recognizable across its touchpoints.</p>
+
+          <article class="service-card service-card--support" data-service-reveal>
+            <div class="service-card-top">
+              <span class="service-number">03 / OPERATIONS</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="7" y="11" width="34" height="25" rx="2"></rect>
+                <path d="m8 14 16 13 16-13M17 35l-5 6M31 35l5 6"></path>
+              </svg>
+            </div>
+            <div class="service-card-copy">
+              <h3>VA<br>support</h3>
+              <p>Inbox cleanup, follow-ups, Google Sheets and Forms.</p>
+            </div>
+            <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
-          <article class="service-row">
-            <span class="service-index">04</span>
-            <div><h3>Marketing materials</h3><div class="service-meta">Promotional graphics · Campaign assets</div></div>
-            <p>Digital and print-ready materials that introduce an offer, support a campaign, or make important information easier to notice.</p>
+
+          <article class="service-card service-card--web" data-service-reveal>
+            <div class="service-card-top">
+              <span class="service-number">04 / DIGITAL BUILD</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true">
+                <rect x="6" y="8" width="36" height="30" rx="2"></rect>
+                <path d="M6 16h36M13 12h.1M18 12h.1M23 12h.1M14 23h9M14 28h20M14 33h15"></path>
+              </svg>
+            </div>
+            <div class="service-card-copy">
+              <h3>Website and<br>template builds</h3>
+              <p>Simple web pages and reusable digital templates.</p>
+            </div>
+            <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
         </div>
+
+        <a class="service-quote" href="#contact">
+          <span>Have something in mind?</span>
+          <strong>Message me for a quote</strong>
+          <span class="service-quote-arrow" aria-hidden="true">↗</span>
+        </a>
       </div>
     </section>
 
@@ -1225,6 +1513,23 @@
     });
 
     document.querySelector("#year").textContent = new Date().getFullYear();
+
+    // Reveal the service panels once as they enter the viewport.
+    const serviceRevealItems = document.querySelectorAll("#services [data-service-reveal]");
+    if ("IntersectionObserver" in window) {
+      const serviceObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      serviceRevealItems.forEach((item) => serviceObserver.observe(item));
+    } else {
+      serviceRevealItems.forEach((item) => item.classList.add("is-visible"));
+    }
+
   </script>
 </body>
 </html>
