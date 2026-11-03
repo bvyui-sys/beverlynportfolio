@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f1f0e9">
+  <meta name="theme-color" content="#0D0D12">
   <meta name="description" content="Beverlyn is a graphic designer and social media manager creating thoughtful visual identities, social content, and brand campaigns.">
-  <title>Beverlyn — Graphic Design & Social Media</title>
+  <title>Beverlyn Manuel | Graphic Designer &amp; Social Media VA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800;900&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --paper: #f1f0e9;
@@ -388,51 +388,268 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
+
+    /* HERO REDESIGN: dark editorial direction */
+    :root {
+      --night: #0D0D12;
+      --surface: #17171F;
+      --hero-text: #F5F2EC;
+      --hero-muted: #9A98A6;
+      --violet: #B79CFF;
+      --pink: #FF8FD0;
+      --display: "Anton", Impact, sans-serif;
+      --body: "Inter", "DM Sans", sans-serif;
+    }
+    body { font-family: var(--body); }
+    .site-header {
+      background: rgba(13,13,18,.92);
+      border-bottom: 1px solid rgba(245,242,236,.12);
+      backdrop-filter: blur(18px);
+    }
+    .wordmark, .nav-links a { color: var(--hero-text); }
+    .wordmark-text { font-size: .78rem; letter-spacing: .12em; }
+    .nav-links { gap: clamp(16px, 2.7vw, 36px); }
+    .nav-links a { font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; }
+    .nav-links a:hover, .nav-links a[aria-current="location"] { color: var(--violet); }
+    .nav-links .nav-contact { border-color: rgba(245,242,236,.42); }
+    .nav-links .nav-contact:hover { background: var(--violet); border-color: var(--violet); color: var(--night); }
+    .menu-toggle { border-color: rgba(245,242,236,.42); color: var(--hero-text); }
+    .hero {
+      min-height: calc(100svh - 76px);
+      display: flex;
+      align-items: center;
+      padding-block: clamp(54px, 7vh, 90px) 36px;
+      overflow: hidden;
+      background: var(--night);
+      color: var(--hero-text);
+    }
+    .hero-grid {
+      position: relative;
+      width: min(1400px, calc(100% - 9vw));
+      min-height: calc(100svh - 150px);
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, .85fr);
+      align-items: center;
+      gap: clamp(24px, 4vw, 70px);
+      padding-bottom: 42px;
+    }
+    .hero-copy { z-index: 3; }
+    .hero-role {
+      display: inline-block;
+      color: var(--hero-muted);
+      font-size: .67rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+    }
+    .hero h1 {
+      margin: 24px 0 22px;
+      color: var(--hero-text);
+      font-family: var(--display);
+      font-size: clamp(5.8rem, 13.4vw, 12.8rem);
+      font-weight: 400;
+      line-height: .83;
+      letter-spacing: -.025em;
+    }
+    .hero h1 span { display: block; white-space: nowrap; }
+    .hero h1 span:last-child { color: var(--violet); }
+    .hero-lede {
+      max-width: 440px;
+      color: #D0CDD8;
+      font-size: clamp(1rem, 1.5vw, 1.2rem);
+      line-height: 1.55;
+    }
+    .hero-actions { gap: 12px; margin-top: 30px; }
+    .hero-button {
+      min-height: 49px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 20px;
+      padding: 0 19px;
+      border: 1px solid var(--violet);
+      border-radius: 3px;
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+      text-decoration: none;
+      transition: transform .22s ease, background .22s ease, color .22s ease, border-color .22s ease;
+    }
+    .hero-button:hover { transform: translateY(-3px); }
+    .hero-button--primary { background: var(--violet); color: var(--night); }
+    .hero-button--primary:hover { background: #C8B5FF; border-color: #C8B5FF; }
+    .hero-button--outline { background: transparent; color: var(--hero-text); border-color: rgba(245,242,236,.42); }
+    .hero-button--outline:hover { color: var(--violet); border-color: var(--violet); }
+    .hero-note {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      margin: 0;
+      color: var(--hero-muted);
+      font-size: .64rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    .hero-visual {
+      position: relative;
+      width: min(100%, 510px);
+      aspect-ratio: 1;
+      justify-self: end;
+      display: grid;
+      place-items: center;
+      isolation: isolate;
+    }
+    .hero-visual::before {
+      content: "";
+      position: absolute;
+      inset: 8%;
+      z-index: -2;
+      border-radius: 50%;
+      background: var(--violet);
+      box-shadow: 0 0 100px rgba(183,156,255,.16);
+    }
+    .hero-orbit {
+      position: absolute;
+      inset: 1%;
+      border: 1px solid rgba(183,156,255,.38);
+      border-radius: 50%;
+      transform: rotate(-18deg) scaleY(.84);
+    }
+    .hero-orbit::after {
+      content: "";
+      position: absolute;
+      width: 9px;
+      height: 9px;
+      top: 15%;
+      right: 10%;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 20px rgba(255,143,208,.55);
+    }
+    .hero-avatar {
+      position: relative;
+      width: 58%;
+      height: 78%;
+      align-self: end;
+      overflow: hidden;
+      filter: drop-shadow(18px 18px 0 rgba(13,13,18,.12));
+    }
+    .avatar-head {
+      position: absolute;
+      z-index: 2;
+      top: 8%;
+      left: 30%;
+      width: 42%;
+      aspect-ratio: .78;
+      border-radius: 46% 46% 42% 42%;
+      background: #17171F;
+    }
+    .avatar-head::before {
+      content: "";
+      position: absolute;
+      top: -7%;
+      left: -8%;
+      width: 116%;
+      height: 43%;
+      border-radius: 55% 55% 25% 25%;
+      background: #0D0D12;
+    }
+    .avatar-body {
+      position: absolute;
+      bottom: -14%;
+      left: 7%;
+      width: 86%;
+      height: 68%;
+      border-radius: 48% 48% 0 0;
+      background: #17171F;
+    }
+    .avatar-body::before {
+      content: "";
+      position: absolute;
+      top: 5%;
+      left: 40%;
+      width: 20%;
+      height: 30%;
+      background: #0D0D12;
+      clip-path: polygon(50% 0, 100% 100%, 0 100%);
+    }
+    .hero-visual-note, .hero-visual-index {
+      position: absolute;
+      color: rgba(13,13,18,.78);
+      font-size: .58rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+    }
+    .hero-visual-note { top: 13%; left: 3%; transform: rotate(-90deg) translateX(-100%); transform-origin: top left; }
+    .hero-visual-index { right: 4%; bottom: 15%; }
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: minmax(0, 1fr) minmax(230px, .72fr); }
+      .hero h1 { font-size: clamp(5rem, 12vw, 9rem); }
+    }
+    @media (max-width: 640px) {
+      .nav-links {
+        top: 68px;
+        background: #111118;
+        border-bottom-color: rgba(245,242,236,.12);
+      }
+      .nav-links a { color: var(--hero-text); border-bottom-color: rgba(245,242,236,.1); }
+      .hero { min-height: auto; padding-block: 54px 32px; }
+      .hero-grid {
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding-bottom: 46px;
+      }
+      .hero h1 { margin-block: 19px 16px; font-size: clamp(4.7rem, 20vw, 7.4rem); }
+      .hero-lede { max-width: 340px; }
+      .hero-actions { align-items: stretch; }
+      .hero-button { flex: 1 1 auto; padding-inline: 13px; gap: 10px; font-size: .67rem; }
+      .hero-visual { width: min(76%, 330px); justify-self: center; margin-top: 5px; }
+      .hero-note { bottom: 0; font-size: .57rem; }
+    }
+    @media (prefers-reduced-motion: no-preference) {
+      .hero-copy, .hero-visual { animation: hero-enter .7s cubic-bezier(.2,.75,.25,1) both; }
+      .hero-visual { animation-delay: .12s; }
+      @keyframes hero-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    }
+
   </style>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap nav-shell">
-      <a class="wordmark" href="#top" aria-label="Beverlyn, back to top">
-        <span class="wordmark-mark">B</span>
-        <span class="wordmark-text">Beverlyn<span>Design + Social</span></span>
+      <a class="wordmark" href="#top" aria-label="Beverlyn Manuel, back to top">
+        <span class="wordmark-text">Beverlyn Manuel</span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-nav">Menu</button>
       <nav class="nav-links" id="primary-nav" aria-label="Main navigation">
         <a href="#about">About</a>
+        <a href="#love">What I do</a>
         <a href="#services">Services</a>
-        <a href="#sample-work">Sample work</a>
-        <a href="#projects">Projects</a>
-        <a class="nav-contact" href="#contact">Let's talk <span class="arrow" aria-hidden="true">↗</span></a>
+        <a href="#projects">Work</a>
+        <a class="nav-contact" href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
   <main id="top">
     <!-- SECTION: HERO -->
-    <section class="hero">
+    <section class="hero" id="hero">
       <div class="wrap hero-grid">
         <div class="hero-copy">
-          <span class="small-label">Graphic design · Social media</span>
-          <h1><span>Make it</span><span class="accent-word">matter.</span></h1>
-          <p class="hero-lede">I'm Beverlyn. I bring graphic design and social media thinking together to help brands communicate with clarity, character, and a reason to connect.</p>
+          <span class="hero-role">GRAPHIC DESIGNER &amp; SOCIAL MEDIA VA</span>
+          <h1><span>BEVERLYN</span><span>MANUEL</span></h1>
+          <p class="hero-lede">I make content that looks good and gets read.</p>
           <div class="hero-actions">
-            <a class="button" href="#projects">Explore my work <span class="arrow" aria-hidden="true">↘</span></a>
-            <a class="button button--outline" href="#contact">Résumé on request <span class="arrow" aria-hidden="true">↗</span></a>
+            <a class="hero-button hero-button--primary" href="#projects">See my work <span aria-hidden="true">↗</span></a>
+            <a class="hero-button hero-button--outline" href="#contact">Let's work together <span aria-hidden="true">↗</span></a>
           </div>
-          <p class="hero-note">Based in the Philippines · Open to remote opportunities</p>
         </div>
-        <div class="hero-art" aria-label="Editorial graphic composition representing visual design and social content">
-          <div class="art-topline"><span>Visual direction</span><span>Design / Social / Story</span></div>
-          <div class="art-poster">
-            <div class="poster-top"><span>Independent creative practice</span><span>01 — 26</span></div>
-            <div class="poster-title">Ideas<br><em>in form.</em></div>
-            <p class="poster-sub">Visual identities and social content built around a clear point of view.</p>
-            <div class="poster-stamp">Good<br>work<br>starts here</div>
-          </div>
-          <span class="art-caption">A considered approach to creative work</span>
-          <span class="art-index">B.</span>
+        <div class="hero-visual" role="img" aria-label="Stylized violet portrait avatar placeholder">
+          <div class="hero-orbit"></div>
+          <div class="hero-avatar" aria-hidden="true"><span class="avatar-head"></span><span class="avatar-body"></span></div>
+          <span class="hero-visual-note">A LITTLE CREATIVE ENERGY</span>
+          <span class="hero-visual-index">BM / 01</span>
         </div>
+        <p class="hero-note">Based in the Philippines. Open to remote work.</p>
       </div>
     </section>
 
