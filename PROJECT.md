@@ -19,10 +19,10 @@ Show selected work and detailed case studies first, provide access to a résumé
 Beverlyn — Graphic Designer & Social Media Manager. Equal emphasis on visual design and social media, with a friendly, professional, editorial voice.
 
 ## Visual Direction
-Editorial minimalism with a creative edge: warm off-white, ink black, muted green accents, oversized condensed typography, asymmetrical composition, varied grids, and alternating light/dark sections. No portrait is required.
+Dark editorial direction: #0D0D12 background, #17171F surfaces, #F5F2EC primary text, #9A98A6 muted text, #B79CFF violet accent, and #FF8FD0 as a tiny secondary accent. Use oversized Anton-style condensed headings, Inter or DM Sans body text, spaced-caps labels, generous whitespace, thin dividers, subtle hover states, and restrained motion. Mobile-first and fully responsive. Use the real name Beverlyn Manuel only, with no invented brand name.
 
 ## Page Structure
-Hero; About Me; What I Love Doing; What I Bring to Help (services); Sample Work; Projects I Finish (case studies); Creative Process; Contact.
+Hero; About; What I Do; Services; Work; Contact. Build one requested section at a time and wait for the user's "next" before editing another section.
 
 ## Copy Direction
 Direct, warm, professional, approachable, and articulate. Explain the purpose behind creative work. Avoid inflated claims.
@@ -38,3 +38,8 @@ Generic template styling, excessive animation, fake client work, invented testim
 
 ## Current Decisions
 Sample Work previews individual visual explorations; Projects I Finish presents fuller project narratives. Concept work is labeled honestly. Case studies distinguish proposed KPIs from actual results. Keep the project to index.html, PROJECT.md, and README.md unless explicitly expanded.
+
+## Current Build Progress
+- Hero redesigned in the dark violet visual direction.
+- Hero uses a CSS-drawn avatar placeholder because no portrait asset has been supplied. Replace it with Beverlyn's chosen portrait/avatar when provided.
+- Remaining sections are intentionally not redesigned until the user asks for each one.
