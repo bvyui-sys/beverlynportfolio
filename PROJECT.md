@@ -3,43 +3,39 @@
 ## Repository
 https://github.com/bvyui-sys/beverlynportfolio
 
-## Deployment
-Not deployed yet.
+## Page
+Personal portfolio for Beverlyn Manuel, graphic designer and social media VA.
 
-## Product
-Personal portfolio for Beverlyn, presenting graphic design and social media management work.
+## Visual direction
+- Background: #0D0D12
+- Surface: #17171F
+- Text: #F5F2EC
+- Muted text: #9A98A6
+- Single accent: #B79CFF
+- Anton display type with Inter body type
+- Flat color only. No gradients, glows, blur blobs, or glassmorphism.
+- Large condensed typography, asymmetrical project compositions, thin rules, and restrained motion.
+- No invented brand name.
 
-## Audience
-Small businesses, creators and personal brands, agencies, and international clients.
+## Page structure
+Hero; About; What I love doing; Services; Work; Contact; footer.
+The What I love doing section is retained as requested and must not be altered unless Beverlyn explicitly asks.
 
-## Goal
-Show selected work and detailed case studies first, provide access to a résumé, and make contacting Beverlyn straightforward.
+## Work to show
+1. Biometric desktop system. Monitor mockup with screenshot placeholder. Tool badges: C#, MySQL, VS Code. Project description and contribution pills remain explicit placeholders for Beverlyn to complete.
+2. Study Quest: The Path to Mastery. Open-book spread with image placeholders. Accurate highlights: gamer-style study guide; designed in Canva, Photoshop, and Figma; made for students who game.
+3. Study Break, But Make It Matcha. Five-slide social media carousel with phone mockup and clickable slide placeholders. Clearly labeled MOCK BRAND PROJECT.
 
-## Brand
-Beverlyn — Graphic Designer & Social Media Manager. Equal emphasis on visual design and social media, with a friendly, professional, editorial voice.
-
-## Visual Direction
-Dark editorial direction: #0D0D12 background, #17171F surfaces, #F5F2EC primary text, #9A98A6 muted text, #B79CFF violet accent, and #FF8FD0 as a tiny secondary accent. Use oversized Anton-style condensed headings, Inter or DM Sans body text, spaced-caps labels, generous whitespace, thin dividers, subtle hover states, and restrained motion. Mobile-first and fully responsive. Use the real name Beverlyn Manuel only, with no invented brand name.
-
-## Page Structure
-Hero; About; What I Do; Services; Work; Contact. Build one requested section at a time and wait for the user's "next" before editing another section.
-
-## Copy Direction
-Direct, warm, professional, approachable, and articulate. Explain the purpose behind creative work. Avoid inflated claims.
-
-## Assets
-Current visual examples are self-initiated concepts only: an unbranded matcha social campaign and a speculative movement-studio identity. No client results are claimed. Résumé PDF, contact email, social profile links, and any real project assets still need to be supplied.
+## Honesty and content
+- No fake clients, testimonials, metrics, or project outcomes.
+- No stock photography. Portrait and project media remain clearly labeled placeholders until Beverlyn supplies real assets.
+- Keep copy limited to details supplied by Beverlyn or clear placeholders.
+- Do not use em dashes in page copy.
+- Do not restore the Form Studio concept, the typography study, modal case studies, or the four-step process section.
 
 ## Functionality
-Single responsive index.html with anchor navigation, mobile menu, and native dialog case studies. No backend or external form service. Résumé download and direct contact links remain pending until the correct files and details are provided.
-
-## Avoid
-Generic template styling, excessive animation, fake client work, invented testimonials, fabricated metrics, stock portrait imagery, and unnecessary visual clutter.
-
-## Current Decisions
-Sample Work previews individual visual explorations; Projects I Finish presents fuller project narratives. Concept work is labeled honestly. Case studies distinguish proposed KPIs from actual results. Keep the project to index.html, PROJECT.md, and README.md unless explicitly expanded.
-
-## Current Build Progress
-- Hero redesigned in the dark violet visual direction.
-- Hero uses a CSS-drawn avatar placeholder because no portrait asset has been supplied. Replace it with Beverlyn's chosen portrait/avatar when provided.
-- Remaining sections are intentionally not redesigned until the user asks for each one.
+- Responsive sticky navigation with active-section indication.
+- Mobile navigation toggle.
+- Clickable carousel preview that changes the phone screen placeholder.
+- Subtle once-only reveal for work blocks, respecting reduced-motion preferences.
+- Single-file front end in index.html. Contact details remain a placeholder until supplied.
