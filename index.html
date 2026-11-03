@@ -784,7 +784,16 @@
     }
     .contact .eyebrow { color: #B8B1B3; }
     .contact-side p { color: #B8B1B3; }
-    .contact-placeholder { color: #F7F5F3; }
+    .contact .service-quote {
+      margin-top: 0;
+      margin-bottom: clamp(55px, 7vw, 88px);
+      border-color: rgba(247,245,243,.24);
+      color: #F7F5F3;
+    }
+    .contact .service-quote > span:first-child { color: #B8B1B3; }
+    .contact .service-quote-arrow { border-color: rgba(247,245,243,.3); }
+    .contact .service-quote:hover { color: var(--accent); border-color: var(--accent); }
+    .contact .service-quote:hover .service-quote-arrow { color: #141414; }
     .contact-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(220px, .9fr);
@@ -793,8 +802,25 @@
     }
     .contact h2 { margin: 18px 0 0; font-family: var(--display); font-size: clamp(4.8rem, 11vw, 10.5rem); font-weight: 400; line-height: .82; }
     .contact h2 span { color: var(--accent); }
-    .contact-side p { max-width: 390px; color: var(--muted); font-size: .9rem; }
-    .contact-placeholder { display: inline-block; margin-top: 12px; padding-bottom: 5px; border-bottom: 1px solid var(--accent); color: var(--text); font-size: .73rem; }
+    .contact-side p { max-width: 390px; color: #B8B1B3; font-size: .9rem; }
+    .contact-links { display: grid; gap: 0; margin-top: 27px; }
+    .contact-links a {
+      display: grid;
+      grid-template-columns: 82px minmax(0, 1fr) 18px;
+      align-items: center;
+      gap: 12px;
+      padding: 15px 0;
+      border-top: 1px solid rgba(247,245,243,.2);
+      color: #F7F5F3;
+      font-size: .78rem;
+      text-decoration: none;
+      overflow-wrap: anywhere;
+      transition: color .18s ease, border-color .18s ease;
+    }
+    .contact-links a:last-child { border-bottom: 1px solid rgba(247,245,243,.2); }
+    .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
+    .contact-link-label { color: #B8B1B3; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
+    .contact-links a > span:last-child { justify-self: end; color: var(--accent); }
     .site-footer { padding-block: 22px; background: var(--bg); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .64rem; letter-spacing: .05em; }
     .footer-inner a { color: var(--text); text-decoration: none; }
@@ -820,6 +846,10 @@
       .matcha-stage { grid-template-columns: minmax(0, 1fr) minmax(190px, .7fr); }
       .slide-stack--right { display: none; }
       .contact-grid { grid-template-columns: 1fr; }
+      .contact .service-quote { margin-bottom: 46px; gap: 9px 12px; flex-wrap: wrap; }
+      .contact .service-quote > span:first-child { width: 100%; }
+      .contact .service-quote strong { font-size: clamp(1.45rem, 6vw, 2rem); }
+      .contact-links a { grid-template-columns: 68px minmax(0, 1fr) 16px; gap: 8px; font-size: .7rem; }
     }
     @media (max-width: 640px) {
       :root { --page: calc(100% - 34px); }
@@ -1081,11 +1111,6 @@
             <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
         </div>
-        <a class="service-quote" href="#contact">
-          <span>Have a project in mind?</span>
-          <strong>Message me for a quote</strong>
-          <span class="service-quote-arrow" aria-hidden="true">↗</span>
-        </a>
       </div>
     </section>
 
@@ -1205,14 +1230,26 @@
     </section>
 
     <section class="contact section-space" id="contact">
-      <div class="wrap contact-grid">
-        <div>
-          <div class="eyebrow">contact</div>
-          <h2>LET'S<br>WORK<br><span>TOGETHER.</span></h2>
-        </div>
-        <div class="contact-side">
-          <p>Have a project in mind? Message me for a quote.</p>
-          <span class="contact-placeholder">[add your email or preferred contact link]</span>
+      <div class="wrap">
+        <a class="service-quote contact-quote" href="mailto:beverlyn.manuel19@gmail.com?subject=Project%20Inquiry">
+          <span>Have a project in mind?</span>
+          <strong>Message me for a quote</strong>
+          <span class="service-quote-arrow" aria-hidden="true">↗</span>
+        </a>
+        <div class="contact-grid">
+          <div>
+            <div class="eyebrow">contact</div>
+            <h2>LET'S<br>WORK<br><span>TOGETHER.</span></h2>
+          </div>
+          <div class="contact-side">
+            <p>Get in touch through email, phone, or social platforms.</p>
+            <div class="contact-links" aria-label="Contact information">
+              <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">EMAIL</span><span>beverlyn.manuel19@gmail.com</span><span aria-hidden="true">↗</span></a>
+              <a href="tel:+639687585016"><span class="contact-link-label">PHONE</span><span>+63 968 758 5016</span><span aria-hidden="true">↗</span></a>
+              <a href="https://www.linkedin.com/in/beverlyn-manuel/" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">LINKEDIN</span><span>linkedin.com/in/beverlyn-manuel</span><span aria-hidden="true">↗</span></a>
+              <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">TELEGRAM</span><span>@bevysm</span><span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
         </div>
       </div>
     </section>
