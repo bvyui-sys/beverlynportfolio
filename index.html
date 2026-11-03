@@ -611,6 +611,177 @@
       @keyframes hero-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     }
 
+
+    /* ABOUT SECTION: profile + practical details */
+    .about {
+      background: var(--night);
+      color: var(--hero-text);
+      border-top: 1px solid rgba(245,242,236,.1);
+    }
+    .about-wrap { width: min(1240px, calc(100% - 9vw)); }
+    .about-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      margin-bottom: clamp(28px, 4vw, 52px);
+      color: var(--violet);
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: lowercase;
+    }
+    .about-kicker::before {
+      content: "";
+      width: 27px;
+      height: 1px;
+      background: currentColor;
+    }
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(300px, .92fr);
+      align-items: stretch;
+      gap: clamp(24px, 5vw, 76px);
+    }
+    .about-profile {
+      display: grid;
+      grid-template-columns: minmax(190px, .78fr) minmax(0, 1.22fr);
+      align-items: end;
+      gap: clamp(20px, 3vw, 38px);
+    }
+    .about-photo {
+      position: relative;
+      min-height: 350px;
+      aspect-ratio: .78;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 75% 19%, rgba(255,143,208,.42), transparent 23%),
+        linear-gradient(145deg, #29233c, #17171F 64%);
+      border: 1px solid rgba(183,156,255,.42);
+    }
+    .about-photo::before {
+      content: "";
+      position: absolute;
+      width: 76%;
+      aspect-ratio: 1;
+      top: 12%;
+      border: 1px solid rgba(183,156,255,.42);
+      border-radius: 50%;
+    }
+    .about-photo-shape {
+      position: absolute;
+      bottom: -8%;
+      width: 70%;
+      height: 72%;
+      border-radius: 48% 48% 0 0;
+      background: linear-gradient(150deg, #B79CFF, #6B568F);
+      opacity: .88;
+    }
+    .about-photo-shape::before {
+      content: "";
+      position: absolute;
+      left: 27%;
+      top: -38%;
+      width: 46%;
+      aspect-ratio: .8;
+      border-radius: 48% 48% 43% 43%;
+      background: #17171F;
+      box-shadow: 0 -13px 0 3px #0D0D12;
+    }
+    .about-photo span, .about-photo small {
+      position: absolute;
+      z-index: 2;
+      left: 14px;
+      color: #F5F2EC;
+      font-size: .56rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+    }
+    .about-photo span { top: 14px; }
+    .about-photo small { bottom: 14px; color: rgba(245,242,236,.7); }
+    .about-bio { padding-bottom: 4px; }
+    .about-bio p {
+      margin: 0;
+      color: #C7C4D0;
+      font-size: clamp(.94rem, 1.18vw, 1.06rem);
+      line-height: 1.9;
+    }
+    .about-bio strong { color: var(--hero-text); font-weight: 600; }
+    .about-facts {
+      align-self: stretch;
+      padding: clamp(24px, 3.5vw, 42px);
+      background: var(--surface);
+      border: 1px solid rgba(245,242,236,.14);
+    }
+    .about-facts-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-bottom: 22px;
+      border-bottom: 1px solid rgba(245,242,236,.14);
+    }
+    .about-card-index {
+      color: var(--hero-muted);
+      font-size: .6rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+    }
+    .about-card-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--pink);
+      box-shadow: 0 0 15px rgba(255,143,208,.4);
+    }
+    .about-facts h2 {
+      margin: 26px 0 28px;
+      color: var(--hero-text);
+      font-family: var(--display);
+      font-size: clamp(2.7rem, 5vw, 4.7rem);
+      font-weight: 400;
+      line-height: .92;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+    }
+    .about-fact-list { margin: 0; }
+    .about-fact {
+      display: grid;
+      grid-template-columns: minmax(105px, .72fr) 1.28fr;
+      gap: 16px;
+      padding: 16px 0;
+      border-top: 1px solid rgba(245,242,236,.12);
+    }
+    .about-fact dt {
+      color: var(--hero-muted);
+      font-size: .68rem;
+      letter-spacing: .04em;
+    }
+    .about-fact dd {
+      margin: 0;
+      color: var(--hero-text);
+      font-size: .78rem;
+      font-weight: 600;
+      text-align: right;
+    }
+    @media (max-width: 900px) {
+      .about-layout { grid-template-columns: 1fr; gap: 28px; }
+      .about-profile { grid-template-columns: minmax(210px, .7fr) minmax(0, 1.3fr); }
+      .about-facts { max-width: none; }
+    }
+    @media (max-width: 640px) {
+      .about-wrap { width: calc(100% - 34px); }
+      .about-kicker { font-size: .6rem; letter-spacing: .12em; }
+      .about-profile { grid-template-columns: 1fr; gap: 23px; }
+      .about-photo { width: min(100%, 310px); min-height: 330px; aspect-ratio: .9; }
+      .about-bio p { font-size: .94rem; line-height: 1.85; }
+      .about-facts { padding: 24px 20px; }
+      .about-facts h2 { font-size: 3.15rem; }
+      .about-fact { grid-template-columns: minmax(88px, .72fr) 1.28fr; gap: 10px; }
+      .about-fact dd { font-size: .72rem; }
+    }
+
   </style>
 </head>
 <body>
@@ -653,17 +824,47 @@
       </div>
     </section>
 
-    <!-- SECTION: ABOUT ME -->
+    <!-- SECTION: ABOUT -->
     <section class="about section-space" id="about">
-      <div class="wrap about-grid">
-        <h2 class="about-title">A little<br>about me.</h2>
-        <div class="about-copy">
-          <p><strong>I'm Beverlyn, a graphic designer and social media manager</strong> interested in the space where visual storytelling meets thoughtful communication.</p>
-          <p>I enjoy shaping a brand's look, finding the idea behind a post, and making sure each piece of content has a purpose. I approach creative work with curiosity, care for the details, and an eye on the people a brand wants to reach.</p>
-          <p>My practice brings together design, content, and the small decisions that make a brand feel consistent wherever people meet it.</p>
-          <div class="about-tags" aria-label="Areas of focus">
-            <span>Visual identity</span><span>Content design</span><span>Social media</span><span>Creative direction</span>
+      <div class="wrap about-wrap">
+        <div class="about-kicker">lemme tell you more about me</div>
+        <div class="about-layout">
+          <div class="about-profile">
+            <div class="about-photo" role="img" aria-label="Portrait photo placeholder for Beverlyn Manuel">
+              <div class="about-photo-shape" aria-hidden="true"></div>
+              <span>YOUR PHOTO HERE</span>
+              <small>PORTRAIT / 01</small>
+            </div>
+            <div class="about-bio">
+              <p>I'm a <strong>BSIT graduate from Cagayan State University.</strong> I design e-books, templates, and social media content, bringing structure and visual clarity to each piece. As a student and gamer myself, I understand the interests and online spaces that shape those communities. I'm now building my path as a <strong>Social Media VA</strong>, combining creative work with thoughtful, reliable support.</p>
+            </div>
           </div>
+
+          <aside class="about-facts" aria-labelledby="about-facts-title">
+            <div class="about-facts-top">
+              <span class="about-card-index">BM / DETAILS</span>
+              <span class="about-card-dot" aria-hidden="true"></span>
+            </div>
+            <h2 id="about-facts-title">the boring but<br>important stuff</h2>
+            <dl class="about-fact-list">
+              <div class="about-fact">
+                <dt>Based in</dt>
+                <dd>Philippines</dd>
+              </div>
+              <div class="about-fact">
+                <dt>Status</dt>
+                <dd>Open to full-time or part-time</dd>
+              </div>
+              <div class="about-fact">
+                <dt>Usually found in</dt>
+                <dd>Canva, Photoshop, Figma</dd>
+              </div>
+              <div class="about-fact">
+                <dt>Availability</dt>
+                <dd>Any time of day</dd>
+              </div>
+            </dl>
+          </aside>
         </div>
       </div>
     </section>
