@@ -433,7 +433,7 @@
       height: 38px;
       flex: 0 0 38px;
       place-items: center;
-      background: var(--alt);
+      background: var(--panel);
       color: var(--muted);
       font-size: 1rem;
     }
@@ -852,6 +852,9 @@
       .about-facts h2 { font-size: 3.1rem; }
       .about-fact { grid-template-columns: minmax(85px, .7fr) 1.3fr; gap: 9px; }
       .about-fact dd { font-size: .69rem; }
+      .tech-stack { padding: 20px 16px; }
+      .tech-stack-row { grid-template-columns: 1fr; gap: 13px; padding: 19px 0; }
+      .tech-stack-row ul { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 13px 16px; }
       .love-wrap, .services-wrap { width: calc(100% - 34px); }
       .love-title { margin-top: 29px; font-size: clamp(4.7rem, 19vw, 7.3rem); }
       .love-intro { margin-top: 22px; font-size: .92rem; }
@@ -978,6 +981,42 @@
             </dl>
           </aside>
         </div>
+        <section class="tech-stack" aria-labelledby="tech-stack-title">
+          <div class="tech-stack-heading">
+            <div>
+              <div class="tech-stack-kicker">MY TECH STACK</div>
+              <h2 id="tech-stack-title">Tools I work with</h2>
+              <p>Tools I use for design, development, organization, and everyday support.</p>
+            </div>
+            <span class="tech-stack-mark" aria-hidden="true">✳</span>
+          </div>
+          <div class="tech-stack-rows">
+            <div class="tech-stack-row">
+              <h3><span class="stack-symbol" aria-hidden="true">✳</span> Design</h3>
+              <ul>
+                <li>Canva</li><li>Figma</li><li>Photoshop <small>Learning</small></li><li>CapCut <small>Learning</small></li>
+              </ul>
+            </div>
+            <div class="tech-stack-row">
+              <h3><span class="stack-symbol" aria-hidden="true">⌘</span> Development</h3>
+              <ul>
+                <li>C#</li><li>.NET</li><li>Visual Studio</li><li>Visual Studio Code</li><li>MySQL</li><li>MySQL Workbench</li><li>HTML &amp; CSS <small>Learning</small></li>
+              </ul>
+            </div>
+            <div class="tech-stack-row">
+              <h3><span class="stack-symbol" aria-hidden="true">▤</span> Productivity</h3>
+              <ul>
+                <li>Microsoft Word</li><li>Excel</li><li>PowerPoint</li><li>Google Sheets</li><li>Google Forms</li><li>Google Calendar</li><li>Google Docs</li>
+              </ul>
+            </div>
+            <div class="tech-stack-row">
+              <h3><span class="stack-symbol" aria-hidden="true">✧</span> AI &amp; Workflow</h3>
+              <ul>
+                <li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Obsidian</li><li>Instagram</li>
+              </ul>
+            </div>
+          </div>
+        </section>
       </div>
     </section>
 
