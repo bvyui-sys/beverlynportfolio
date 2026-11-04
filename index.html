@@ -1168,6 +1168,33 @@
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     }
+
+    /* MATCHA CAROUSEL: keep all six slide previews in the same pink palette. */
+    .project-matcha .matcha-stage { background: #F1DDE8; }
+    .project-matcha .slide-thumb {
+      background: #F8EAF1;
+      border-color: rgba(126, 72, 99, .38);
+      color: #70465B;
+    }
+    .project-matcha .slide-thumb[aria-pressed="true"] {
+      background: #EFC9DC;
+      border-color: #C86F9F;
+      color: #432B39;
+    }
+    .project-matcha .slide-thumb-placeholder {
+      background: #F0D4E2;
+      border-color: rgba(126, 72, 99, .28);
+      color: #70465B;
+    }
+    .project-matcha .ig-media-wrap,
+    .project-matcha .ig-image-placeholder {
+      background: #F0D4E2;
+      color: #70465B;
+    }
+    .project-matcha .ig-image-placeholder-inner {
+      border-color: rgba(112, 70, 91, .38);
+    }
+    .project-matcha .ig-dots span.is-active { background: #C86F9F; }
   </style>
 </head>
 <body>
