@@ -435,7 +435,15 @@
       place-items: center;
       background: var(--panel);
       color: var(--muted);
-      font-size: 1rem;
+    }
+    .stack-symbol svg {
+      width: 19px;
+      height: 19px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
     }
     .tech-stack-row ul {
       display: grid;
@@ -1264,33 +1272,53 @@
             <div>
               <div class="tech-stack-kicker">MY TECH STACK</div>
               <h2 id="tech-stack-title">Tools I work with</h2>
-              <p>Tools I use for design, development, organization, and everyday support.</p>
+              <p>A categorized look at the tools I use and the ones I am currently learning.</p>
             </div>
             <span class="tech-stack-mark" aria-hidden="true">✳</span>
           </div>
           <div class="tech-stack-rows">
             <div class="tech-stack-row">
-              <h3><span class="stack-symbol" aria-hidden="true">✳</span> Design</h3>
+              <h3>
+                <span class="stack-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M4 18 14.5 4l5.5 4.2L9.5 22H4zM11 8.7l5.5 4.2M4 18l5.5 4"/></svg>
+                </span>
+                Design
+              </h3>
               <ul>
                 <li>Canva</li><li>Figma</li><li>Photoshop <small>Learning</small></li><li>CapCut <small>Learning</small></li>
               </ul>
             </div>
             <div class="tech-stack-row">
-              <h3><span class="stack-symbol" aria-hidden="true">⌘</span> Development</h3>
+              <h3>
+                <span class="stack-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="m8 7-5 5 5 5M16 7l5 5-5 5M14 4l-4 16"/></svg>
+                </span>
+                Development
+              </h3>
               <ul>
                 <li>C#</li><li>.NET</li><li>Visual Studio</li><li>Visual Studio Code</li><li>MySQL</li><li>MySQL Workbench</li><li>HTML &amp; CSS <small>Learning</small></li>
               </ul>
             </div>
             <div class="tech-stack-row">
-              <h3><span class="stack-symbol" aria-hidden="true">▤</span> Productivity</h3>
+              <h3>
+                <span class="stack-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="1.5"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+                </span>
+                Productivity
+              </h3>
               <ul>
-                <li>Microsoft Word</li><li>Excel</li><li>PowerPoint</li><li>Google Sheets</li><li>Google Forms</li><li>Google Calendar</li><li>Google Docs</li>
+                <li>Microsoft Word</li><li>Microsoft Excel</li><li>Microsoft PowerPoint</li><li>Google Sheets</li><li>Google Forms</li><li>Google Calendar</li><li>Google Docs</li>
               </ul>
             </div>
             <div class="tech-stack-row">
-              <h3><span class="stack-symbol" aria-hidden="true">✧</span> AI &amp; Workflow</h3>
+              <h3>
+                <span class="stack-symbol" aria-hidden="true">
+                  <svg viewBox="0 0 24 24"><path d="M12 3.5c-4.7 0-8.5 3.4-8.5 7.6 0 3.7 3.1 6.8 7.2 7.5l-.7 2.1 4-2.1c3.8-.7 6.5-3.7 6.5-7.4 0-4.3-3.8-7.7-8.5-7.7Z"/><path d="M8 10h8M8 13.5h5"/></svg>
+                </span>
+                AI
+              </h3>
               <ul>
-                <li>ChatGPT</li><li>Claude</li><li>Gemini</li><li>Obsidian</li><li>Instagram</li>
+                <li>ChatGPT</li><li>Claude</li><li>Gemini</li>
               </ul>
             </div>
           </div>
