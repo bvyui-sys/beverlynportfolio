@@ -523,9 +523,7 @@
     .services-intro p { max-width: 330px; margin: 0 0 6px; color: var(--muted); font-size: .9rem; line-height: 1.8; }
     .services-layout {
       display: grid;
-      grid-template-columns: repeat(12, minmax(0, 1fr));
-      grid-template-areas: "content content content content content content content design design design design design" ". support support support support support web web web web web web";
-      grid-template-rows: minmax(280px, auto) minmax(270px, auto);
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
       align-items: stretch;
     }
@@ -542,10 +540,9 @@
       transition: border-color .18s ease, transform .18s ease;
     }
     .service-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .service-card--content { grid-area: content; min-height: 320px; }
-    .service-card--design { grid-area: design; min-height: 280px; margin-top: 62px; }
-    .service-card--support { grid-area: support; min-height: 265px; margin-top: -36px; }
-    .service-card--web { grid-area: web; min-height: 290px; margin-top: 23px; }
+    .service-card--social { min-height: 330px; margin-top: 38px; }
+    .service-card--content { min-height: 330px; }
+    .service-card--admin { min-height: 330px; margin-top: 72px; }
     .service-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
     .service-number { color: var(--muted); font-size: .59rem; font-weight: 700; letter-spacing: .15em; }
     .service-icon { width: 37px; height: 37px; fill: none; stroke: var(--accent); stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
@@ -1019,12 +1016,9 @@
       .about-layout { grid-template-columns: 1fr; }
       .about-profile { grid-template-columns: minmax(210px, .7fr) minmax(0, 1.3fr); }
       .services-intro { grid-template-columns: 1fr; gap: 20px; }
-      .services-layout {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-areas: "content content" "design design" "support web";
-        grid-template-rows: auto;
-      }
-      .service-card--content, .service-card--design, .service-card--support, .service-card--web { min-height: 250px; margin: 0; }
+      .services-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .service-card--social, .service-card--content, .service-card--admin { min-height: 260px; margin: 0; }
+      .service-card--admin { grid-column: 1 / -1; }
       .project-biometric { grid-template-columns: 1fr; }
       .biometric-copy { max-width: 660px; }
       .study-head { align-items: start; flex-direction: column; }
@@ -1082,13 +1076,14 @@
       .love-word--offset, .love-word--right { margin-inline-start: 0; }
       .love-word:nth-child(even) { margin-left: auto; }
       .services-title { font-size: clamp(4.2rem, 17vw, 6.2rem); }
-      .services-layout { gap: 9px; }
-      .service-card, .service-card--content, .service-card--design, .service-card--support, .service-card--web { min-height: 222px; padding: 15px 12px; }
-      .service-number { font-size: .47rem; letter-spacing: .09em; }
-      .service-icon { width: 27px; height: 27px; }
-      .service-card h3 { font-size: clamp(1.65rem, 7vw, 2.45rem); margin-bottom: 9px; }
-      .service-card p { font-size: .66rem; }
-      .service-card-mark { right: 9px; bottom: 6px; }
+      .services-layout { grid-template-columns: 1fr; gap: 10px; }
+      .service-card, .service-card--social, .service-card--content, .service-card--admin { min-height: 220px; margin: 0; padding: 20px 17px; }
+      .service-card--admin { grid-column: auto; }
+      .service-number { font-size: .52rem; letter-spacing: .1em; }
+      .service-icon { width: 30px; height: 30px; }
+      .service-card h3 { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: 9px; }
+      .service-card p { max-width: 340px; font-size: .75rem; }
+      .service-card-mark { right: 12px; bottom: 8px; }
       .service-quote { flex-wrap: wrap; gap: 8px 12px; margin-top: 34px; padding-block: 17px; }
       .service-quote > span:first-child { width: 100%; }
       .service-quote strong { font-size: clamp(1.4rem, 6.7vw, 1.9rem); }
@@ -1440,36 +1435,28 @@
           <p>Creative and day-to-day support, depending on what your business needs.</p>
         </div>
         <div class="services-layout">
+          <article class="service-card service-card--social">
+            <div class="service-card-top">
+              <span class="service-number">01 / SOCIAL PLATFORMS</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="32" height="29" rx="2"></rect><path d="M15 6v8M33 6v8M8 19h32M15 26h7M15 32h3M28 26h5M28 32h5"></path></svg>
+            </div>
+            <div class="service-card-copy"><h3>Social Media<br>Management</h3><p>Managing your social platforms through content scheduling, account organization, and consistent audience engagement.</p></div>
+            <span class="service-card-mark" aria-hidden="true">✳</span>
+          </article>
           <article class="service-card service-card--content">
             <div class="service-card-top">
-              <span class="service-number">01 / CONTENT</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="9" y="8" width="22" height="29" rx="1"></rect><path d="M15 16h10M15 22h10M15 28h6M32 15l7 7v18H17M32 15v7h7"></path></svg>
+              <span class="service-number">02 / VISUAL CONTENT</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="2"></rect><circle cx="18" cy="18" r="4"></circle><path d="m10 35 10-10 7 7 5-5 6 7"></path></svg>
             </div>
-            <div class="service-card-copy"><h3>Social media<br>content</h3><p>Carousels, posts, captions.</p></div>
+            <div class="service-card-copy"><h3>Content<br>Creation</h3><p>Creating engaging social media posts, carousels, graphics, and other visual content that fits your brand.</p></div>
             <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
-          <article class="service-card service-card--design">
+          <article class="service-card service-card--admin">
             <div class="service-card-top">
-              <span class="service-number">02 / VISUALS</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><path d="M8 34 28 8l12 9-20 26H8zM23 15l12 9M8 34l12 9M8 34l-1 9 9-1"></path></svg>
+              <span class="service-number">03 / ADMINISTRATIVE</span>
+              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="29" rx="2"></rect><path d="M15 6v8M33 6v8M7 19h34M16 26h7M16 32h7M30 26v6l4 2"></path><circle cx="31" cy="29" r="7"></circle></svg>
             </div>
-            <div class="service-card-copy"><h3>Graphic<br>design</h3><p>E-books, templates, visuals.</p></div>
-            <span class="service-card-mark" aria-hidden="true">✳</span>
-          </article>
-          <article class="service-card service-card--support">
-            <div class="service-card-top">
-              <span class="service-number">03 / VA SUPPORT</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="11" width="34" height="25" rx="2"></rect><path d="m8 14 16 13 16-13M17 35l-5 6M31 35l5 6"></path></svg>
-            </div>
-            <div class="service-card-copy"><h3>VA<br>support</h3><p>Inbox cleanup, follow-ups, Google Sheets and Forms.</p></div>
-            <span class="service-card-mark" aria-hidden="true">✳</span>
-          </article>
-          <article class="service-card service-card--web">
-            <div class="service-card-top">
-              <span class="service-number">04 / DIGITAL BUILDS</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="6" y="8" width="36" height="30" rx="2"></rect><path d="M6 16h36M13 12h.1M18 12h.1M23 12h.1M14 23h9M14 28h20M14 33h15"></path></svg>
-            </div>
-            <div class="service-card-copy"><h3>Website and<br>template builds</h3><p>Website pages and reusable templates.</p></div>
+            <div class="service-card-copy"><h3>Admin<br>Support</h3><p>Helping with scheduling, data entry, file organization, documentation, inbox management, and everyday administrative tasks.</p></div>
             <span class="service-card-mark" aria-hidden="true">✳</span>
           </article>
         </div>
