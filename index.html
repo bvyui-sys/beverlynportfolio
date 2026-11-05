@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#0D0D12">
+  <meta name="theme-color" content="#D9D1D1">
   <meta name="description" content="Beverlyn Manuel is a graphic designer and social media VA creating visual content, digital resources, and practical support for brands.">
   <title>Beverlyn Manuel | Graphic Designer &amp; Social Media VA</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -1203,6 +1203,55 @@
       border-color: rgba(56, 83, 61, .38);
     }
     .project-matcha .ig-dots span.is-active { background: #82916F; }
+
+    /* Biometric project: art-directed system showcase */
+    .project-biometric { position: relative; overflow: hidden; padding: clamp(28px, 4vw, 54px); background: #777075; color: #F7F5F3; }
+    .project-biometric::before, .project-biometric::after { position:absolute; width:210px; height:210px; border:1px solid rgba(229,143,193,.35); border-radius:50%; content:""; pointer-events:none; }
+    .project-biometric::before { top:-135px; right:-45px; box-shadow:0 0 0 18px rgba(229,143,193,.035),0 0 0 38px rgba(229,143,193,.025); }
+    .project-biometric::after { bottom:-165px; left:-70px; }
+    .biometric-copy { min-width:0; }
+    .project-biometric .project-label { color:rgba(247,245,243,.7); }
+    .biometric-sample-tag { display:inline-block; margin-top:15px; padding:5px 10px; border:1px solid rgba(247,245,243,.35); color:#F7F5F3; font-size:.56rem; letter-spacing:.13em; text-transform:uppercase; }
+    .project-biometric .project-name { margin:16px 0 15px; color:#fff; font-size:clamp(3.4rem,6vw,6.5rem); line-height:.86; letter-spacing:-.025em; }
+    .biometric-description { max-width:370px; margin:0; color:rgba(255,255,255,.82); font-size:.9rem; line-height:1.7; }
+    .biometric-feature-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:10px; margin-top:25px; }
+    .biometric-feature-grid div { display:flex; min-height:74px; flex-direction:column; justify-content:center; align-items:center; gap:6px; border:1px solid rgba(255,255,255,.2); border-radius:50%; color:#fff; font-size:.54rem; text-align:center; }
+    .feature-icon { font-size:1.25rem; line-height:1; }
+    .biometric-tech { display:flex; flex-wrap:wrap; gap:7px; margin-top:22px; }
+    .biometric-tech span { padding:7px 9px; background:#F7F5F3; color:#242124; font-size:.58rem; font-weight:700; }
+    .biometric-nav { display:flex; flex-wrap:wrap; gap:6px; margin-top:20px; }
+    .biometric-nav span { padding:7px 10px; border:1px solid rgba(255,255,255,.38); border-radius:30px; color:#fff; font-size:.55rem; }
+    .biometric-nav .is-current { background:#F7F5F3; color:#242124; }
+    .biometric-pills { display:grid; gap:8px; margin-top:18px; }
+    .project-biometric .project-pill { width:100%; max-width:100%; padding:9px 13px; border-color:rgba(255,255,255,.45); border-radius:30px; color:#fff; font-size:.59rem; font-style:italic; }
+    .project-biometric .monitor-stage { position:relative; padding:clamp(14px,2.5vw,30px); background:#ECEAEF; border:0; }
+    .project-biometric .monitor-screen { padding:7px; border-color:#242124; background:#242124; }
+    .project-biometric .monitor-screen-inner { display:block; min-height:clamp(250px,31vw,390px); border:0; background:#F7F5F3; text-align:left; }
+    .biometric-dashboard { padding:clamp(12px,2vw,24px); color:#282428; }
+    .dashboard-top { display:flex; justify-content:space-between; gap:10px; padding-bottom:12px; border-bottom:2px solid #B74650; font-size:.56rem; }
+    .dashboard-top span { color:#777075; font-size:.48rem; letter-spacing:.08em; }
+    .dashboard-welcome { display:grid; gap:3px; margin:18px 0; font-size:1rem; font-weight:700; }
+    .dashboard-welcome small { color:#777075; font-size:.58rem; font-weight:400; }
+    .dashboard-stats { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:9px; }
+    .dashboard-stats div { display:grid; gap:4px; padding:13px 9px; border:1px solid #E5DFDF; border-top:3px solid #B74650; background:#fff; }
+    .dashboard-stats small { color:#777075; font-size:.46rem; font-weight:700; letter-spacing:.06em; }
+    .dashboard-stats strong { color:#282428; font-size:clamp(1.5rem,3vw,2.3rem); line-height:1; }
+    .dashboard-stats span { color:#777075; font-size:.5rem; }
+    .dashboard-lower { display:grid; grid-template-columns:1.4fr .6fr; gap:10px; margin-top:15px; }
+    .dashboard-lower > div:first-child { display:grid; gap:9px; padding:12px; background:#fff; font-size:.57rem; }
+    .dashboard-lower > div:first-child span { height:6px; background:#E8E3E3; }
+    .dashboard-fingerprint { display:grid; place-content:center; justify-items:center; gap:6px; background:#F2E7E7; color:#B74650; font-size:2.4rem; }
+    .dashboard-fingerprint small { color:#777075; font-size:.43rem; text-align:center; }
+    .tablet-mockup { position:absolute; right:2%; bottom:8%; width:30%; padding:8px; border:5px solid #292832; border-radius:15px; background:#292832; transform:rotate(5deg); box-shadow:0 16px 30px rgba(20,20,20,.22); }
+    .tablet-screen { display:grid; min-height:150px; place-content:center; justify-items:center; gap:7px; padding:10px; background:#F7F5F3; color:#B74650; text-align:center; }
+    .tablet-screen span { color:#777075; font-size:.45rem; letter-spacing:.12em; }
+    .tablet-screen strong { font-size:2.6rem; }
+    .tablet-screen b { color:#282428; font-size:.48rem; }
+    .tablet-screen small { color:#777075; font-size:.46rem; }
+    .mockup-disclaimer { margin:13px 0 0; color:#777075; font-size:.52rem; text-align:right; }
+    @media (max-width:900px) { .project-biometric { grid-template-columns:1fr; } .project-biometric .project-name { font-size:clamp(3.6rem,11vw,6rem); } .project-biometric .monitor-stage { margin-top:10px; } }
+    @media (max-width:520px) { .project-biometric { padding:22px 16px; } .biometric-feature-grid { grid-template-columns:repeat(3,minmax(0,1fr)); } .biometric-feature-grid div { min-height:68px; font-size:.47rem; } .tablet-mockup { right:0; bottom:5%; width:34%; } .tablet-screen { min-height:105px; } }
+
   </style>
 </head>
 <body>
@@ -1251,7 +1300,7 @@
               <span class="placeholder-label">PHOTO PLACEHOLDER</span>
             </div>
             <div class="about-bio">
-              <p>[ABOUT TEXT PLACEHOLDER]</p>
+              <p>I’m a <strong>BSIT graduate from Cagayan State University</strong> with an interest in visual design, digital content, and the work that keeps things running behind the scenes. I enjoy creating e-books, templates, and social media visuals that make information easier to follow. I’m now building my path as a <strong>graphic designer and social media VA</strong>, bringing together my design skills, technical background, and willingness to learn.</p>
             </div>
           </div>
           <aside class="about-facts" aria-labelledby="about-facts-title">
@@ -1404,26 +1453,41 @@
         <article class="project project-biometric" data-reveal>
           <div class="biometric-copy">
             <div class="project-label">DESKTOP SYSTEM PROJECT</div>
-            <h3 class="project-name">Biometric<br>System</h3>
-            <div class="tools-list" aria-label="Tools used">
-              <span class="tool-badge" title="C sharp">C#</span>
-              <span class="tool-badge" title="MySQL">SQL</span>
-              <span class="tool-badge" title="Visual Studio Code">VS</span>
+            <span class="biometric-sample-tag">SAMPLE WORK 01</span>
+            <h3 class="project-name">Attendance<br>Monitoring<br>System</h3>
+            <p class="biometric-description">A fingerprint attendance system built for the Local Government Unit of Lasam.</p>
+            <div class="biometric-feature-grid" aria-label="System features">
+              <div><span class="feature-icon">⌁</span><span>Scan</span></div>
+              <div><span class="feature-icon">✓</span><span>Verify</span></div>
+              <div><span class="feature-icon">◷</span><span>Time in / out</span></div>
+              <div><span class="feature-icon">▤</span><span>Employee records</span></div>
+              <div><span class="feature-icon">▥</span><span>Database</span></div>
+              <div><span class="feature-icon">▧</span><span>DTR reports</span></div>
             </div>
-            <div class="project-pill-row biometric-pills">
-              <span class="project-pill project-pill--placeholder">[what the system does]</span>
-              <span class="project-pill project-pill--placeholder">[main features]</span>
-              <span class="project-pill project-pill--placeholder">[what I built or handled]</span>
+            <div class="biometric-tech">
+              <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
+            </div>
+            <div class="biometric-nav" aria-label="Illustrative system navigation">
+              <span>Login</span><span class="is-current">Dashboard</span><span>Departments</span><span>Registration</span>
+            </div>
+            <div class="biometric-pills">
+              <span class="project-pill">Fingerprint-based employee time-in and time-out</span>
+              <span class="project-pill">Employee records and attendance status monitoring</span>
+              <span class="project-pill">Daily Time Record generation and leave management</span>
             </div>
           </div>
           <div class="monitor-stage">
-            <div class="monitor" role="img" aria-label="Desktop monitor mockup with placeholder for a screenshot of the biometric system">
+            <div class="monitor" role="img" aria-label="Illustrative desktop dashboard mockup showing sample attendance totals, not live employee data">
               <div class="monitor-screen">
-                <div class="monitor-screen-inner">
-                  <div class="screen-placeholder">
-                    <strong>IMAGE PLACEHOLDER</strong>
-                    <span>Add your biometric desktop system screenshot here</span>
+                <div class="monitor-screen-inner biometric-dashboard">
+                  <div class="dashboard-top"><strong>LGU LASAM</strong><span>ATTENDANCE MONITORING SYSTEM</span></div>
+                  <div class="dashboard-welcome"><span>Dashboard overview</span><small>Employee attendance summary</small></div>
+                  <div class="dashboard-stats">
+                    <div><small>PRESENT</small><strong>01</strong><span>Today</span></div>
+                    <div><small>ABSENT</small><strong>11</strong><span>Today</span></div>
+                    <div><small>OVERTIME</small><strong>00</strong><span>Today</span></div>
                   </div>
+                  <div class="dashboard-lower"><div><strong>Attendance activity</strong><span></span><span></span><span></span></div><div class="dashboard-fingerprint">◎<small>BIOMETRIC<br>SCANNER</small></div></div>
                 </div>
               </div>
               <div class="monitor-chin"></div>
@@ -1431,6 +1495,10 @@
               <div class="monitor-foot"></div>
             </div>
             <div class="desk-accessories" aria-hidden="true"><div class="keyboard"></div><div class="mouse"></div></div>
+            <div class="tablet-mockup" aria-label="Illustrative biometric fingerprint scanner interface">
+              <div class="tablet-screen"><span>LGU LASAM</span><strong>◎</strong><b>BIOMETRIC ATTENDANCE</b><small>Monitoring System</small></div>
+            </div>
+            <p class="mockup-disclaimer">Illustrative interface mockup · sample dashboard values</p>
           </div>
         </article>
 
