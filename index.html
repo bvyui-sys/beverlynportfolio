@@ -1492,6 +1492,10 @@
     @media (prefers-reduced-motion: no-preference) {
       [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
       [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
+
+      /* The What I Love Doing section enters from right to left. */
+      .love [data-reveal] { transform: translateX(32px); }
+      .love [data-reveal].is-visible { transform: translateX(0); }
       .services-layout > [data-reveal]:nth-child(2), .process-grid > [data-reveal]:nth-child(2) { transition-delay: .09s; }
       .services-layout > [data-reveal]:nth-child(3), .process-grid > [data-reveal]:nth-child(3) { transition-delay: .18s; }
       .process-grid > [data-reveal]:nth-child(4) { transition-delay: .27s; }
