@@ -1526,8 +1526,11 @@
       /* The What I Love Doing section enters from right to left, slightly faster. */
       .love [data-reveal] { transform: translateX(32px); transition-duration: .62s; }
       .love [data-reveal].is-visible { transform: translateX(0); }
-      .services-layout > [data-reveal]:nth-child(2), .process-grid > [data-reveal]:nth-child(2) { transition-delay: .09s; }
-      .services-layout > [data-reveal]:nth-child(3), .process-grid > [data-reveal]:nth-child(3) { transition-delay: .18s; }
+      .services-layout > [data-reveal] { transition-duration: 1.2s; transition-timing-function: cubic-bezier(.2,.7,.2,1); }
+      .services-layout > [data-reveal]:nth-child(2) { transition-delay: .38s; }
+      .services-layout > [data-reveal]:nth-child(3) { transition-delay: .76s; }
+      .process-grid > [data-reveal]:nth-child(2) { transition-delay: .09s; }
+      .process-grid > [data-reveal]:nth-child(3) { transition-delay: .18s; }
       .process-grid > [data-reveal]:nth-child(4) { transition-delay: .27s; }
       .hero-copy { animation: hero-enter .7s ease both; }
       .hero-visual { animation: hero-enter .85s .12s ease both; }
