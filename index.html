@@ -725,6 +725,36 @@
     .book-placeholder span { display: block; margin-top: 16px; color: #56515F; font-size: .58rem; font-weight: 700; letter-spacing: .13em; }
     .study-pills { margin-top: 22px; }
 
+    /* DIGITAL PRODUCT: e-book and template presentation */
+    .project-digital { display:grid; grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr); align-items:center; gap:clamp(28px,5vw,70px); }
+    .digital-copy { position:relative; z-index:1; }
+    .digital-copy .project-name { margin:19px 0 22px; font-size:clamp(3.6rem,6.8vw,6.7rem); }
+    .digital-description { max-width:470px; margin:0 0 22px; color:#565156; font-size:.84rem; line-height:1.8; }
+    .digital-facts { display:grid; gap:9px; }
+    .digital-facts p { margin:0; color:#565156; font-size:.77rem; line-height:1.6; }
+    .digital-facts strong { color:var(--text); }
+    .digital-stage { position:relative; display:flex; min-height:500px; align-items:center; justify-content:center; gap:clamp(20px,4vw,48px); overflow:hidden; padding:clamp(25px,4vw,48px); border:1px solid var(--line); background:var(--panel); }
+    .digital-book { position:relative; display:flex; width:min(42%,245px); min-width:160px; aspect-ratio:.72; filter:drop-shadow(12px 16px 13px rgba(20,20,20,.18)); transform:rotate(-5deg); }
+    .digital-book-spine { width:10px; flex:0 0 10px; background:#9B6F83; }
+    .digital-book-cover { display:flex; min-width:0; flex:1; flex-direction:column; justify-content:space-between; padding:clamp(15px,2vw,24px); background:#E8D9D1; color:#342B2E; }
+    .digital-book-kicker,.digital-book-edition { font-size:.48rem; font-weight:800; letter-spacing:.13em; line-height:1.5; }
+    .digital-book-cover strong { font-family:var(--display); font-size:clamp(2.4rem,4.4vw,4.2rem); font-weight:400; line-height:.84; }
+    .digital-book-subtitle { max-width:140px; font-family:Georgia,serif; font-size:.68rem; line-height:1.45; }
+    .digital-book-pages { position:absolute; top:4px; right:-8px; bottom:4px; width:8px; background:repeating-linear-gradient(180deg,#F8F4EF 0 3px,#D9D1CA 3px 4px); }
+    .digital-template-grid { display:grid; width:min(48%,270px); gap:17px; }
+    .digital-template { min-height:170px; padding:14px; border:1px solid rgba(20,20,20,.14); background:#F9F7F3; box-shadow:0 8px 17px rgba(20,20,20,.1); color:#333036; }
+    .digital-template--one { transform:rotate(4deg); }
+    .digital-template--two { transform:rotate(-2deg); background:#E9EDE5; }
+    .digital-template-label,.digital-template-footer { display:block; color:#777078; font-size:.44rem; font-weight:800; letter-spacing:.13em; }
+    .digital-template-heading { margin:13px 0 9px; font-family:var(--display); font-size:clamp(1.3rem,2.5vw,2rem); line-height:.9; }
+    .digital-template-lines { display:grid; gap:7px; }
+    .digital-template-lines i { display:block; height:1px; background:rgba(51,48,54,.22); }
+    .digital-template-lines i:nth-child(2),.digital-template-lines i:nth-child(5) { width:78%; }
+    .digital-template-blocks { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
+    .digital-template-blocks i { min-height:22px; border:1px solid rgba(51,48,54,.2); }
+    .digital-template-footer { margin-top:12px; }
+    .digital-stage-note { position:absolute; right:16px; bottom:13px; color:var(--muted); font-size:.48rem; font-weight:800; letter-spacing:.14em; }
+
     /* MATCHA CAROUSEL: Instagram-style post preview */
     .project-matcha {
       display: grid;
@@ -1060,6 +1090,8 @@
       .study-head { align-items: start; flex-direction: column; }
       .study-facts { max-width: 540px; }
       .project-matcha { grid-template-columns: 1fr; }
+      .project-digital { grid-template-columns: 1fr; }
+      .digital-stage { min-height: 440px; }
       .matcha-project-heading { max-width: 680px; }
       .matcha-stage { min-height: 640px; grid-template-columns: minmax(0, 1fr) minmax(235px, .72fr) minmax(0, 1fr); }
       .slide-stack { gap: 12px; }
@@ -1538,38 +1570,13 @@
             <div class="eyebrow">DESKTOP · DIGITAL · SOCIAL</div>
             <h2 class="work-title">THE WORK<span style="color:var(--accent)">.</span></h2>
           </div>
-          <p>Three projects across desktop systems, digital publishing, and social content.</p>
+          <p>Social content, digital products, and a technical system project.</p>
         </div>
 
-              <!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
-        <article class="project bio" data-reveal>
-          <div class="bio-copy">
-            <div class="bio-label">DESKTOP SYSTEM PROJECT</div>
-            <h3 class="bio-title">Attendance<br>Monitoring<br>System</h3>
-            <p class="bio-desc">A fingerprint attendance system built for the Local Government Unit of Lasam. Capstone project with two teammates, BSIT 2026.</p>
-            <ul class="bio-features" aria-label="System features">
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Scan</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg></span><span>Verify</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span>Time in and out</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></span><span>Employee records</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span>Database</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR reports</span></li>
-            </ul>
-            <div class="bio-tech" aria-label="Technologies used">
-              <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
-            </div>
-          </div>
-          <div class="bio-stage">
-            <div class="bio-monitor">
-              <div class="bio-screen"><img src="images/biometric-ui1.png" alt="Attendance Monitoring System login screen for the Municipality of Lasam" loading="lazy" decoding="async"></div>
-              <div class="bio-neck" aria-hidden="true"></div>
-              <div class="bio-foot" aria-hidden="true"></div>
-            </div>
-            <div class="bio-tablet"><img src="images/biometric-ui2.png" alt="Fingerprint scanner interface of the Attendance Monitoring System" loading="lazy" decoding="async"></div>
-          </div>
-        </article>
+              
     
-       <!-- PROJECT: THE MATCHA TEA CLUB -->
+       
+<!-- PROJECT: THE MATCHA TEA CLUB -->
         <article class="project project-matcha" data-reveal>
           <div class="matcha-project-heading">
             <h3 class="project-name">The Matcha<br>Tea Club</h3>
@@ -1645,6 +1652,78 @@
                 <img src="images/matcha-6.jpg" alt="Slide 6 thumbnail" style="width: 100%; aspect-ratio: 4/5; object-fit: cover; border-radius: 4px; display: block;" />
               </button>
             </div>
+          </div>
+        </article>
+
+        <!-- PROJECT: STUDY GUIDE, E-BOOK & TEMPLATES -->
+        <article class="project project-digital" data-reveal>
+          <div class="digital-copy">
+            <div class="project-label">OWN DIGITAL PRODUCT WORK</div>
+            <h3 class="project-name">Study Guide<br>&amp; Templates</h3>
+            <p class="digital-description">An independently created digital publishing project featuring a structured study guide and reusable template layouts. Designed with a focus on clear information, readable pages, and consistent visual organization.</p>
+            <div class="digital-facts">
+              <p><strong>Format:</strong> E-book and digital templates</p>
+              <p><strong>Focus:</strong> Information hierarchy, readability, and layout design</p>
+              <p><strong>Tools:</strong> Canva and Figma</p>
+            </div>
+            <div class="project-pill-row">
+              <span class="project-pill">Digital Publishing</span><span class="project-pill">E-book Design</span><span class="project-pill">Template Design</span>
+            </div>
+          </div>
+          <div class="digital-stage" aria-label="Study guide e-book and digital template previews">
+            <div class="digital-book">
+              <div class="digital-book-spine"></div>
+              <div class="digital-book-cover">
+                <span class="digital-book-kicker">A STUDENT RESOURCE</span>
+                <strong>STUDY<br>GUIDE</strong>
+                <span class="digital-book-subtitle">A practical resource for learning and review</span>
+                <span class="digital-book-edition">STUDY GUIDE &amp; RESOURCE E-BOOK</span>
+              </div>
+              <div class="digital-book-pages"></div>
+            </div>
+            <div class="digital-template-grid">
+              <div class="digital-template digital-template--one">
+                <span class="digital-template-label">TEMPLATE / 01</span>
+                <div class="digital-template-heading">YOUR<br>NOTES</div>
+                <div class="digital-template-lines"><i></i><i></i><i></i><i></i><i></i></div>
+                <div class="digital-template-footer">STUDY RESOURCE</div>
+              </div>
+              <div class="digital-template digital-template--two">
+                <span class="digital-template-label">TEMPLATE / 02</span>
+                <div class="digital-template-heading">PLAN<br>AND REVIEW</div>
+                <div class="digital-template-blocks"><i></i><i></i><i></i><i></i></div>
+                <div class="digital-template-footer">EDITABLE LAYOUT</div>
+              </div>
+            </div>
+            <span class="digital-stage-note">E-BOOK COVER · TEMPLATE LAYOUTS</span>
+          </div>
+        </article>
+
+<!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
+        <article class="project bio" data-reveal>
+          <div class="bio-copy">
+            <div class="bio-label">DESKTOP SYSTEM PROJECT</div>
+            <h3 class="bio-title">Attendance<br>Monitoring<br>System</h3>
+            <p class="bio-desc">A fingerprint attendance system built for the Local Government Unit of Lasam. Capstone project with two teammates, BSIT 2026.</p>
+            <ul class="bio-features" aria-label="System features">
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Scan</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg></span><span>Verify</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span>Time in and out</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></span><span>Employee records</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span>Database</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR reports</span></li>
+            </ul>
+            <div class="bio-tech" aria-label="Technologies used">
+              <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
+            </div>
+          </div>
+          <div class="bio-stage">
+            <div class="bio-monitor">
+              <div class="bio-screen"><img src="images/biometric-ui1.png" alt="Attendance Monitoring System login screen for the Municipality of Lasam" loading="lazy" decoding="async"></div>
+              <div class="bio-neck" aria-hidden="true"></div>
+              <div class="bio-foot" aria-hidden="true"></div>
+            </div>
+            <div class="bio-tablet"><img src="images/biometric-ui2.png" alt="Fingerprint scanner interface of the Attendance Monitoring System" loading="lazy" decoding="async"></div>
           </div>
         </article>
       </div>
