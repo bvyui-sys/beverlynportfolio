@@ -755,17 +755,27 @@
       letter-spacing: .04em;
     }
     .matcha-description {
-      max-width: 410px;
+      max-width: 440px;
+      margin: 0 0 23px;
+      color: var(--muted);
+      font-size: .82rem;
+      font-style: italic;
+      line-height: 1.7;
+    }
+    .matcha-details {
+      display: grid;
+      max-width: 470px;
+      gap: 11px;
+    }
+    .matcha-details p {
       margin: 0;
       color: #565156;
-      font-size: clamp(.92rem, 1.15vw, 1.02rem);
-      line-height: 1.8;
+      font-size: .78rem;
+      line-height: 1.65;
     }
-    .matcha-meta {
-      margin: 19px 0 0;
-      color: var(--muted);
-      font-size: .68rem;
-      letter-spacing: .02em;
+    .matcha-details strong {
+      color: var(--text);
+      font-weight: 700;
     }
     .matcha-stage {
       position: relative;
@@ -1537,10 +1547,15 @@
        <!-- PROJECT: THE MATCHA TEA CLUB -->
         <article class="project project-matcha" data-reveal>
           <div class="matcha-project-heading">
-            <span class="project-flag">Mock brand project</span>
             <h3 class="project-name">The Matcha<br>Tea Club</h3>
-            <p class="matcha-description">A six-slide Instagram carousel for a made-up matcha brand. Swipe the phone or tap a slide.</p>
-            <p class="matcha-meta">Social media carousel. Designed in Canva.</p>
+            <p class="matcha-description">Self-initiated concept project for a fictional matcha brand.</p>
+            <div class="matcha-details">
+              <p><strong>Audience:</strong> Students and young adults</p>
+              <p><strong>Idea:</strong> Matcha as the study-break drink, with product discovery, lifestyle content, and an interactive question to start conversations</p>
+              <p><strong>Goal:</strong> Comments, saves, and shares</p>
+              <p><strong>Style:</strong> Consistent visuals, short conversational copy, product-focused imagery</p>
+              <p><strong>Tools:</strong> Canva</p>
+            </div>
           </div>
           <div class="matcha-stage" aria-label="Instagram post preview for The Matcha Tea Club">
             <div class="slide-stack slide-stack--left" aria-label="Carousel slides one, three, and five">
