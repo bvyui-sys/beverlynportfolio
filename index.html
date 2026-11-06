@@ -344,6 +344,36 @@
       content: "";
       pointer-events: none;
     }
+    .about-photo-tag {
+      position: absolute;
+      z-index: 3;
+      right: 17%;
+      bottom: 12%;
+      display: flex;
+      width: clamp(82px, 10vw, 112px);
+      aspect-ratio: 1;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 5px;
+      border: 1px solid rgba(20,20,20,.22);
+      background: var(--panel);
+      color: var(--text);
+      box-shadow: 5px 5px 0 rgba(20,20,20,.14);
+      text-align: center;
+    }
+    .about-photo-tag span {
+      font-size: .48rem;
+      font-weight: 700;
+      letter-spacing: .2em;
+      text-transform: uppercase;
+    }
+    .about-photo-tag strong {
+      font-family: var(--display, inherit);
+      font-size: clamp(1.45rem, 2.8vw, 2rem);
+      line-height: .9;
+      letter-spacing: -.06em;
+    }
     .about-photo-shape { display: none; }
     .placeholder-label {
       position: absolute;
@@ -1633,6 +1663,10 @@
           <div class="about-profile">
             <figure class="about-photo">
               <img src="images/about.jpg" alt="Beverlyn's about photo" loading="lazy" decoding="async">
+              <div class="about-photo-tag" aria-label="Call me Bev">
+                <span>Call me</span>
+                <strong>BEV</strong>
+              </div>
             </figure>
             <div class="about-bio">
               <p>I create e-books, templates, and social media visuals, and I also have a background in system development. My work combines graphic design, technical skills, and social media support.</p>
