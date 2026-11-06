@@ -531,13 +531,15 @@
     .love-kicker::before { content: ""; width: 26px; height: 1px; background: currentColor; }
     .love-title { margin: 35px 0 0; font-family: var(--display); font-size: clamp(5rem, 13vw, 12rem); font-weight: 400; line-height: .81; letter-spacing: -.025em; }
     .love-intro { max-width: 580px; margin: 29px 0 0; color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.08rem); line-height: 1.8; }
-    .love-cloud { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: clamp(10px, 2vw, 22px) clamp(20px, 3vw, 44px); margin-top: clamp(60px, 8vw, 108px); padding-top: 29px; border-top: 1px solid var(--line); }
-    .love-word { display: inline-block; color: #777482; font-family: var(--display); font-size: clamp(2.5rem, 5.6vw, 5.4rem); line-height: .98; letter-spacing: -.012em; text-transform: uppercase; cursor: default; transition: color .25s ease, transform .25s ease; }
-    .love-word:hover, .love-word:focus-visible { color: var(--accent); transform: translateY(-4px); outline: none; }
+    .love-marquee { width: 100%; overflow: hidden; margin-top: clamp(60px, 8vw, 108px); padding-block: 29px 18px; border-top: 1px solid var(--line); }
+    .love-marquee-track { display: flex; width: max-content; animation: love-marquee-right 52s linear infinite; will-change: transform; }
+    .love-marquee-group { display: flex; flex: 0 0 auto; align-items: baseline; gap: clamp(28px, 4vw, 64px); padding-right: clamp(28px, 4vw, 64px); }
+    .love-word { display: inline-block; flex: 0 0 auto; color: #777482; font-family: var(--display); font-size: clamp(2.5rem, 5.6vw, 5.4rem); line-height: .98; letter-spacing: -.012em; text-transform: uppercase; cursor: default; transition: color .25s ease; white-space: nowrap; }
+    .love-word:hover { color: var(--accent); }
     .love-word--large { font-size: clamp(3.2rem, 7vw, 6.6rem); }
     .love-word--medium { font-size: clamp(2.7rem, 5.2vw, 5rem); }
-    .love-word--offset { margin-inline-start: clamp(12px, 5vw, 72px); }
-    .love-word--right { margin-inline-start: auto; }
+    @keyframes love-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    @media (prefers-reduced-motion: reduce) { .love-marquee-track { animation: none; } }
 
     /* SERVICES */
     .services { border-top: 1px solid var(--line); }
@@ -1465,10 +1467,14 @@
     }
 
     @media (prefers-reduced-motion: no-preference) {
-      [data-reveal] { opacity: 0; transform: translateY(16px); transition: opacity .55s ease, transform .55s ease; }
+      [data-reveal] { opacity: 0; transform: translateY(18px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); }
       [data-reveal].is-visible { opacity: 1; transform: translateY(0); }
-      .hero-copy { animation: hero-enter .6s ease both; }
-      @keyframes hero-enter { from { opacity: 0; transform: translateY(13px); } to { opacity: 1; transform: translateY(0); } }
+      .services-layout > [data-reveal]:nth-child(2), .process-grid > [data-reveal]:nth-child(2) { transition-delay: .09s; }
+      .services-layout > [data-reveal]:nth-child(3), .process-grid > [data-reveal]:nth-child(3) { transition-delay: .18s; }
+      .process-grid > [data-reveal]:nth-child(4) { transition-delay: .27s; }
+      .hero-copy { animation: hero-enter .7s ease both; }
+      .hero-visual { animation: hero-enter .85s .12s ease both; }
+      @keyframes hero-enter { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
     }
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
@@ -1804,17 +1810,33 @@
         <h2 class="love-title">WHAT I LOVE<br>DOING.</h2>
         <p class="love-intro">I create e-books, templates, and social media content that look good and are easy to understand, and I help keep things organized behind the scenes.</p>
 
-        <div class="love-cloud" aria-label="Creative and virtual assistant interests">
-          <span class="love-word love-word--large">Social Media Management</span>
-          <span class="love-word love-word--medium love-word--offset">Content Creation</span>
-          <span class="love-word love-word--large love-word--right">Content Engagement</span>
-          <span class="love-word love-word--medium">E-books</span>
-          <span class="love-word love-word--large love-word--right">Templates</span>
-          <span class="love-word love-word--medium">Data Entry</span>
-          <span class="love-word love-word--offset">Copywriting</span>
-          <span class="love-word love-word--large">Documentation</span>
-          <span class="love-word love-word--medium love-word--right">Inbox Support</span>
-          <span class="love-word love-word--offset">Customer Service</span>
+        <div class="love-marquee" aria-label="Creative and virtual assistant interests">
+          <div class="love-marquee-track">
+            <div class="love-marquee-group">
+              <span class="love-word love-word--large">Social Media Management</span>
+              <span class="love-word love-word--medium">Content Creation</span>
+              <span class="love-word love-word--large">Content Engagement</span>
+              <span class="love-word love-word--medium">E-books</span>
+              <span class="love-word love-word--large">Templates</span>
+              <span class="love-word love-word--medium">Data Entry</span>
+              <span class="love-word">Copywriting</span>
+              <span class="love-word love-word--large">Documentation</span>
+              <span class="love-word love-word--medium">Inbox Support</span>
+              <span class="love-word">Customer Service</span>
+            </div>
+            <div class="love-marquee-group" aria-hidden="true">
+              <span class="love-word love-word--large">Social Media Management</span>
+              <span class="love-word love-word--medium">Content Creation</span>
+              <span class="love-word love-word--large">Content Engagement</span>
+              <span class="love-word love-word--medium">E-books</span>
+              <span class="love-word love-word--large">Templates</span>
+              <span class="love-word love-word--medium">Data Entry</span>
+              <span class="love-word">Copywriting</span>
+              <span class="love-word love-word--large">Documentation</span>
+              <span class="love-word love-word--medium">Inbox Support</span>
+              <span class="love-word">Customer Service</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -2142,7 +2164,10 @@
     }
     showSlide(1);
 
-    // Reveal work blocks once, with a visible fallback for older browsers.
+    // Add gentle scroll reveals to the main content blocks.
+    document.querySelectorAll(".about-layout, .love-kicker, .love-title, .love-intro, .love-marquee, .services-intro, .services-layout > *, .process-heading, .process-grid > *, .contact-quote, .contact-grid").forEach((item) => item.setAttribute("data-reveal", ""));
+
+    // Reveal content once as it enters the viewport, with a visible fallback.
     const revealItems = document.querySelectorAll("[data-reveal]");
     if ("IntersectionObserver" in window) {
       const revealObserver = new IntersectionObserver((entries, observer) => {
