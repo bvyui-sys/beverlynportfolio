@@ -1284,6 +1284,38 @@
       .tablet-screen span,.tablet-screen small { font-size:.35rem; }
       .mockup-disclaimer { max-width:65%; }
     }
+        /* Attendance Monitoring System: clean desktop-mockup layout */
+    .bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(28px,5vw,72px);padding:clamp(28px,4.5vw,64px);background:var(--panel);border:1px solid var(--line);overflow:hidden}
+    .bio-label{display:inline-flex;align-items:center;gap:12px;color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .bio-label::before{content:"";width:23px;height:1px;background:var(--accent)}
+    .bio-title{margin:18px 0 22px;font-family:var(--display);font-weight:400;font-size:clamp(4.2rem,8.4vw,8.6rem);line-height:.84;letter-spacing:-.015em;text-transform:uppercase}
+    .bio-desc{max-width:440px;margin:0;color:#6B6568;font-size:clamp(.95rem,1.2vw,1.08rem);line-height:1.7}
+    .bio-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 14px;max-width:460px;margin:34px 0 0;padding:0;list-style:none}
+    .bio-features li{display:flex;flex-direction:column;align-items:center;gap:10px;color:#2A2628;font-size:.72rem;font-weight:700;line-height:1.3;text-align:center}
+    .bio-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--surface);border:1px solid rgba(20,20,20,.1);box-shadow:0 4px 12px rgba(20,20,20,.06)}
+    .bio-icon svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+    .bio-tech{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+    .bio-tech span{padding:8px 14px;border:1px solid rgba(20,20,20,.1);border-radius:100px;background:var(--surface);font-size:.7rem;font-weight:600}
+    .bio-stage{position:relative;min-width:0;padding-bottom:38px}
+    .bio-monitor{width:100%;max-width:640px;margin-inline:auto}
+    .bio-screen{padding:9px;border-radius:18px;background:var(--surface);box-shadow:0 18px 40px rgba(20,20,20,.12),0 0 0 1px rgba(20,20,20,.06)}
+    .bio-screen img{display:block;width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;border-radius:10px;background:#111}
+    .bio-neck{width:15%;height:44px;margin:0 auto;background:linear-gradient(90deg,#CFCBCD,#E9E6E7 50%,#CFCBCD)}
+    .bio-foot{width:36%;height:10px;margin:0 auto;border-radius:6px;background:#DAD6D8;box-shadow:0 3px 8px rgba(20,20,20,.1)}
+    .bio-tablet{position:absolute;right:-1%;bottom:0;width:30%;padding:7px;border-radius:14px;background:#201E20;box-shadow:0 18px 32px rgba(20,20,20,.28);transform:rotate(4deg)}
+    .bio-tablet img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#111}
+    @media (max-width:900px){
+      .bio{grid-template-columns:minmax(0,1fr)}
+      .bio-features{max-width:520px}
+    }
+    @media (max-width:640px){
+      .bio{padding:24px 18px}
+      .bio-title{font-size:clamp(3.2rem,14.5vw,5rem)}
+      .bio-features{gap:18px 8px}
+      .bio-icon{width:52px;height:52px}
+      .bio-neck{height:30px}
+      .bio-tablet{width:38%;padding:5px;border-radius:10px}
+    }
   </style>
 </head>
 <body>
@@ -1474,50 +1506,31 @@
           <p>Three projects across desktop systems, digital publishing, and social content.</p>
         </div>
 
-        <!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
-        <article class="project project-biometric" data-reveal>
-          <div class="biometric-copy">
-            <div class="project-label">DESKTOP SYSTEM PROJECT</div>
-            <h3 class="project-name">Attendance<br>Monitoring<br>System</h3>
-            <p class="biometric-description">A fingerprint attendance system built for the Local Government Unit of Lasam. Built end to end: UI, database, and DTR reports.</p>
-            <div class="biometric-feature-grid" aria-label="System features">
-              <div><span class="feature-icon">⌁</span><span>Scan</span></div>
-              <div><span class="feature-icon">✓</span><span>Verify</span></div>
-              <div><span class="feature-icon">◷</span><span>Time in / out</span></div>
-              <div><span class="feature-icon">▤</span><span>Employee records</span></div>
-              <div><span class="feature-icon">▥</span><span>Database</span></div>
-              <div><span class="feature-icon">▧</span><span>DTR reports</span></div>
-            </div>
-            <div class="biometric-tech">
+              <!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
+        <article class="project bio" data-reveal>
+          <div class="bio-copy">
+            <div class="bio-label">DESKTOP SYSTEM PROJECT</div>
+            <h3 class="bio-title">Attendance<br>Monitoring<br>System</h3>
+            <p class="bio-desc">A fingerprint attendance system built for the Local Government Unit of Lasam. Capstone project with two teammates, BSIT 2026.</p>
+            <ul class="bio-features" aria-label="System features">
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Scan</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg></span><span>Verify</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span>Time in and out</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></span><span>Employee records</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span>Database</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR reports</span></li>
+            </ul>
+            <div class="bio-tech" aria-label="Technologies used">
               <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
             </div>
-            <div class="biometric-nav" aria-label="Illustrative system navigation">
-              <span class="is-current">Login</span><span>Dashboard</span><span>Departments</span><span>Registration</span>
-            </div>
-            <div class="biometric-pills">
-              <span class="project-pill">Fingerprint-based employee time-in and time-out</span>
-              <span class="project-pill">Employee records and attendance status monitoring</span>
-              <span class="project-pill">Daily Time Record generation and leave management</span>
-            </div>
           </div>
-          <div class="monitor-stage">
-            <div class="monitor" role="img" aria-label="Desktop login preview for Attendance Monitoring System">
-              <div class="monitor-screen">
-                <div class="monitor-screen-inner">
-                  <img src="images/biometric-ui1.png" alt="LGU Lasam Attendance Monitoring System Login UI" />
-                </div>
-              </div>
-              <div class="monitor-chin"></div>
-              <div class="monitor-neck"></div>
-              <div class="monitor-foot"></div>
+          <div class="bio-stage">
+            <div class="bio-monitor">
+              <div class="bio-screen"><img src="images/biometric-ui1.png" alt="Attendance Monitoring System login screen for the Municipality of Lasam" loading="lazy" decoding="async"></div>
+              <div class="bio-neck" aria-hidden="true"></div>
+              <div class="bio-foot" aria-hidden="true"></div>
             </div>
-            <div class="desk-accessories" aria-hidden="true"><div class="keyboard"></div><div class="mouse"></div></div>
-            <div class="tablet-mockup" aria-label="Biometric fingerprint scanner interface">
-              <div class="tablet-screen">
-                <img src="images/biometric-ui2.png" alt="Biometric Scanner Interface" />
-              </div>
-            </div>
-            <p class="mockup-disclaimer">LGU Lasam Attendance Monitoring System · Real UI</p>
+            <div class="bio-tablet"><img src="images/biometric-ui2.png" alt="Fingerprint scanner interface of the Attendance Monitoring System" loading="lazy" decoding="async"></div>
           </div>
         </article>
     
