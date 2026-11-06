@@ -465,6 +465,10 @@
     }
     .tech-stack-row li { color: #565156; font-size: .9rem; line-height: 1.4; }
     .tech-stack-row li small { display: block; margin-top: 3px; color: var(--muted); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; }
+    .tech-stack-row ul.tool-logo-list { display:flex; grid-template-columns:none; gap:14px; }
+    .tool-logo-item { display:flex; align-items:center; gap:10px; min-width:0; }
+    .tool-logo-item img { display:block; width:38px; height:38px; object-fit:contain; padding:7px; background:#FFFFFF; border:1px solid rgba(20,20,20,.1); border-radius:10px; }
+    .tool-logo-item span { color:var(--text); font-size:.88rem; font-weight:650; }
     .about-facts {
       align-self: stretch;
       padding: clamp(23px, 3.2vw, 40px);
@@ -1636,8 +1640,11 @@
           <div class="tech-stack-rows">
             <div class="tech-stack-row">
               <h3>Tools</h3>
-              <ul>
-                <li>Canva</li>
+              <ul class="tool-logo-list">
+                <li class="tool-logo-item">
+                  <img src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva logo" width="38" height="38" loading="lazy" decoding="async">
+                  <span>Canva</span>
+                </li>
               </ul>
             </div>
           </div>
