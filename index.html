@@ -266,11 +266,12 @@
     .hero-portrait {
       position: relative;
       z-index: 1;
+      display: block;
       width: 73%;
       height: 88%;
       align-self: end;
-      border: 1px dashed rgba(20,20,20,.42);
-      background: rgba(247,245,243,.42);
+      object-fit: cover;
+      object-position: center top;
     }
     .hero-placeholder-label {
       position: absolute;
@@ -339,8 +340,16 @@
       aspect-ratio: .8;
       place-items: center;
       overflow: hidden;
-      border: 1px dashed rgba(20,20,20,.38);
+      border: 1px solid var(--line);
       background: var(--surface);
+    }
+    .about-photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      min-height: 340px;
+      object-fit: cover;
+      object-position: center top;
     }
     .about-photo::after {
       position: absolute;
@@ -1413,10 +1422,9 @@
             <a class="button button--outline" href="#contact">Let's work together <span aria-hidden="true">↗</span></a>
           </div>
         </div>
-        <div class="hero-visual" role="img" aria-label="Portrait placeholder for Beverlyn Manuel">
+        <div class="hero-visual">
           <span class="hero-visual-index">BM / 01</span>
-          <span class="hero-portrait" aria-hidden="true"></span>
-          <span class="hero-placeholder-label">PHOTO PLACEHOLDER</span>
+          <img class="hero-portrait" src="images/hero.jpg" alt="Beverlyn Manuel">
         </div>
         <p class="hero-note"><span>Cagayan Valley, Philippines</span><span aria-hidden="true">/</span><span>Availability: Flexible / Remote-friendly</span></p>
       </div>
@@ -1427,8 +1435,8 @@
         <div class="eyebrow about-kicker">ABOUT</div>
         <div class="about-layout">
           <div class="about-profile">
-            <div class="about-photo" role="img" aria-label="Photo placeholder for Beverlyn Manuel">
-              <span class="placeholder-label">PHOTO PLACEHOLDER</span>
+            <div class="about-photo">
+              <img src="images/about.jpg" alt="Beverlyn Manuel">
             </div>
             <div class="about-bio">
               <p>I create e-books, templates, and social media visuals, and I also have a background in system development. My work combines graphic design, technical skills, and social media support.</p>
