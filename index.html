@@ -483,8 +483,10 @@
     .tech-stack-row li small { display: block; margin-top: 3px; color: var(--muted); font-size: .62rem; letter-spacing: .04em; text-transform: uppercase; }
     .tech-stack-row ul.tool-logo-list { display:grid; grid-template-columns:repeat(auto-fit, minmax(118px, 1fr)); gap:14px 16px; align-items:start; margin-top:0; }
     .tool-logo-item { display:flex; align-items:center; gap:10px; min-width:0; }
-    .tool-logo-mark { display:block; flex:0 0 42px; width:42px; height:42px; padding:9px; background:var(--brand); -webkit-mask:var(--logo) center / contain no-repeat; mask:var(--logo) center / contain no-repeat; }
-    .tool-logo-item span { color:var(--text); font-size:.82rem; font-weight:650; line-height:1.3; overflow-wrap:anywhere; }
+    .tool-logo-mark { display:block; flex:0 0 42px; width:42px; height:42px; padding:5px; object-fit:contain; background:transparent; }
+    .tool-logo-item > span:not(.tool-logo-fallback) { color:var(--text); font-size:.82rem; font-weight:650; line-height:1.3; overflow-wrap:anywhere; }
+    .tool-logo-fallback { display:none; flex:0 0 42px; width:42px; height:42px; align-items:center; justify-content:center; background:var(--brand); color:#fff; font-size:.72rem; font-weight:800; letter-spacing:-.03em; }
+    .tool-logo-fallback.is-visible { display:flex; }
     @media (max-width: 680px) { .tech-stack-row { grid-template-columns:1fr; gap:14px; } .tech-stack-row ul.tool-logo-list { grid-template-columns:repeat(2, minmax(0, 1fr)); gap:13px 12px; } .tool-logo-mark { flex-basis:40px; width:40px; height:40px; } }
     .about-facts {
       align-self: stretch;
@@ -1759,16 +1761,19 @@
             <div class="tech-stack-row">
               <h3>Design</h3>
               <ul class="tool-logo-list">
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Canva logo" style="--brand:#00C4CC;--logo:url('https://cdn.simpleicons.org/canva')"></span>
+                <li class="tool-logo-item" style="--brand:#00C4CC">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/canva/00C4CC" alt="Canva logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Ca</span>
                   <span>Canva</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Figma logo" style="--brand:#F24E1E;--logo:url('https://cdn.simpleicons.org/figma')"></span>
+                <li class="tool-logo-item" style="--brand:#F24E1E">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/figma/F24E1E" alt="Figma logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Fi</span>
                   <span>Figma</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Photoshop logo" style="--brand:#31A8FF;--logo:url('https://cdn.simpleicons.org/adobephotoshop')"></span>
+                <li class="tool-logo-item" style="--brand:#31A8FF">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/adobephotoshop/31A8FF" alt="Photoshop logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Ps</span>
                   <span>Photoshop</span>
                 </li>
               </ul>
@@ -1776,28 +1781,34 @@
             <div class="tech-stack-row">
               <h3>Development</h3>
               <ul class="tool-logo-list">
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="C# logo" style="--brand:#239120;--logo:url('https://cdn.simpleicons.org/csharp')"></span>
+                <li class="tool-logo-item" style="--brand:#239120">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/csharp/239120" alt="C# logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">C#</span>
                   <span>C#</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label=".NET logo" style="--brand:#512BD4;--logo:url('https://cdn.simpleicons.org/dotnet')"></span>
+                <li class="tool-logo-item" style="--brand:#512BD4">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/dotnet/512BD4" alt=".NET logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">.N</span>
                   <span>.NET</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="MySQL logo" style="--brand:#4479A1;--logo:url('https://cdn.simpleicons.org/mysql')"></span>
+                <li class="tool-logo-item" style="--brand:#4479A1">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/mysql/4479A1" alt="MySQL logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">My</span>
                   <span>MySQL</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Visual Studio Code logo" style="--brand:#007ACC;--logo:url('https://cdn.simpleicons.org/visualstudiocode')"></span>
-                  <span>Visual Studio Code</span>
+                <li class="tool-logo-item" style="--brand:#5C2D91">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/visualstudio/5C2D91" alt="Visual Studio logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">VS</span>
+                  <span>Visual Studio</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="HTML5 logo" style="--brand:#E34F26;--logo:url('https://cdn.simpleicons.org/html5')"></span>
+                <li class="tool-logo-item" style="--brand:#E34F26">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/html5/E34F26" alt="HTML5 logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">5</span>
                   <span>HTML5</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="CSS3 logo" style="--brand:#1572B6;--logo:url('https://cdn.simpleicons.org/css3')"></span>
+                <li class="tool-logo-item" style="--brand:#1572B6">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/css3/1572B6" alt="CSS3 logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">3</span>
                   <span>CSS3</span>
                 </li>
               </ul>
@@ -1805,32 +1816,39 @@
             <div class="tech-stack-row">
               <h3>Productivity</h3>
               <ul class="tool-logo-list">
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Word logo" style="--brand:#2B579A;--logo:url('https://cdn.simpleicons.org/microsoftword')"></span>
+                <li class="tool-logo-item" style="--brand:#2B579A">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/microsoftword/2B579A" alt="Word logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">W</span>
                   <span>Word</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Excel logo" style="--brand:#217346;--logo:url('https://cdn.simpleicons.org/microsoftexcel')"></span>
+                <li class="tool-logo-item" style="--brand:#217346">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/microsoftexcel/217346" alt="Excel logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">X</span>
                   <span>Excel</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="PowerPoint logo" style="--brand:#B7472A;--logo:url('https://cdn.simpleicons.org/microsoftpowerpoint')"></span>
+                <li class="tool-logo-item" style="--brand:#B7472A">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/microsoftpowerpoint/B7472A" alt="PowerPoint logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">P</span>
                   <span>PowerPoint</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Google Sheets logo" style="--brand:#34A853;--logo:url('https://cdn.simpleicons.org/googlesheets')"></span>
+                <li class="tool-logo-item" style="--brand:#34A853">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/googlesheets/34A853" alt="Google Sheets logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Sh</span>
                   <span>Google Sheets</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Google Forms logo" style="--brand:#7248B9;--logo:url('https://cdn.simpleicons.org/googleforms')"></span>
+                <li class="tool-logo-item" style="--brand:#7248B9">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/googleforms/7248B9" alt="Google Forms logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Fo</span>
                   <span>Google Forms</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Google Calendar logo" style="--brand:#4285F4;--logo:url('https://cdn.simpleicons.org/googlecalendar')"></span>
+                <li class="tool-logo-item" style="--brand:#4285F4">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/googlecalendar/4285F4" alt="Google Calendar logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Ca</span>
                   <span>Google Calendar</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Google Docs logo" style="--brand:#4285F4;--logo:url('https://cdn.simpleicons.org/googledocs')"></span>
+                <li class="tool-logo-item" style="--brand:#4285F4">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/googledocs/4285F4" alt="Google Docs logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Do</span>
                   <span>Google Docs</span>
                 </li>
               </ul>
@@ -1838,16 +1856,19 @@
             <div class="tech-stack-row">
               <h3>AI</h3>
               <ul class="tool-logo-list">
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="ChatGPT logo" style="--brand:#412991;--logo:url('https://cdn.simpleicons.org/openai')"></span>
+                <li class="tool-logo-item" style="--brand:#10A37F">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/openai/10A37F" alt="ChatGPT logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">AI</span>
                   <span>ChatGPT</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Claude logo" style="--brand:#D97757;--logo:url('https://cdn.simpleicons.org/claude')"></span>
+                <li class="tool-logo-item" style="--brand:#D97757">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/claude/D97757" alt="Claude logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Cl</span>
                   <span>Claude</span>
                 </li>
-                <li class="tool-logo-item">
-                  <span class="tool-logo-mark" role="img" aria-label="Gemini logo" style="--brand:#8E75B2;--logo:url('https://cdn.simpleicons.org/googlegemini')"></span>
+                <li class="tool-logo-item" style="--brand:#8E75B2">
+                  <img class="tool-logo-mark" src="https://cdn.simpleicons.org/googlegemini/8E75B2" alt="Gemini logo" loading="lazy" decoding="async">
+                  <span class="tool-logo-fallback" aria-hidden="true">Ge</span>
                   <span>Gemini</span>
                 </li>
               </ul>
@@ -2222,6 +2243,17 @@
       }, { passive: true });
     }
     showSlide(1);
+
+    // Keep every tool tile visibly branded, with a fallback if a logo host is unavailable.
+    document.querySelectorAll(".tool-logo-mark").forEach((logo) => {
+      const showFallback = () => {
+        logo.hidden = true;
+        const fallback = logo.nextElementSibling;
+        if (fallback) fallback.classList.add("is-visible");
+      };
+      if (logo.complete && logo.naturalWidth === 0) showFallback();
+      else logo.addEventListener("error", showFallback, { once: true });
+    });
 
     // Add gentle scroll reveals to the main content blocks.
     document.querySelectorAll(".about-layout, .love-kicker, .love-title, .love-intro, .love-marquee, .services-intro, .services-layout > *, .process-heading, .process-grid > *, .contact-quote, .contact-grid").forEach((item) => item.setAttribute("data-reveal", ""));
