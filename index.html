@@ -795,35 +795,134 @@
     .book-placeholder span { display: block; margin-top: 16px; color: #56515F; font-size: .58rem; font-weight: 700; letter-spacing: .13em; }
     .study-pills { margin-top: 22px; }
 
-    /* DIGITAL PRODUCT: e-book and template presentation */
-    .project-digital { display:grid; grid-template-columns:minmax(260px,.78fr) minmax(0,1.22fr); align-items:center; gap:clamp(28px,5vw,70px); }
+    /* DIGITAL PRODUCTS: layered e-book and template mockups */
+    .project-digital {
+      display:grid;
+      grid-template-columns:minmax(250px,.72fr) minmax(0,1.28fr);
+      align-items:center;
+      gap:clamp(28px,4.5vw,64px);
+    }
     .digital-copy { position:relative; z-index:1; }
-    .digital-copy .project-name { margin:19px 0 22px; font-size:clamp(3.6rem,6.8vw,6.7rem); }
-    .digital-description { max-width:470px; margin:0 0 22px; color:#565156; font-size:.84rem; line-height:1.8; }
+    .digital-copy .project-name {
+      margin:19px 0 22px;
+      font-size:clamp(3.8rem,7vw,7rem);
+      line-height:.84;
+    }
+    .digital-description {
+      max-width:470px;
+      margin:0 0 22px;
+      color:#565156;
+      font-size:.84rem;
+      line-height:1.8;
+    }
     .digital-facts { display:grid; gap:9px; }
     .digital-facts p { margin:0; color:#565156; font-size:.77rem; line-height:1.6; }
     .digital-facts strong { color:var(--text); }
-    .digital-stage { position:relative; display:flex; min-height:500px; align-items:center; justify-content:center; gap:clamp(20px,4vw,48px); overflow:hidden; padding:clamp(25px,4vw,48px); border:1px solid var(--line); background:var(--panel); }
-    .digital-book { position:relative; display:flex; width:min(42%,245px); min-width:160px; aspect-ratio:.72; filter:drop-shadow(12px 16px 13px rgba(20,20,20,.18)); transform:rotate(-5deg); }
-    .digital-book-spine { width:10px; flex:0 0 10px; background:#9B6F83; }
-    .digital-book-cover { display:flex; min-width:0; flex:1; flex-direction:column; justify-content:space-between; padding:clamp(15px,2vw,24px); background:#E8D9D1; color:#342B2E; }
-    .digital-book-kicker,.digital-book-edition { font-size:.48rem; font-weight:800; letter-spacing:.13em; line-height:1.5; }
-    .digital-book-cover strong { font-family:var(--display); font-size:clamp(2.4rem,4.4vw,4.2rem); font-weight:400; line-height:.84; }
-    .digital-book-subtitle { max-width:140px; font-family:Georgia,serif; font-size:.68rem; line-height:1.45; }
-    .digital-book-pages { position:absolute; top:4px; right:-8px; bottom:4px; width:8px; background:repeating-linear-gradient(180deg,#F8F4EF 0 3px,#D9D1CA 3px 4px); }
-    .digital-template-grid { display:grid; width:min(48%,270px); gap:17px; }
-    .digital-template { min-height:170px; padding:14px; border:1px solid rgba(20,20,20,.14); background:#F9F7F3; box-shadow:0 8px 17px rgba(20,20,20,.1); color:#333036; }
-    .digital-template--one { transform:rotate(4deg); }
-    .digital-template--two { transform:rotate(-2deg); background:#E9EDE5; }
-    .digital-template-label,.digital-template-footer { display:block; color:#777078; font-size:.44rem; font-weight:800; letter-spacing:.13em; }
-    .digital-template-heading { margin:13px 0 9px; font-family:var(--display); font-size:clamp(1.3rem,2.5vw,2rem); line-height:.9; }
-    .digital-template-lines { display:grid; gap:7px; }
-    .digital-template-lines i { display:block; height:1px; background:rgba(51,48,54,.22); }
-    .digital-template-lines i:nth-child(2),.digital-template-lines i:nth-child(5) { width:78%; }
-    .digital-template-blocks { display:grid; grid-template-columns:repeat(2,1fr); gap:6px; }
-    .digital-template-blocks i { min-height:22px; border:1px solid rgba(51,48,54,.2); }
-    .digital-template-footer { margin-top:12px; }
-    .digital-stage-note { position:absolute; right:16px; bottom:13px; color:var(--muted); font-size:.48rem; font-weight:800; letter-spacing:.14em; }
+    .digital-showcase {
+      display:grid;
+      min-width:0;
+      gap:18px;
+      padding:clamp(15px,2.4vw,28px);
+      border:1px solid var(--line);
+      background:var(--panel);
+    }
+    .digital-gallery {
+      min-width:0;
+      padding:clamp(14px,2vw,22px);
+      background:var(--surface);
+      border:1px solid rgba(20,20,20,.1);
+    }
+    .digital-gallery-heading {
+      display:flex;
+      justify-content:space-between;
+      gap:12px;
+      padding-bottom:13px;
+      border-bottom:1px solid var(--line);
+      color:var(--muted);
+      font-size:.53rem;
+      font-weight:800;
+      letter-spacing:.14em;
+    }
+    .ebook-mockup-grid {
+      display:grid;
+      grid-template-columns:1.18fr .82fr .82fr;
+      grid-template-rows:repeat(2,minmax(125px,1fr));
+      align-items:center;
+      gap:12px;
+      padding:20px 8px 12px;
+      perspective:900px;
+    }
+    .ebook-mockup {
+      position:relative;
+      min-width:0;
+      margin:0;
+      padding:7px 7px 25px;
+      background:#fff;
+      border:1px solid rgba(20,20,20,.12);
+      box-shadow:0 9px 18px rgba(20,20,20,.12);
+      transform:rotate(-2deg);
+    }
+    .ebook-mockup img {
+      display:block;
+      width:100%;
+      height:100%;
+      aspect-ratio:3/4;
+      object-fit:cover;
+      background:#e8e3e2;
+    }
+    .ebook-mockup figcaption {
+      position:absolute;
+      right:7px;
+      bottom:7px;
+      left:7px;
+      color:var(--muted);
+      font-size:.43rem;
+      font-weight:800;
+      letter-spacing:.12em;
+    }
+    .ebook-mockup--main {
+      grid-row:span 2;
+      transform:rotate(-4deg) translateY(2px);
+      z-index:2;
+    }
+    .ebook-mockup--two { transform:rotate(3deg) translateY(5px); }
+    .ebook-mockup--three { transform:rotate(-2deg) translateY(-3px); }
+    .ebook-mockup--four { transform:rotate(2deg) translateY(3px); }
+    .ebook-mockup--five { transform:rotate(-3deg) translateY(-5px); }
+    .template-mockup-grid {
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      align-items:center;
+      gap:clamp(9px,1.7vw,18px);
+      padding:22px 5px 10px;
+    }
+    .template-mockup {
+      position:relative;
+      min-width:0;
+      margin:0;
+      padding:9px 9px 25px;
+      border:1px solid rgba(20,20,20,.13);
+      background:#fff;
+      box-shadow:0 10px 19px rgba(20,20,20,.13);
+    }
+    .template-mockup img {
+      display:block;
+      width:100%;
+      aspect-ratio:4/5;
+      object-fit:cover;
+      background:#e8e3e2;
+    }
+    .template-mockup--one { transform:rotate(-4deg) translateY(5px); }
+    .template-mockup--two { transform:rotate(2deg) translateY(-5px); z-index:1; }
+    .template-mockup--three { transform:rotate(-2deg) translateY(3px); }
+    .template-device-label {
+      display:block;
+      padding:0 0 8px;
+      color:var(--muted);
+      font-size:.42rem;
+      font-weight:800;
+      letter-spacing:.1em;
+    }
 
     /* MATCHA CAROUSEL: Instagram-style post preview */
     .project-matcha {
@@ -1724,51 +1823,44 @@
           </div>
         </article>
 
-        <!-- PROJECT: STUDY GUIDE, E-BOOK & TEMPLATES -->
+        <!-- PROJECT: E-BOOK & TEMPLATES -->
         <article class="project project-digital" data-reveal>
           <div class="digital-copy">
-            <div class="project-label">OWN DIGITAL PRODUCT WORK</div>
-            <h3 class="project-name">Study Guide<br>&amp; Resource E-Book</h3>
-            <p class="digital-description">A comprehensive, visually structured study guide and resource manual designed for optimal information retention and clean readability.</p>
+            <div class="project-label">DIGITAL PRODUCTS</div>
+            <h3 class="project-name">E-book<br>&amp; Templates</h3>
+            <p class="digital-description">A collection of digital layouts, learning resources, and editable templates designed with attention to structure, readability, and visual consistency.</p>
             <div class="digital-facts">
-              <p><strong>Format:</strong> E-book and digital templates</p>
-              <p><strong>Focus:</strong> Information hierarchy, readability, and layout design</p>
+              <p><strong>Includes:</strong> E-book pages and digital templates</p>
+              <p><strong>Focus:</strong> Layout design, information hierarchy, and usability</p>
               <p><strong>Tools:</strong> Canva and Figma</p>
             </div>
             <div class="project-pill-row">
-              <span class="project-pill">Digital Publishing</span><span class="project-pill">E-book Design</span><span class="project-pill">Template Design</span>
+              <span class="project-pill">E-book Design</span><span class="project-pill">Digital Templates</span><span class="project-pill">Layout Design</span>
             </div>
           </div>
-          <div class="digital-stage" aria-label="Study guide e-book and digital template previews">
-            <div class="digital-book">
-              <div class="digital-book-spine"></div>
-              <div class="digital-book-cover">
-                <span class="digital-book-kicker">A STUDENT RESOURCE</span>
-                <strong>STUDY<br>GUIDE</strong>
-                <span class="digital-book-subtitle">A practical resource for learning and review</span>
-                <span class="digital-book-edition">STUDY GUIDE &amp; RESOURCE E-BOOK</span>
+          <div class="digital-showcase" aria-label="E-book and template design mockups">
+            <section class="digital-gallery digital-gallery--ebook" aria-label="E-book previews">
+              <div class="digital-gallery-heading"><span>01 / E-BOOK</span><span>PAGE PREVIEWS</span></div>
+              <div class="ebook-mockup-grid">
+                <figure class="ebook-mockup ebook-mockup--main"><img src="images/ebook1.jpg" alt="E-book cover design" loading="lazy" decoding="async"><figcaption>01 / COVER</figcaption></figure>
+                <figure class="ebook-mockup ebook-mockup--two"><img src="images/ebook2.jpg" alt="E-book page design 2" loading="lazy" decoding="async"><figcaption>02 / PAGE</figcaption></figure>
+                <figure class="ebook-mockup ebook-mockup--three"><img src="images/ebook3.jpg" alt="E-book page design 3" loading="lazy" decoding="async"><figcaption>03 / PAGE</figcaption></figure>
+                <figure class="ebook-mockup ebook-mockup--four"><img src="images/ebook4.jpg" alt="E-book page design 4" loading="lazy" decoding="async"><figcaption>04 / PAGE</figcaption></figure>
+                <figure class="ebook-mockup ebook-mockup--five"><img src="images/ebook5.jpg" alt="E-book page design 5" loading="lazy" decoding="async"><figcaption>05 / PAGE</figcaption></figure>
               </div>
-              <div class="digital-book-pages"></div>
-            </div>
-            <div class="digital-template-grid">
-              <div class="digital-template digital-template--one">
-                <span class="digital-template-label">TEMPLATE / 01</span>
-                <div class="digital-template-heading">YOUR<br>NOTES</div>
-                <div class="digital-template-lines"><i></i><i></i><i></i><i></i><i></i></div>
-                <div class="digital-template-footer">STUDY RESOURCE</div>
+            </section>
+            <section class="digital-gallery digital-gallery--templates" aria-label="Digital template previews">
+              <div class="digital-gallery-heading"><span>02 / TEMPLATES</span><span>DESIGN PREVIEWS</span></div>
+              <div class="template-mockup-grid">
+                <figure class="template-mockup template-mockup--one"><span class="template-device-label">EDITABLE DESIGN / 01</span><img src="images/template1.jpg" alt="Digital template design 1" loading="lazy" decoding="async"></figure>
+                <figure class="template-mockup template-mockup--two"><span class="template-device-label">EDITABLE DESIGN / 02</span><img src="images/template2.jpg" alt="Digital template design 2" loading="lazy" decoding="async"></figure>
+                <figure class="template-mockup template-mockup--three"><span class="template-device-label">EDITABLE DESIGN / 03</span><img src="images/template3.jpg" alt="Digital template design 3" loading="lazy" decoding="async"></figure>
               </div>
-              <div class="digital-template digital-template--two">
-                <span class="digital-template-label">TEMPLATE / 02</span>
-                <div class="digital-template-heading">PLAN<br>AND REVIEW</div>
-                <div class="digital-template-blocks"><i></i><i></i><i></i><i></i></div>
-                <div class="digital-template-footer">EDITABLE LAYOUT</div>
-              </div>
-            </div>
-            <span class="digital-stage-note">E-BOOK COVER · TEMPLATE LAYOUTS</span>
+            </section>
           </div>
         </article>
 
-<!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
+        <!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
         <article class="project bio" data-reveal>
           <div class="bio-copy">
             <div class="bio-label">DESKTOP SYSTEM PROJECT</div>
