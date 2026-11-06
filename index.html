@@ -445,6 +445,23 @@
       border-bottom: 1px solid var(--line);
     }
     .tech-stack-row:last-child { border-bottom: 0; padding-bottom: 2px; }
+    .tech-stack-row.tool-row-reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .65s ease, transform .65s cubic-bezier(.2,.7,.2,1);
+    }
+    .tech-stack-row.tool-row-reveal.is-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .tech-stack-row.tool-row-reveal,
+      .tech-stack-row.tool-row-reveal.is-visible {
+        opacity: 1;
+        transform: none;
+        transition: none;
+      }
+    }
     .tech-stack-row h3 {
       display: flex;
       align-items: center;
@@ -2269,7 +2286,7 @@
     showSlide(1);
 
     // Try a second SVG source if the primary logo CDN fails, then show a visible brand tile.
-    document.querySelectorAll(".tool-logo-mark").forEach((logo) => {
+    document.querySelectorAll("img.tool-logo-mark").forEach((logo) => {
       const fallback = logo.nextElementSibling;
       const useTextFallback = () => {
         logo.style.display = "none";
@@ -2291,6 +2308,26 @@
       });
       if (logo.complete && logo.naturalWidth === 0) tryBackup();
     });
+
+    // Reveal the tool categories one row at a time as the Tools section enters view.
+    const toolRows = document.querySelectorAll(".tech-stack-rows .tech-stack-row");
+    toolRows.forEach((row, index) => {
+      row.classList.add("tool-row-reveal");
+      row.style.transitionDelay = (index * 170) + "ms";
+    });
+    if ("IntersectionObserver" in window) {
+      const toolRowsObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      toolRows.forEach((row) => toolRowsObserver.observe(row));
+    } else {
+      toolRows.forEach((row) => row.classList.add("is-visible"));
+    }
 
     // Add gentle scroll reveals to the main content blocks.
     document.querySelectorAll(".about-layout, .love-kicker, .love-title, .love-intro, .love-marquee, .services-intro, .services-layout > *, .process-heading, .process-grid > *, .contact-quote, .contact-grid").forEach((item) => item.setAttribute("data-reveal", ""));
