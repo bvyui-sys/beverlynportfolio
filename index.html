@@ -1591,12 +1591,9 @@
                       <span class="ig-more" aria-hidden="true">•••</span>
                     </div>
                     <div class="ig-media-wrap" id="ig-media-wrap">
-                      <div class="ig-image-placeholder" id="ig-image-placeholder" role="img" aria-label="Original image placeholder for carousel slide 1">
-                        <div class="ig-image-placeholder-inner">
-                          <strong id="ig-image-title">ADD ORIGINAL SLIDE 01</strong>
-                          <span>Place your exported carousel image here without editing it.</span>
-                        </div>
-                      </div>
+                    <div class="ig-image-placeholder" id="ig-image-placeholder" role="img" aria-label="Carousel slide preview" style="padding: 0; overflow: hidden;">
+                      <img id="active-carousel-img" src="images/matcha-1.jpg" alt="The Matcha Tea Club Slide 1" style="width: 100%; height: 100%; object-fit: cover; display: block;" />
+                    </div>
                       <span class="ig-count" id="ig-count">1/6</span>
                       <button class="ig-arrow ig-arrow--prev" type="button" data-direction="-1" aria-label="Previous slide">‹</button>
                       <button class="ig-arrow ig-arrow--next" type="button" data-direction="1" aria-label="Next slide">›</button>
@@ -1680,7 +1677,7 @@
 
     // Interactive six-slide Instagram-style carousel preview.
     const slideButtons = document.querySelectorAll(".project-matcha [data-slide]");
-    const imageTitle = document.querySelector("#ig-image-title");
+    const activeCarouselImg = document.querySelector("#active-carousel-img");
     const imagePlaceholder = document.querySelector("#ig-image-placeholder");
     const imageCount = document.querySelector("#ig-count");
     const phoneIndex = document.querySelector("#phone-slide-index");
@@ -1692,8 +1689,13 @@
     function showSlide(slide) {
       currentSlide = ((slide - 1 + 6) % 6) + 1;
       const number = String(currentSlide).padStart(2, "0");
-      imageTitle.textContent = "ADD ORIGINAL SLIDE " + number;
-      imagePlaceholder.setAttribute("aria-label", "Original image placeholder for carousel slide " + currentSlide);
+
+      if (activeCarouselImg) {
+        activeCarouselImg.src = `images/matcha-${currentSlide}.jpg`;
+        activeCarouselImg.alt = `The Matcha Tea Club Carousel Slide ${currentSlide}`;
+      }
+
+      imagePlaceholder.setAttribute("aria-label", "Carousel slide " + currentSlide);
       imageCount.textContent = currentSlide + "/6";
       phoneIndex.textContent = number + " / 06";
       document.querySelector("#ig-dots").setAttribute("aria-label", "Slide " + currentSlide + " of 6");
