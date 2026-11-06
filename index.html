@@ -532,13 +532,13 @@
     .love-title { margin: 35px 0 0; font-family: var(--display); font-size: clamp(5rem, 13vw, 12rem); font-weight: 400; line-height: .81; letter-spacing: -.025em; }
     .love-intro { max-width: 580px; margin: 29px 0 0; color: var(--muted); font-size: clamp(.95rem, 1.25vw, 1.08rem); line-height: 1.8; }
     .love-marquee { width: 100%; overflow: hidden; margin-top: clamp(60px, 8vw, 108px); padding-block: 29px 18px; border-top: 1px solid var(--line); }
-    .love-marquee-track { display: flex; width: max-content; animation: love-marquee-right 52s linear infinite; will-change: transform; }
+    .love-marquee-track { display: flex; width: max-content; animation: love-marquee-left 48s linear infinite; will-change: transform; }
     .love-marquee-group { display: flex; flex: 0 0 auto; align-items: baseline; gap: clamp(28px, 4vw, 64px); padding-right: clamp(28px, 4vw, 64px); }
     .love-word { display: inline-block; flex: 0 0 auto; color: #777482; font-family: var(--display); font-size: clamp(2.5rem, 5.6vw, 5.4rem); line-height: .98; letter-spacing: -.012em; text-transform: uppercase; cursor: default; transition: color .25s ease; white-space: nowrap; }
     .love-word:hover { color: var(--accent); }
     .love-word--large { font-size: clamp(3.2rem, 7vw, 6.6rem); }
     .love-word--medium { font-size: clamp(2.7rem, 5.2vw, 5rem); }
-    @keyframes love-marquee-right { from { transform: translateX(-50%); } to { transform: translateX(0); } }
+    @keyframes love-marquee-left { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     @media (prefers-reduced-motion: reduce) { .love-marquee-track { animation: none; } }
 
     /* SERVICES */
