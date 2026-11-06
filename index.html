@@ -319,37 +319,23 @@
     .about-profile {
       display: grid;
       grid-template-columns: minmax(0, 1fr);
-      gap: clamp(20px, 3vw, 38px);
-      align-items: center;
+      gap: clamp(20px, 3vw, 30px);
+      align-content: start;
     }
     .about-photo {
       position: relative;
-      display: flex;
-      min-height: 340px;
-      aspect-ratio: .8;
-      align-items: end;
-      justify-content: center;
+      width: 100%;
+      aspect-ratio: 16 / 9;
       overflow: hidden;
       border: 1px solid var(--line);
-      background: var(--surface);
-    }
-    .about-photo {
-      position: relative;
-      display: grid;
-      min-height: 340px;
-      aspect-ratio: .8;
-      place-items: center;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      background: var(--surface);
+      background: var(--panel);
     }
     .about-photo img {
       display: block;
       width: 100%;
       height: 100%;
-      min-height: 340px;
       object-fit: cover;
-      object-position: center top;
+      object-position: center;
     }
     .about-photo::after {
       position: absolute;
@@ -1337,7 +1323,7 @@
       .hero-visual { width: min(83%, 350px); justify-self: center; aspect-ratio: .95; }
       .hero-note { font-size: .54rem; }
       .about-profile { grid-template-columns: 1fr; }
-      .about-photo { width: min(100%, 310px); min-height: 330px; aspect-ratio: .9; }
+      .about-photo { width: 100%; aspect-ratio: 16 / 9; }
       .about-facts { padding: 23px 19px; }
       .about-facts h2 { font-size: 3.1rem; }
       .about-fact { grid-template-columns: minmax(85px, .7fr) 1.3fr; gap: 9px; }
@@ -1645,6 +1631,9 @@
         <div class="eyebrow about-kicker">ABOUT</div>
         <div class="about-layout">
           <div class="about-profile">
+            <figure class="about-photo">
+              <img src="images/about.jpg" alt="Beverlyn's about photo" loading="lazy" decoding="async">
+            </figure>
             <div class="about-bio">
               <p>I create e-books, templates, and social media visuals, and I also have a background in system development. My work combines graphic design, technical skills, and social media support.</p>
             </div>
