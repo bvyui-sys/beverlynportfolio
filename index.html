@@ -9,6 +9,39 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  /* Override for real biometric UI images */
+    .project-biometric .monitor-screen-inner {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: clamp(245px, 30vw, 385px) !important;
+      border: 0 !important;
+      background: #111 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+    }
+    .project-biometric .monitor-screen-inner img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
+    .tablet-screen {
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: 155px !important;
+      background: #111 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border-radius: 6px !important;
+    }
+    .tablet-screen img {
+      width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      display: block !important;
+    }
   <style>
     :root {
       --bg: #D9D1D1;
@@ -1491,7 +1524,7 @@
               <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
             </div>
             <div class="biometric-nav" aria-label="Illustrative system navigation">
-              <span>Login</span><span class="is-current">Dashboard</span><span>Departments</span><span>Registration</span>
+              <span class="is-current">Login</span><span>Dashboard</span><span>Departments</span><span>Registration</span>
             </div>
             <div class="biometric-pills">
               <span class="project-pill">Fingerprint-based employee time-in and time-out</span>
@@ -1500,17 +1533,10 @@
             </div>
           </div>
           <div class="monitor-stage">
-            <div class="monitor" role="img" aria-label="Illustrative desktop dashboard mockup showing sample attendance totals, not live employee data">
+            <div class="monitor" role="img" aria-label="Desktop login preview for Attendance Monitoring System">
               <div class="monitor-screen">
-                <div class="monitor-screen-inner biometric-dashboard">
-                  <div class="dashboard-top"><strong>LGU LASAM</strong><span>ATTENDANCE MONITORING SYSTEM</span></div>
-                  <div class="dashboard-welcome"><span>Dashboard overview</span><small>Employee attendance summary</small></div>
-                  <div class="dashboard-stats">
-                    <div><small>PRESENT</small><strong>1</strong><span>Today</span></div>
-                    <div><small>ABSENT</small><strong>11</strong><span>Today</span></div>
-                    <div><small>OVERTIME</small><strong>0</strong><span>Today</span></div>
-                  </div>
-                  <div class="dashboard-lower"><div><strong>Attendance activity</strong><span></span><span></span><span></span></div><div class="dashboard-fingerprint">◎<small>BIOMETRIC<br>SCANNER</small></div></div>
+                <div class="monitor-screen-inner">
+                  <img src="images/biometric-ui1.png" alt="LGU Lasam Attendance Monitoring System Login UI" />
                 </div>
               </div>
               <div class="monitor-chin"></div>
@@ -1518,45 +1544,15 @@
               <div class="monitor-foot"></div>
             </div>
             <div class="desk-accessories" aria-hidden="true"><div class="keyboard"></div><div class="mouse"></div></div>
-            <div class="tablet-mockup" aria-label="Illustrative biometric fingerprint scanner interface">
-              <div class="tablet-screen"><span>LGU LASAM</span><strong>◎</strong><b>Biometric Attendance<br>Monitoring System<br>LGU Lasam</b><small>Fingerprint access interface</small></div>
-            </div>
-            <p class="mockup-disclaimer">Illustrative interface mockup · sample dashboard values</p>
-          </div>
-        </article>
-
-        <!-- PROJECT: STUDY GUIDE & RESOURCE E-BOOK -->
-        <article class="project project-study" data-reveal>
-          <div class="study-head">
-            <div>
-              <div class="project-label">DIGITAL PUBLISHING</div>
-              <h3 class="project-name">Study Guide &amp;<br>Resource E-Book</h3>
-            </div>
-            <p class="study-facts">A study guide with templates for students who game: focus routines, note systems, and a weekly review spread. Built in Canva, laid out for phone reading.</p>
-          </div>
-          <div class="book-stage">
-            <div class="book-spread">
-              <div class="book-page">
-                <div class="book-placeholder" role="img" aria-label="Placeholder for first study guide e-book page">
-                  <strong>STUDY<br>GUIDE</strong>
-                  <span>IMAGE PLACEHOLDER / PAGE 01</span>
-                </div>
-              </div>
-              <div class="book-page">
-                <div class="book-placeholder" role="img" aria-label="Placeholder for second study guide resource page">
-                  <strong>RESOURCE<br>MANUAL</strong>
-                  <span>IMAGE PLACEHOLDER / PAGE 02</span>
-                </div>
+            <div class="tablet-mockup" aria-label="Biometric fingerprint scanner interface">
+              <div class="tablet-screen">
+                <img src="images/biometric-ui2.png" alt="Biometric Scanner Interface" />
               </div>
             </div>
-          </div>
-          <div class="project-pill-row study-pills">
-            <span class="project-pill">Digital Publishing</span>
-            <span class="project-pill">Canva &amp; Figma</span>
+            <p class="mockup-disclaimer">LGU Lasam Attendance Monitoring System · Real UI</p>
           </div>
         </article>
-
-        <!-- PROJECT: THE MATCHA TEA CLUB -->
+    
        <!-- PROJECT: THE MATCHA TEA CLUB -->
         <article class="project project-matcha" data-reveal>
           <div class="matcha-project-heading">
