@@ -2244,15 +2244,28 @@
     }
     showSlide(1);
 
-    // Keep every tool tile visibly branded, with a fallback if a logo host is unavailable.
+    // Try a second SVG source if the primary logo CDN fails, then show a visible brand tile.
     document.querySelectorAll(".tool-logo-mark").forEach((logo) => {
-      const showFallback = () => {
-        logo.hidden = true;
-        const fallback = logo.nextElementSibling;
+      const fallback = logo.nextElementSibling;
+      const useTextFallback = () => {
+        logo.style.display = "none";
         if (fallback) fallback.classList.add("is-visible");
       };
-      if (logo.complete && logo.naturalWidth === 0) showFallback();
-      else logo.addEventListener("error", showFallback, { once: true });
+      const tryBackup = () => {
+        if (logo.dataset.backupTried !== "true") {
+          logo.dataset.backupTried = "true";
+          const slug = new URL(logo.src).pathname.split("/").filter(Boolean)[0];
+          logo.src = "https://cdn.jsdelivr.net/npm/simple-icons@v15/icons/" + slug + ".svg";
+        } else {
+          useTextFallback();
+        }
+      };
+      logo.addEventListener("error", tryBackup);
+      logo.addEventListener("load", () => {
+        logo.style.display = "block";
+        if (fallback) fallback.classList.remove("is-visible");
+      });
+      if (logo.complete && logo.naturalWidth === 0) tryBackup();
     });
 
     // Add gentle scroll reveals to the main content blocks.
