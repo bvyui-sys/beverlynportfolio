@@ -1339,14 +1339,14 @@
     .contact-side p { max-width: 410px; margin: 12px 0 0; color: #F7F5F3; font-size: clamp(.95rem, 1.25vw, 1.12rem); line-height: 1.65; }
     .contact-links { display: grid; gap: 0; margin-top: 30px; }
     .contact-links a {
-      display: grid;
-      grid-template-columns: 82px minmax(0, 1fr) 18px;
-      align-items: center;
-      gap: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 7px;
       padding: 15px 0;
       border-top: 1px solid rgba(247,245,243,.2);
       color: #F7F5F3;
-      font-size: .78rem;
+      font-size: .82rem;
       text-decoration: none;
       overflow-wrap: anywhere;
       transition: color .18s ease, border-color .18s ease;
@@ -1354,7 +1354,6 @@
     .contact-links a:last-child { border-bottom: 1px solid rgba(247,245,243,.2); }
     .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
     .contact-link-label { color: #B8B1B3; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
-    .contact-links a > span:last-child { justify-self: end; color: var(--accent); }
     .contact-quote { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-top: 28px; padding: 17px 0; border-top: 1px solid rgba(247,245,243,.2); border-bottom: 1px solid rgba(247,245,243,.2); color: #F7F5F3; font-family: var(--display); font-size: clamp(1.35rem, 2.2vw, 2rem); line-height: 1; text-decoration: none; transition: color .18s ease; }
     .contact-quote span:last-child { color: var(--accent); font-family: var(--body); font-size: 1.1rem; }
     .contact-quote:hover { color: var(--accent); }
@@ -2210,10 +2209,10 @@
           </div>
           <div class="contact-side">
             <div class="contact-links" aria-label="Contact information">
-              <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">01 · EMAIL</span><span>beverlyn.manuel19@gmail.com</span><span aria-hidden="true">↗</span></a>
-              <a href="tel:+639687585016"><span class="contact-link-label">02 · PHONE</span><span>+63 968 758 5016</span><span aria-hidden="true">↗</span></a>
-              <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">03 · TELEGRAM</span><span>@bevysm</span><span aria-hidden="true">↗</span></a>
-              <a href="https://www.instagram.com/qncnx.z/" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">04 · INSTAGRAM</span><span>@qncnx.z</span><span aria-hidden="true">↗</span></a>
+              <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">01 · EMAIL</span><span>beverlyn.manuel19@gmail.com</span></a>
+              <a href="tel:+639687585016"><span class="contact-link-label">02 · PHONE</span><span>+63 968 758 5016</span></a>
+              <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">03 · TELEGRAM</span><span>@bevysm</span></a>
+              <a href="https://www.instagram.com/qncnx.z/" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">04 · INSTAGRAM</span><span>@qncnx.z</span></a>
             </div>
             <a class="contact-quote" href="mailto:beverlyn.manuel19@gmail.com?subject=Project%20Inquiry">
               <span>MESSAGE ME FOR A QUOTE</span><span aria-hidden="true">↗</span>
