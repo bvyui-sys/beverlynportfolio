@@ -1325,14 +1325,18 @@
     .contact .service-quote:hover .service-quote-arrow { color: #141414; }
     .contact-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(220px, .9fr);
-      align-items: end;
-      gap: 35px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      align-items: stretch;
+      gap: clamp(35px, 5vw, 72px);
     }
+    .contact-grid > div:first-child { display: flex; flex-direction: column; align-items: flex-start; }
     .contact h2 { margin: 18px 0 0; font-family: var(--display); font-size: clamp(4.8rem, 11vw, 10.5rem); font-weight: 400; line-height: .82; }
     .contact h2 span { color: var(--accent); }
-    .contact-side p { max-width: 390px; color: #B8B1B3; font-size: .9rem; }
-    .contact-links { display: grid; gap: 0; margin-top: 27px; }
+    .contact-side { display: flex; flex-direction: column; justify-content: space-between; min-height: 410px; padding-top: 5px; }
+    .contact-side-intro { max-width: 440px; }
+    .contact-side-kicker { color: #B8B1B3; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
+    .contact-side p { max-width: 410px; margin: 12px 0 0; color: #F7F5F3; font-size: clamp(.95rem, 1.25vw, 1.12rem); line-height: 1.65; }
+    .contact-links { display: grid; gap: 0; margin-top: 30px; }
     .contact-links a {
       display: grid;
       grid-template-columns: 82px minmax(0, 1fr) 18px;
@@ -1350,6 +1354,11 @@
     .contact-links a:hover { color: var(--accent); border-color: var(--accent); }
     .contact-link-label { color: #B8B1B3; font-size: .58rem; font-weight: 700; letter-spacing: .14em; }
     .contact-links a > span:last-child { justify-self: end; color: var(--accent); }
+    .contact-availability { display: flex; align-items: flex-start; gap: 12px; margin-top: 28px; padding: 17px 18px; border: 1px solid rgba(247,245,243,.2); }
+    .contact-availability-dot { flex: 0 0 7px; width: 7px; height: 7px; margin-top: 5px; border-radius: 50%; background: var(--accent); }
+    .contact-availability div { display: grid; gap: 6px; }
+    .contact-availability strong { color: #F7F5F3; font-size: .58rem; letter-spacing: .13em; }
+    .contact-availability div span { color: #B8B1B3; font-size: .72rem; line-height: 1.5; }
     .site-footer { padding-block: 22px; background: var(--bg); }
     .footer-inner { display: flex; align-items: center; justify-content: space-between; gap: 18px; color: var(--muted); font-size: .64rem; letter-spacing: .05em; }
     .footer-inner a { color: var(--text); text-decoration: none; }
@@ -1376,7 +1385,8 @@
       .matcha-stage { min-height: 640px; grid-template-columns: minmax(0, 1fr) minmax(235px, .72fr) minmax(0, 1fr); }
       .slide-stack { gap: 12px; }
       .slide-thumb { min-height: 125px; }
-      .contact-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; gap: 34px; }
+      .contact-side { min-height: 0; }
       .contact .service-quote { margin-bottom: 46px; gap: 9px 12px; flex-wrap: wrap; }
       .contact .service-quote > span:first-child { width: 100%; }
       .contact .service-quote strong { font-size: clamp(1.45rem, 6vw, 2rem); }
@@ -2199,11 +2209,18 @@
             <h2>LET'S<br>WORK<br><span>TOGETHER.</span></h2>
           </div>
           <div class="contact-side">
-            <p>Get in touch through email, phone, or social platforms.</p>
+            <div class="contact-side-intro">
+              <span class="contact-side-kicker">HAVE SOMETHING IN MIND?</span>
+              <p>Whether it's a project, an opportunity, or a question, I'd be happy to hear from you.</p>
+            </div>
             <div class="contact-links" aria-label="Contact information">
               <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">EMAIL</span><span>beverlyn.manuel19@gmail.com</span><span aria-hidden="true">↗</span></a>
               <a href="tel:+639687585016"><span class="contact-link-label">PHONE</span><span>+63 968 758 5016</span><span aria-hidden="true">↗</span></a>
               <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">TELEGRAM</span><span>@bevysm</span><span aria-hidden="true">↗</span></a>
+            </div>
+            <div class="contact-availability">
+              <span class="contact-availability-dot" aria-hidden="true"></span>
+              <div><strong>OPEN TO REMOTE OPPORTUNITIES</strong><span>Creative, social media, and administrative support.</span></div>
             </div>
           </div>
         </div>
