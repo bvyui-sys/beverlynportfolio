@@ -45,10 +45,10 @@
     .section-kicker::before{width:28px;height:1px;background:var(--accent);content:""}
     .section-title{margin:0 0 36px;font-family:var(--display);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:400;line-height:.9;letter-spacing:-.02em;text-transform:uppercase}
     .case-study-space{min-height:150px;border-top:1px solid var(--line)}
-    .feed-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:clamp(32px,6vw,76px);align-items:center}
-    .feed-art{margin:0;padding:clamp(12px,2vw,22px);background:var(--surface);border:1px solid var(--line)}
-    .feed-art img{display:block;width:100%;height:auto;object-fit:contain}
-    .feed-notes{display:grid;gap:24px}
+    .feed-layout{display:grid;grid-template-columns:minmax(0,.9fr) minmax(300px,1.1fr);gap:clamp(28px,5vw,64px);align-items:center}
+    .feed-art{display:flex;align-items:center;justify-content:center;margin:0;padding:clamp(10px,1.5vw,16px);background:var(--surface);border:1px solid var(--line);min-width:0}
+    .feed-art img{display:block;width:auto;max-width:100%;height:auto;max-height:min(54vh,460px);object-fit:contain}
+    .feed-notes{display:grid;gap:clamp(14px,2vh,22px)}
     .feed-note{padding-bottom:22px;border-bottom:1px solid var(--line)}
     .feed-note:last-child{padding-bottom:0;border-bottom:0}
     .feed-note h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.05;text-transform:uppercase}
@@ -58,7 +58,7 @@
     .feed-goal .goal-label{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     .feed-goal p{margin:0;color:var(--text);font-size:.9rem;line-height:1.8}
     .future-anchor{height:1px;scroll-margin-top:28px}
-    @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:620px}.feed-notes{gap:20px}}
+    @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:460px}.feed-art img{max-height:44vh}.feed-notes{gap:18px}}
     @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}.page-nav{gap:12px 16px}.section-title{margin-bottom:26px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
