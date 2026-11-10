@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#D9D1D1">
+  <meta name="description" content="A self-initiated social media management practice project by Beverlyn Manuel, featuring content planning, strategy, and creative work for a mock matcha brand.">
+  <title>Social Media Management | Beverlyn Manuel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg:#D9D1D1; --panel:#ECEAEF; --surface:#F7F5F3; --text:#141414;
+      --muted:#6F6A6C; --accent:#E58FC1; --sage:#9DAA94;
+      --line:rgba(20,20,20,.18); --display:"Anton",Impact,sans-serif;
+      --body:"Inter",Arial,sans-serif; --page:min(1120px,calc(100% - 9vw));
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;background:var(--bg);color:var(--text);font-family:var(--body);font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased}
+    a{color:inherit;text-underline-offset:5px}
+    a:focus-visible{outline:2px solid var(--accent);outline-offset:5px}
+    .wrap{width:var(--page);margin-inline:auto}
+    .page-top{padding-top:clamp(28px,5vw,58px)}
+    .back-link{display:inline-flex;align-items:center;gap:12px;color:var(--muted);font-size:.68rem;font-weight:700;letter-spacing:.12em;text-decoration:none;text-transform:uppercase;transition:color .2s ease}
+    .back-link:hover{color:var(--text)}
+    .back-link span{font-size:1rem}
+    .intro{padding-block:clamp(76px,12vw,150px) clamp(80px,10vw,128px)}
+    .project-label{display:inline-flex;align-items:center;gap:11px;color:var(--muted);font-size:.63rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+    .project-label::before{width:28px;height:1px;background:var(--accent);content:""}
+    h1{max-width:1000px;margin:30px 0 28px;font-family:var(--display);font-size:clamp(4.5rem,11.5vw,10.5rem);font-weight:400;line-height:.86;letter-spacing:-.025em;text-transform:uppercase}
+    .intro-copy{max-width:660px;margin:0;color:#514B4E;font-size:clamp(1rem,1.5vw,1.16rem);line-height:1.9}
+    .intro-rule{display:grid;grid-template-columns:1fr 1fr;gap:clamp(35px,7vw,100px);margin-top:clamp(62px,9vw,112px);padding-top:27px;border-top:1px solid var(--line)}
+    .detail-block h2{margin:0 0 23px;font-size:.68rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .detail-list{display:grid;gap:13px;margin:0;padding:0;list-style:none}
+    .detail-list li{position:relative;padding-left:18px;color:#514B4E;font-size:.9rem;line-height:1.6}
+    .detail-list li::before{position:absolute;top:.72em;left:0;width:6px;height:6px;background:var(--accent);content:""}
+    @media(max-width:680px){.intro{padding-top:78px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <header class="page-top wrap">
+    <a class="back-link" href="index.html#services"><span aria-hidden="true">←</span> Back to portfolio</a>
+  </header>
+  <main>
+    <section class="intro wrap" aria-labelledby="page-title">
+      <div class="project-label">Self-initiated practice project</div>
+      <h1 id="page-title">Social Media<br>Management</h1>
+      <p class="intro-copy">I plan, design, and organize social media content so a brand shows up consistently. This page walks through a practice project I ran from start to finish, including the thinking behind each decision.</p>
+      <div class="intro-rule">
+        <section class="detail-block" aria-labelledby="handle-title">
+          <h2 id="handle-title">What I handle</h2>
+          <ul class="detail-list">
+            <li>Content planning and social media strategy</li>
+            <li>Monthly content calendars</li>
+            <li>Post and carousel design, with captions and hashtags</li>
+            <li>Platform management and community engagement</li>
+          </ul>
+        </section>
+        <section class="detail-block" aria-labelledby="snapshot-title">
+          <h2 id="snapshot-title">Project snapshot</h2>
+          <ul class="detail-list">
+            <li>Brand: Matcha Tea Club, a mock matcha brand</li>
+            <li>Audience: students and young adults</li>
+            <li>Platform: Instagram</li>
+            <li>Tools: Canva and Notion</li>
+            <li>Status: practice project, no real client and no metrics</li>
+          </ul>
+        </section>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
