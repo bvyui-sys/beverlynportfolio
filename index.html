@@ -568,14 +568,21 @@
       grid-template-columns: minmax(0, 1.2fr) minmax(220px, .55fr);
       align-items: end;
       gap: clamp(25px, 5vw, 70px);
-      margin-bottom: clamp(44px, 6vw, 78px);
+      margin-bottom: clamp(42px, 5.5vw, 70px);
     }
-    .services-title { margin: 0; font-family: var(--display); font-size: clamp(4.7rem, 11vw, 10.2rem); font-weight: 400; line-height: .82; letter-spacing: -.02em; }
+    .services-title {
+      margin: 0;
+      font-family: var(--display);
+      font-size: clamp(4.7rem, 10.5vw, 9.6rem);
+      font-weight: 400;
+      line-height: .82;
+      letter-spacing: -.02em;
+    }
     .services-title span { color: var(--accent); }
     .services-intro p { max-width: 330px; margin: 0 0 6px; color: var(--muted); font-size: .9rem; line-height: 1.8; }
     .services-layout {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(2, minmax(0, 1fr));
       gap: 14px;
       align-items: stretch;
     }
@@ -583,25 +590,88 @@
       position: relative;
       display: flex;
       min-width: 0;
+      min-height: 270px;
       flex-direction: column;
       justify-content: space-between;
       overflow: hidden;
-      padding: clamp(21px, 3vw, 36px);
+      padding: clamp(23px, 3.2vw, 40px);
       border: 1px solid var(--line);
       background: var(--surface);
-      transition: border-color .18s ease, transform .18s ease;
+      color: var(--text);
+      text-decoration: none;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
     }
-    .service-card:hover { transform: translateY(-4px); border-color: var(--accent); }
-    .service-card--social { min-height: 330px; margin-top: 38px; }
-    .service-card--content { min-height: 330px; }
-    .service-card--admin { min-height: 330px; margin-top: 72px; }
-    .service-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 18px; }
-    .service-number { color: var(--muted); font-size: .59rem; font-weight: 700; letter-spacing: .15em; }
-    .service-icon { width: 37px; height: 37px; fill: none; stroke: var(--accent); stroke-width: 1.35; stroke-linecap: round; stroke-linejoin: round; }
-    .service-card-copy { max-width: 390px; }
-    .service-card h3 { margin: 0 0 13px; font-family: var(--display); font-size: clamp(2.6rem, 4.3vw, 4.8rem); font-weight: 400; line-height: .91; text-transform: uppercase; }
-    .service-card p { max-width: 320px; margin: 0; color: #575153; font-size: .81rem; line-height: 1.65; }
-    .service-card-mark { position: absolute; right: 19px; bottom: 12px; color: rgba(229,143,193,.26); font-size: 2rem; line-height: 1; }
+    .service-card--social {
+      min-height: 300px;
+      grid-column: 1 / -1;
+      background: var(--panel);
+    }
+    .service-card--content,
+    .service-card--admin { min-height: 270px; }
+    .service-card-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+    }
+    .service-number {
+      color: var(--muted);
+      font-size: .62rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+    }
+    .service-card-arrow {
+      display: grid;
+      width: 38px;
+      height: 38px;
+      flex: 0 0 38px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      color: var(--text);
+      font-size: 1.1rem;
+      line-height: 1;
+      transition: background .2s ease, border-color .2s ease, transform .2s ease;
+    }
+    .service-card-copy { max-width: 650px; }
+    .service-card h3 {
+      margin: 0 0 13px;
+      font-family: var(--display);
+      font-size: clamp(2.8rem, 5.2vw, 5.3rem);
+      font-weight: 400;
+      line-height: .9;
+      letter-spacing: -.015em;
+      text-transform: uppercase;
+    }
+    .service-card--social h3 { font-size: clamp(3.3rem, 7vw, 7rem); }
+    .service-card p {
+      max-width: 450px;
+      margin: 0;
+      color: #575153;
+      font-size: .86rem;
+      line-height: 1.75;
+    }
+    .service-card--social p { max-width: 520px; }
+    .service-card--link:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      background: #F2E9EF;
+    }
+    .service-card--link:hover .service-card-arrow {
+      transform: translate(2px, -2px);
+      border-color: var(--accent);
+      background: var(--accent);
+    }
+    .service-card--static { cursor: default; }
+    .service-card--static .service-card-arrow {
+      border-color: transparent;
+      color: var(--accent);
+      font-size: 1.25rem;
+    }
+    .service-card--link:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 5px;
+    }
     .service-quote {
       display: flex;
       align-items: center;
@@ -2171,32 +2241,37 @@
         <div class="eyebrow services-kicker">SOCIAL · CREATIVE · ADMIN SUPPORT</div>
         <div class="services-intro">
           <h2 class="services-title">WHAT I BRING<br>TO HELP YOU<span>.</span></h2>
-          <p>Creative and day-to-day support, depending on what your business needs.</p>
         </div>
         <div class="services-layout">
-          <article class="service-card service-card--social">
+          <article class="service-card service-card--social service-card--static">
             <div class="service-card-top">
               <span class="service-number">01 / SOCIAL PLATFORMS</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="10" width="32" height="29" rx="2"></rect><path d="M15 6v8M33 6v8M8 19h32M15 26h7M15 32h3M28 26h5M28 32h5"></path></svg>
+              <span class="service-card-arrow" aria-hidden="true">↗</span>
             </div>
-            <div class="service-card-copy"><h3>Social Media<br>Management</h3><p>Managing your social platforms through strategic content planning, scheduling, account organization, and consistent audience engagement.</p></div>
-            <span class="service-card-mark" aria-hidden="true">✳</span>
+            <div class="service-card-copy">
+              <h3>Social Media Management</h3>
+              <p>Content planning, social media strategy, content calendars, and platform management.</p>
+            </div>
           </article>
-          <article class="service-card service-card--content">
+          <article class="service-card service-card--content service-card--static">
             <div class="service-card-top">
               <span class="service-number">02 / VISUAL CONTENT</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="8" y="8" width="32" height="32" rx="2"></rect><circle cx="18" cy="18" r="4"></circle><path d="m10 35 10-10 7 7 5-5 6 7"></path></svg>
+              <span class="service-card-arrow" aria-hidden="true">✳</span>
             </div>
-            <div class="service-card-copy"><h3>Content<br>Creation</h3><p>Creating engaging social media posts, carousels, graphics, and other visual content that fits your brand.</p></div>
-            <span class="service-card-mark" aria-hidden="true">✳</span>
+            <div class="service-card-copy">
+              <h3>Graphic Design</h3>
+              <p>Visual content and brand assets.</p>
+            </div>
           </article>
-          <article class="service-card service-card--admin">
+          <article class="service-card service-card--admin service-card--static">
             <div class="service-card-top">
               <span class="service-number">03 / ADMINISTRATIVE</span>
-              <svg class="service-icon" viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="10" width="34" height="29" rx="2"></rect><path d="M15 6v8M33 6v8M7 19h34M16 26h7M16 32h7M30 26v6l4 2"></path><circle cx="31" cy="29" r="7"></circle></svg>
+              <span class="service-card-arrow" aria-hidden="true">✳</span>
             </div>
-            <div class="service-card-copy"><h3>Admin<br>Support</h3><p>Helping with scheduling, data entry, file organization, documentation, inbox management, and everyday administrative tasks.</p></div>
-            <span class="service-card-mark" aria-hidden="true">✳</span>
+            <div class="service-card-copy">
+              <h3>Virtual Assistance</h3>
+              <p>Organization, admin support, and workflows.</p>
+            </div>
           </article>
         </div>
       </div>
