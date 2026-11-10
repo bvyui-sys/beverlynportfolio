@@ -1448,8 +1448,8 @@
       .about-profile { grid-template-columns: minmax(210px, .7fr) minmax(0, 1.3fr); }
       .services-intro { grid-template-columns: 1fr; gap: 20px; }
       .services-layout { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .service-card--social, .service-card--content, .service-card--admin { min-height: 260px; margin: 0; }
-      .service-card--admin { grid-column: 1 / -1; }
+      .service-card--social { min-height: 270px; grid-column: 1 / -1; }
+      .service-card--content, .service-card--admin { min-height: 245px; }
       .project-biometric { grid-template-columns: 1fr; }
       .biometric-copy { max-width: 660px; }
       .study-head { align-items: start; flex-direction: column; }
@@ -1511,13 +1511,13 @@
       .love-word:nth-child(even) { margin-left: auto; }
       .services-title { font-size: clamp(4.2rem, 17vw, 6.2rem); }
       .services-layout { grid-template-columns: 1fr; gap: 10px; }
-      .service-card, .service-card--social, .service-card--content, .service-card--admin { min-height: 220px; margin: 0; padding: 20px 17px; }
-      .service-card--admin { grid-column: auto; }
-      .service-number { font-size: .52rem; letter-spacing: .1em; }
-      .service-icon { width: 30px; height: 30px; }
-      .service-card h3 { font-size: clamp(2.2rem, 9vw, 3rem); margin-bottom: 9px; }
-      .service-card p { max-width: 340px; font-size: .75rem; }
-      .service-card-mark { right: 12px; bottom: 8px; }
+      .service-card, .service-card--social, .service-card--content, .service-card--admin { min-height: 215px; margin: 0; padding: 22px 18px; }
+      .service-card--social { grid-column: auto; min-height: 235px; }
+      .service-number { font-size: .54rem; letter-spacing: .11em; }
+      .service-card h3 { font-size: clamp(2.45rem, 10vw, 3.5rem); margin-bottom: 9px; }
+      .service-card--social h3 { font-size: clamp(2.8rem, 11.5vw, 4.1rem); }
+      .service-card p { max-width: 340px; font-size: .78rem; }
+      .service-card-arrow { width: 34px; height: 34px; flex-basis: 34px; }
       .service-quote { flex-wrap: wrap; gap: 8px 12px; margin-top: 34px; padding-block: 17px; }
       .service-quote > span:first-child { width: 100%; }
       .service-quote strong { font-size: clamp(1.4rem, 6.7vw, 1.9rem); }
