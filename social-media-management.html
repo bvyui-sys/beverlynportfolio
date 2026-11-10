@@ -36,7 +36,30 @@
     .detail-list{display:grid;gap:13px;margin:0;padding:0;list-style:none}
     .detail-list li{position:relative;padding-left:18px;color:#514B4E;font-size:.9rem;line-height:1.6}
     .detail-list li::before{position:absolute;top:.72em;left:0;width:6px;height:6px;background:var(--accent);content:""}
-    @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}}
+    .page-nav{display:flex;flex-wrap:wrap;align-items:center;gap:10px 22px;padding:22px 0 26px;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .page-nav-label{width:100%;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .page-nav a{font-size:.72rem;font-weight:600;text-decoration:none;color:var(--muted);transition:color .2s ease}
+    .page-nav a:hover{color:var(--text)}
+    .content-section{padding-block:clamp(68px,9vw,112px);scroll-margin-top:28px}
+    .section-kicker{display:flex;align-items:center;gap:12px;margin:0 0 14px;color:var(--muted);font-size:.64rem;font-weight:700;letter-spacing:.17em;text-transform:uppercase}
+    .section-kicker::before{width:28px;height:1px;background:var(--accent);content:""}
+    .section-title{margin:0 0 36px;font-family:var(--display);font-size:clamp(3.2rem,7vw,6.5rem);font-weight:400;line-height:.9;letter-spacing:-.02em;text-transform:uppercase}
+    .case-study-space{min-height:150px;border-top:1px solid var(--line)}
+    .feed-layout{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(280px,.88fr);gap:clamp(32px,6vw,76px);align-items:center}
+    .feed-art{margin:0;padding:clamp(12px,2vw,22px);background:var(--surface);border:1px solid var(--line)}
+    .feed-art img{display:block;width:100%;height:auto;object-fit:contain}
+    .feed-notes{display:grid;gap:24px}
+    .feed-note{padding-bottom:22px;border-bottom:1px solid var(--line)}
+    .feed-note:last-child{padding-bottom:0;border-bottom:0}
+    .feed-note h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.05;text-transform:uppercase}
+    .feed-note p{margin:0;color:#514B4E;font-size:.9rem;line-height:1.85}
+    .feed-note .note-number{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.14em}
+    .feed-goal{padding:22px 24px;background:var(--panel);border-left:3px solid var(--accent)}
+    .feed-goal .goal-label{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
+    .feed-goal p{margin:0;color:var(--text);font-size:.9rem;line-height:1.8}
+    .future-anchor{height:1px;scroll-margin-top:28px}
+    @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:620px}.feed-notes{gap:20px}}
+    @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}.page-nav{gap:12px 16px}.section-title{margin-bottom:26px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
   </style>
 </head>
@@ -65,6 +88,53 @@
         </section>
       </div>
     </section>
+
+    <nav class="page-nav wrap" aria-label="On this page">
+      <span class="page-nav-label">On this page</span>
+      <a href="#case-study">Case study</a>
+      <a href="#instagram-feed">Instagram feed</a>
+      <a href="#carousel">Carousel</a>
+      <a href="#stories">Stories</a>
+      <a href="#notion-workspace">Notion workspace</a>
+      <a href="#range">Range</a>
+    </nav>
+
+    <section class="content-section wrap" id="case-study" aria-labelledby="case-study-title">
+      <p class="section-kicker">01 / Matcha Tea Club</p>
+      <h2 class="section-title" id="case-study-title">Case study</h2>
+      <div class="case-study-space" aria-hidden="true"></div>
+    </section>
+
+    <section class="content-section wrap" id="instagram-feed" aria-labelledby="feed-title">
+      <p class="section-kicker">02 / Content design</p>
+      <h2 class="section-title" id="feed-title">Instagram feed</h2>
+      <div class="feed-layout">
+        <figure class="feed-art">
+          <img src="images/ig_feed.png" alt="Matcha Tea Club Instagram feed design showing six coordinated posts in a three-column grid" loading="lazy">
+        </figure>
+        <div class="feed-notes">
+          <article class="feed-note">
+            <span class="note-number">ROW 01</span>
+            <h3>Meet the brand</h3>
+            <p>A new visitor sees what’s on offer, learns one simple fact, and answers a light mood question. Nothing is pushy, so the brand feels calm from the first scroll.</p>
+          </article>
+          <article class="feed-note">
+            <span class="note-number">ROW 02</span>
+            <h3>Feel understood and invited</h3>
+            <p>These posts speak to real student moments and give people an easy way to reply, tag a friend, and imagine visiting.</p>
+          </article>
+          <div class="feed-goal">
+            <span class="goal-label">The goal</span>
+            <p>Build familiarity and encourage interaction by introducing the brand naturally, connecting with student experiences, and giving the audience simple reasons to engage.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div class="future-anchor" id="carousel"></div>
+    <div class="future-anchor" id="stories"></div>
+    <div class="future-anchor" id="notion-workspace"></div>
+    <div class="future-anchor" id="range"></div>
   </main>
 </body>
 </html>
