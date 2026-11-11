@@ -59,21 +59,22 @@
     .feed-goal p{margin:0;color:var(--text);font-size:.9rem;line-height:1.8}
     .future-anchor{height:1px;scroll-margin-top:28px}
 
-    /* carousel */
-    .car-layout{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);align-items:start}
-    .phone{position:sticky;top:28px;width:100%;max-width:380px;margin-inline:auto;background:var(--surface);border:1px solid var(--line);border-radius:34px;padding:14px 0 16px;box-shadow:0 30px 60px -34px rgba(20,20,20,.35)}
+    /* carousel: fits one laptop screen, no scrolling */
+    .car-section{display:flex;align-items:center;min-height:100vh;min-height:100svh;padding-block:24px;scroll-margin-top:0}
+    .car-layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;width:100%}
+    .phone{--img-h:clamp(300px,calc(100svh - 215px),720px);--ratio:.75;width:calc(var(--img-h) * var(--ratio));min-width:270px;background:var(--surface);border:1px solid var(--line);border-radius:30px;padding:14px 0 16px;box-shadow:0 30px 60px -34px rgba(20,20,20,.35)}
     .ig-head{display:flex;align-items:center;gap:10px;padding:2px 16px 12px}
     .ig-avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;font-family:var(--display);font-size:.8rem;letter-spacing:.02em}
     .ig-user{display:grid;line-height:1.25}
     .ig-user strong{font-size:.8rem;font-weight:700}
     .ig-user span{color:var(--muted);font-size:.68rem}
-    .ig-view{position:relative;background:var(--panel)}
-    .ig-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .ig-view{position:relative;height:var(--img-h);background:var(--surface)}
+    .ig-track{display:flex;height:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
     .ig-track::-webkit-scrollbar{display:none}
-    .ig-slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;margin:0;background:var(--panel)}
-    .ig-slide img{display:block;width:100%;height:100%;object-fit:cover}
+    .ig-slide{flex:0 0 100%;height:100%;margin:0;scroll-snap-align:center;background:var(--surface)}
+    .ig-slide img{display:block;width:100%;height:100%;object-fit:contain}
     .ig-count{position:absolute;top:12px;right:12px;padding:3px 10px;border-radius:99px;background:rgba(20,20,20,.62);color:#fff;font-size:.66rem;font-weight:600;letter-spacing:.04em}
-    .ig-arrow{position:absolute;top:50%;width:34px;height:34px;margin-top:-17px;border:0;border-radius:50%;background:rgba(247,245,243,.92);color:var(--text);font-size:1rem;cursor:pointer;transition:opacity .2s ease}
+    .ig-arrow{position:absolute;top:50%;width:34px;height:34px;margin-top:-17px;border:0;border-radius:50%;background:rgba(247,245,243,.92);box-shadow:0 2px 8px rgba(20,20,20,.18);color:var(--text);font-size:1rem;cursor:pointer;transition:opacity .2s ease}
     .ig-arrow[disabled]{opacity:0;pointer-events:none}
     .ig-arrow:focus-visible,.ig-dots button:focus-visible,.slide-note:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
     .ig-prev{left:10px}.ig-next{right:10px}
@@ -82,17 +83,29 @@
     .ig-dots{display:flex;gap:6px;margin:0 auto;transform:translateX(-26px)}
     .ig-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:rgba(20,20,20,.22);cursor:pointer;transition:background .2s ease,transform .2s ease}
     .ig-dots button[aria-current="true"]{background:var(--accent);transform:scale(1.25)}
-    .ig-caption{margin:10px 16px 0;font-size:.78rem;line-height:1.55}
+    .ig-caption{margin:10px 16px 0;font-size:.78rem;line-height:1.5}
     .ig-caption strong{font-weight:700}
-    .slide-notes{display:grid;gap:14px}
-    .slide-note{display:block;width:100%;padding:24px 26px;border:1px solid transparent;border-left:3px solid var(--line);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .25s ease,border-color .25s ease}
+    .car-copy{display:grid;gap:12px;min-width:0}
+    .car-copy .section-kicker{margin:0 0 -2px}
+    .car-copy .section-title{margin:0 0 6px;font-size:clamp(2.6rem,5.2vw,4.6rem)}
+    .slide-note{display:block;width:100%;padding:16px 22px;border:1px solid transparent;border-left:3px solid var(--line);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .25s ease,border-color .25s ease}
     .slide-note:hover{background:rgba(247,245,243,.5)}
     .slide-note.is-active{background:var(--panel);border-left-color:var(--accent)}
-    .slide-note .note-number{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
-    .slide-note h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.05;text-transform:uppercase}
-    .slide-note .note-copy{display:block;color:#514B4E;font-size:.9rem;line-height:1.85}
-    .car-tip{margin:6px 0 0;color:var(--muted);font-size:.76rem}
-    @media(max-width:860px){.car-layout{grid-template-columns:1fr}.phone{position:static;max-width:360px}}
+    .slide-note .note-head{display:flex;align-items:baseline;gap:14px;margin-bottom:6px}
+    .slide-note .note-number{flex:none;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .slide-note h3{margin:0;font-family:var(--display);font-size:clamp(1.2rem,1.8vw,1.6rem);font-weight:400;line-height:1.05;text-transform:uppercase}
+    .slide-note .note-copy{display:block;color:#514B4E;font-size:.86rem;line-height:1.65}
+    .car-copy .feed-goal{padding:16px 22px}
+    .car-copy .feed-goal p{font-size:.86rem;line-height:1.65}
+    @media(max-height:720px){.car-copy .feed-goal{display:none}.slide-note{padding:12px 20px}}
+    @media(max-width:860px){
+      .car-section{display:block;min-height:0;padding-block:clamp(68px,9vw,112px)}
+      .car-layout{grid-template-columns:1fr;gap:32px;justify-items:center}
+      .phone{--img-h:min(68svh,520px);max-width:100%}
+      .car-copy{order:-1;width:100%}
+      .car-layout .phone{order:0}
+      .car-copy .feed-goal{display:block}
+    }
     @media(prefers-reduced-motion:reduce){.ig-track{scroll-behavior:auto}}
     @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:460px}.feed-art img{max-height:52vh}.feed-notes{gap:18px}}
     @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}.page-nav{gap:12px 16px}.section-title{margin-bottom:26px}}
@@ -167,18 +180,16 @@
       </div>
     </section>
 
-    <section class="content-section wrap" id="carousel" aria-labelledby="carousel-title">
-      <p class="section-kicker">03 / Carousel design</p>
-      <h2 class="section-title" id="carousel-title">Carousel</h2>
+    <section class="car-section wrap" id="carousel" aria-labelledby="carousel-title">
       <div class="car-layout">
-        <div class="phone" aria-label="Matcha Tea Club carousel preview">
+        <div class="phone" id="phone" aria-label="Matcha Tea Club carousel preview">
           <div class="ig-head">
             <span class="ig-avatar" aria-hidden="true">M</span>
             <span class="ig-user"><strong>thematchateaclub</strong><span>Matcha Tea Club</span></span>
           </div>
           <div class="ig-view">
             <div class="ig-track" id="igTrack" tabindex="0" aria-label="Swipe through the six carousel slides">
-              <figure class="ig-slide"><img src="images/carousel-cover1.jpg" alt="Carousel slide 1 of 6: the opening hook" loading="lazy"></figure>
+              <figure class="ig-slide"><img id="firstSlide" src="images/carousel-cover1.jpg" alt="Carousel slide 1 of 6: the opening hook"></figure>
               <figure class="ig-slide"><img src="images/carousel-cover2.jpg" alt="Carousel slide 2 of 6" loading="lazy"></figure>
               <figure class="ig-slide"><img src="images/carousel-cover3.jpg" alt="Carousel slide 3 of 6" loading="lazy"></figure>
               <figure class="ig-slide"><img src="images/carousel-cover4.jpg" alt="Carousel slide 4 of 6" loading="lazy"></figure>
@@ -198,27 +209,27 @@
           <p class="ig-caption"><strong>thematchateaclub</strong> Study break, but make it matcha.</p>
         </div>
 
-        <div class="slide-notes" id="slideNotes">
+        <div class="car-copy" id="slideNotes">
+          <div>
+            <p class="section-kicker">03 / Carousel design</p>
+            <h2 class="section-title" id="carousel-title">Carousel</h2>
+          </div>
           <button class="slide-note is-active" type="button" data-from="1" data-to="1">
-            <span class="note-number">Slide 01</span>
-            <h3>Stop the scroll</h3>
+            <span class="note-head"><span class="note-number">Slide 01</span><h3>Stop the scroll</h3></span>
             <span class="note-copy">The first slide has one job: make a tired student pause. It speaks to the study break itself, so the viewer recognizes their own day before reading anything else.</span>
           </button>
           <button class="slide-note" type="button" data-from="2" data-to="5">
-            <span class="note-number">Slides 02 to 05</span>
-            <h3>Give them a reason to keep swiping</h3>
-            <span class="note-copy">Each slide carries one idea, with short text and plenty of space, so it reads in a couple of seconds. The layout, colors, and type stay the same across slides so the set feels like one piece.</span>
+            <span class="note-head"><span class="note-number">Slides 02 to 05</span><h3>Keep them swiping</h3></span>
+            <span class="note-copy">Each slide carries one idea, with short text and plenty of space, so it reads in a couple of seconds. Layout, colors, and type stay the same so the set feels like one piece.</span>
           </button>
           <button class="slide-note" type="button" data-from="6" data-to="6">
-            <span class="note-number">Slide 06</span>
-            <h3>Say what to do next</h3>
-            <span class="note-copy">The last slide asks for one simple action, like saving the post or sending it to a study buddy. One clear ask is easier to follow than three.</span>
+            <span class="note-head"><span class="note-number">Slide 06</span><h3>Say what to do next</h3></span>
+            <span class="note-copy">The closing slide lands the main point and ends on one simple takeaway. One clear idea is easier to remember than three.</span>
           </button>
           <div class="feed-goal">
             <span class="goal-label">The goal</span>
-            <p>Make a carousel that is easy to finish, easy to save, and easy to share, while keeping the brand calm and consistent with the rest of the feed.</p>
+            <p>A carousel that is easy to finish, save, and share, while keeping the brand calm and consistent with the feed.</p>
           </div>
-          <p class="car-tip">Swipe the phone or tap a note to jump to its slide.</p>
         </div>
       </div>
     </section>
@@ -270,6 +281,15 @@
         });
         track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
         window.addEventListener('resize', update);
+        var phone = document.getElementById('phone');
+        var first = document.getElementById('firstSlide');
+        function setRatio() {
+          if (first.naturalWidth && first.naturalHeight) {
+            phone.style.setProperty('--ratio', (first.naturalWidth / first.naturalHeight).toFixed(4));
+            update();
+          }
+        }
+        if (first.complete) setRatio(); else first.addEventListener('load', setRatio);
         update();
       })();
     </script>
