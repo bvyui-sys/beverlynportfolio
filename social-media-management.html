@@ -58,6 +58,42 @@
     .feed-goal .goal-label{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     .feed-goal p{margin:0;color:var(--text);font-size:.9rem;line-height:1.8}
     .future-anchor{height:1px;scroll-margin-top:28px}
+
+    /* carousel */
+    .car-layout{display:grid;grid-template-columns:minmax(300px,.8fr) minmax(0,1.2fr);gap:clamp(32px,6vw,88px);align-items:start}
+    .phone{position:sticky;top:28px;width:100%;max-width:380px;margin-inline:auto;background:var(--surface);border:1px solid var(--line);border-radius:34px;padding:14px 0 16px;box-shadow:0 30px 60px -34px rgba(20,20,20,.35)}
+    .ig-head{display:flex;align-items:center;gap:10px;padding:2px 16px 12px}
+    .ig-avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;font-family:var(--display);font-size:.8rem;letter-spacing:.02em}
+    .ig-user{display:grid;line-height:1.25}
+    .ig-user strong{font-size:.8rem;font-weight:700}
+    .ig-user span{color:var(--muted);font-size:.68rem}
+    .ig-view{position:relative;background:var(--panel)}
+    .ig-track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+    .ig-track::-webkit-scrollbar{display:none}
+    .ig-slide{flex:0 0 100%;scroll-snap-align:center;aspect-ratio:4/5;margin:0;background:var(--panel)}
+    .ig-slide img{display:block;width:100%;height:100%;object-fit:cover}
+    .ig-count{position:absolute;top:12px;right:12px;padding:3px 10px;border-radius:99px;background:rgba(20,20,20,.62);color:#fff;font-size:.66rem;font-weight:600;letter-spacing:.04em}
+    .ig-arrow{position:absolute;top:50%;width:34px;height:34px;margin-top:-17px;border:0;border-radius:50%;background:rgba(247,245,243,.92);color:var(--text);font-size:1rem;cursor:pointer;transition:opacity .2s ease}
+    .ig-arrow[disabled]{opacity:0;pointer-events:none}
+    .ig-arrow:focus-visible,.ig-dots button:focus-visible,.slide-note:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+    .ig-prev{left:10px}.ig-next{right:10px}
+    .ig-actions{display:flex;align-items:center;padding:12px 16px 0}
+    .ig-actions svg{width:22px;height:22px;margin-right:14px;fill:none;stroke:var(--text);stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+    .ig-dots{display:flex;gap:6px;margin:0 auto;transform:translateX(-26px)}
+    .ig-dots button{width:6px;height:6px;padding:0;border:0;border-radius:50%;background:rgba(20,20,20,.22);cursor:pointer;transition:background .2s ease,transform .2s ease}
+    .ig-dots button[aria-current="true"]{background:var(--accent);transform:scale(1.25)}
+    .ig-caption{margin:10px 16px 0;font-size:.78rem;line-height:1.55}
+    .ig-caption strong{font-weight:700}
+    .slide-notes{display:grid;gap:14px}
+    .slide-note{display:block;width:100%;padding:24px 26px;border:1px solid transparent;border-left:3px solid var(--line);background:transparent;color:inherit;font:inherit;text-align:left;cursor:pointer;transition:background .25s ease,border-color .25s ease}
+    .slide-note:hover{background:rgba(247,245,243,.5)}
+    .slide-note.is-active{background:var(--panel);border-left-color:var(--accent)}
+    .slide-note .note-number{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .slide-note h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.05;text-transform:uppercase}
+    .slide-note .note-copy{display:block;color:#514B4E;font-size:.9rem;line-height:1.85}
+    .car-tip{margin:6px 0 0;color:var(--muted);font-size:.76rem}
+    @media(max-width:860px){.car-layout{grid-template-columns:1fr}.phone{position:static;max-width:360px}}
+    @media(prefers-reduced-motion:reduce){.ig-track{scroll-behavior:auto}}
     @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:460px}.feed-art img{max-height:52vh}.feed-notes{gap:18px}}
     @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}.page-nav{gap:12px 16px}.section-title{margin-bottom:26px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
@@ -131,7 +167,112 @@
       </div>
     </section>
 
-    <div class="future-anchor" id="carousel"></div>
+    <section class="content-section wrap" id="carousel" aria-labelledby="carousel-title">
+      <p class="section-kicker">03 / Carousel design</p>
+      <h2 class="section-title" id="carousel-title">Carousel</h2>
+      <div class="car-layout">
+        <div class="phone" aria-label="Matcha Tea Club carousel preview">
+          <div class="ig-head">
+            <span class="ig-avatar" aria-hidden="true">M</span>
+            <span class="ig-user"><strong>thematchateaclub</strong><span>Matcha Tea Club</span></span>
+          </div>
+          <div class="ig-view">
+            <div class="ig-track" id="igTrack" tabindex="0" aria-label="Swipe through the six carousel slides">
+              <figure class="ig-slide"><img src="images/carousel-cover1.jpg" alt="Carousel slide 1 of 6: the opening hook" loading="lazy"></figure>
+              <figure class="ig-slide"><img src="images/carousel-cover2.jpg" alt="Carousel slide 2 of 6" loading="lazy"></figure>
+              <figure class="ig-slide"><img src="images/carousel-cover3.jpg" alt="Carousel slide 3 of 6" loading="lazy"></figure>
+              <figure class="ig-slide"><img src="images/carousel-cover4.jpg" alt="Carousel slide 4 of 6" loading="lazy"></figure>
+              <figure class="ig-slide"><img src="images/carousel-cover5.jpg" alt="Carousel slide 5 of 6" loading="lazy"></figure>
+              <figure class="ig-slide"><img src="images/carousel-cover6.jpg" alt="Carousel slide 6 of 6: the closing call to action" loading="lazy"></figure>
+            </div>
+            <span class="ig-count" id="igCount" aria-live="polite">1 / 6</span>
+            <button class="ig-arrow ig-prev" id="igPrev" type="button" aria-label="Previous slide">←</button>
+            <button class="ig-arrow ig-next" id="igNext" type="button" aria-label="Next slide">→</button>
+          </div>
+          <div class="ig-actions">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.6a4.3 4.3 0 0 1 7.5 2.7c0 5.6-7.5 10.2-7.5 10.2z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11.7a8 8 0 0 1-11.6 7.1L4 20l1.3-4.6A8 8 0 1 1 20.5 11.7z"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 3 10 14M21 3l-7 18-4-7-7-4 18-7z"/></svg>
+            <div class="ig-dots" id="igDots"></div>
+          </div>
+          <p class="ig-caption"><strong>thematchateaclub</strong> Study break, but make it matcha.</p>
+        </div>
+
+        <div class="slide-notes" id="slideNotes">
+          <button class="slide-note is-active" type="button" data-from="1" data-to="1">
+            <span class="note-number">Slide 01</span>
+            <h3>Stop the scroll</h3>
+            <span class="note-copy">The first slide has one job: make a tired student pause. It speaks to the study break itself, so the viewer recognizes their own day before reading anything else.</span>
+          </button>
+          <button class="slide-note" type="button" data-from="2" data-to="5">
+            <span class="note-number">Slides 02 to 05</span>
+            <h3>Give them a reason to keep swiping</h3>
+            <span class="note-copy">Each slide carries one idea, with short text and plenty of space, so it reads in a couple of seconds. The layout, colors, and type stay the same across slides so the set feels like one piece.</span>
+          </button>
+          <button class="slide-note" type="button" data-from="6" data-to="6">
+            <span class="note-number">Slide 06</span>
+            <h3>Say what to do next</h3>
+            <span class="note-copy">The last slide asks for one simple action, like saving the post or sending it to a study buddy. One clear ask is easier to follow than three.</span>
+          </button>
+          <div class="feed-goal">
+            <span class="goal-label">The goal</span>
+            <p>Make a carousel that is easy to finish, easy to save, and easy to share, while keeping the brand calm and consistent with the rest of the feed.</p>
+          </div>
+          <p class="car-tip">Swipe the phone or tap a note to jump to its slide.</p>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var track = document.getElementById('igTrack');
+        if (!track) return;
+        var slides = track.children.length;
+        var count = document.getElementById('igCount');
+        var prev = document.getElementById('igPrev');
+        var next = document.getElementById('igNext');
+        var dotsBox = document.getElementById('igDots');
+        var notes = document.querySelectorAll('#slideNotes .slide-note');
+        var dots = [];
+        var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+        function goTo(i) {
+          i = Math.max(0, Math.min(slides - 1, i));
+          track.scrollTo({ left: i * track.clientWidth, behavior: reduce ? 'auto' : 'smooth' });
+        }
+        for (var d = 0; d < slides; d++) {
+          (function (n) {
+            var b = document.createElement('button');
+            b.type = 'button';
+            b.setAttribute('aria-label', 'Go to slide ' + (n + 1));
+            b.addEventListener('click', function () { goTo(n); });
+            dotsBox.appendChild(b);
+            dots.push(b);
+          })(d);
+        }
+        function update() {
+          var i = Math.round(track.scrollLeft / track.clientWidth);
+          count.textContent = (i + 1) + ' / ' + slides;
+          prev.disabled = i === 0;
+          next.disabled = i === slides - 1;
+          dots.forEach(function (b, n) { b.setAttribute('aria-current', n === i ? 'true' : 'false'); });
+          notes.forEach(function (n) {
+            var on = (i + 1) >= +n.dataset.from && (i + 1) <= +n.dataset.to;
+            n.classList.toggle('is-active', on);
+          });
+        }
+        prev.addEventListener('click', function () { goTo(Math.round(track.scrollLeft / track.clientWidth) - 1); });
+        next.addEventListener('click', function () { goTo(Math.round(track.scrollLeft / track.clientWidth) + 1); });
+        notes.forEach(function (n) { n.addEventListener('click', function () { goTo(+n.dataset.from - 1); }); });
+        track.addEventListener('keydown', function (e) {
+          if (e.key === 'ArrowRight') { e.preventDefault(); goTo(Math.round(track.scrollLeft / track.clientWidth) + 1); }
+          if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(Math.round(track.scrollLeft / track.clientWidth) - 1); }
+        });
+        track.addEventListener('scroll', function () { window.requestAnimationFrame(update); }, { passive: true });
+        window.addEventListener('resize', update);
+        update();
+      })();
+    </script>
     <div class="future-anchor" id="stories"></div>
     <div class="future-anchor" id="notion-workspace"></div>
     <div class="future-anchor" id="range"></div>
