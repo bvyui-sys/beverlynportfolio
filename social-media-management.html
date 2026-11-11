@@ -59,6 +59,35 @@
     .feed-goal p{margin:0;color:var(--text);font-size:.9rem;line-height:1.8}
     .future-anchor{height:1px;scroll-margin-top:28px}
 
+
+    /* iPhone-style social preview */
+    .phone{position:relative;--img-h:clamp(300px,calc(100svh - 245px),700px);--ratio:.75;width:calc(var(--img-h) * var(--ratio));min-width:270px;background:#171717;border:2px solid #393939;border-radius:46px;padding:30px 7px 15px;box-shadow:0 30px 60px -34px rgba(20,20,20,.4);overflow:hidden}
+    .phone::before{position:absolute;z-index:5;top:10px;left:50%;width:88px;height:23px;transform:translateX(-50%);border-radius:99px;background:#050505;content:""}
+    .phone::after{position:absolute;z-index:5;bottom:6px;left:50%;width:72px;height:4px;transform:translateX(-50%);border-radius:99px;background:#fff;content:""}
+    .phone .ig-head{background:var(--surface);padding-top:5px}
+    .phone .ig-view{overflow:hidden}
+    .phone .ig-actions,.phone .ig-caption{background:var(--surface)}
+    .phone .ig-caption{padding-bottom:7px;margin-bottom:0}
+    .phone .ig-dots{transform:translateX(-26px)}
+    .stories-section{padding-block:clamp(68px,9vw,112px);border-top:1px solid var(--line);scroll-margin-top:28px}
+    .stories-intro{max-width:650px;margin:-14px 0 36px;color:#514B4E;font-size:.95rem;line-height:1.85}
+    .story-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:clamp(18px,3.5vw,48px);align-items:start}
+    .story-card{min-width:0}
+    .story-phone{position:relative;width:min(100%,250px);aspect-ratio:9/19.5;margin:0 auto 22px;padding:8px;border:2px solid #3b3b3b;border-radius:38px;background:#171717;box-shadow:0 24px 44px -30px rgba(20,20,20,.45);overflow:hidden}
+    .story-phone::before{position:absolute;z-index:2;top:12px;left:50%;width:72px;height:18px;transform:translateX(-50%);border-radius:99px;background:#050505;content:""}
+    .story-phone::after{position:absolute;z-index:2;bottom:10px;left:50%;width:62px;height:4px;transform:translateX(-50%);border-radius:99px;background:#fff;content:""}
+    .story-screen{width:100%;height:100%;overflow:hidden;border-radius:30px;background:#7d9e73}
+    .story-screen img{display:block;width:100%;height:100%;object-fit:cover;transform:scale(1.2)}
+    .story-copy{padding:20px 18px 0;border-top:1px solid var(--line)}
+    .story-number{display:block;margin-bottom:8px;color:var(--muted);font-size:.62rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase}
+    .story-copy h3{margin:0 0 10px;font-family:var(--display);font-size:clamp(1.35rem,2vw,1.8rem);font-weight:400;line-height:1.05;text-transform:uppercase}
+    .story-copy p{margin:0;color:#514B4E;font-size:.88rem;line-height:1.8}
+    .stories-goal{margin-top:34px;padding:22px 24px;background:var(--panel);border-left:3px solid var(--accent)}
+    .stories-goal strong{display:block;margin-bottom:7px;color:var(--muted);font-size:.62rem;letter-spacing:.16em;text-transform:uppercase}
+    .stories-goal p{margin:0;font-size:.9rem;line-height:1.8}
+    @media(max-width:760px){.story-grid{grid-template-columns:1fr;gap:36px}.story-phone{width:min(72%,270px)}.story-copy{max-width:520px;margin-inline:auto}}
+    @media(max-width:860px){.phone{--img-h:min(65svh,520px);border-radius:42px}}
+
     /* carousel: fits one laptop screen, no scrolling */
     .car-section{display:flex;align-items:center;min-height:100vh;min-height:100svh;padding-block:24px;scroll-margin-top:0}
     .car-layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;width:100%}
@@ -293,7 +322,47 @@
         update();
       })();
     </script>
-    <div class="future-anchor" id="stories"></div>
+    <section class="stories-section wrap" id="stories" aria-labelledby="stories-title">
+      <p class="section-kicker">04 / Instagram stories</p>
+      <h2 class="section-title" id="stories-title">Stories</h2>
+      <p class="stories-intro">Three story concepts for Matcha Tea Club, each with a different job: start a conversation, give people a reason to visit, and invite quick audience feedback.</p>
+      <div class="story-grid">
+        <article class="story-card">
+          <figure class="story-phone">
+            <div class="story-screen"><img src="images/story1.jpg" alt="Matcha Tea Club story asking followers about their go-to matcha order" loading="lazy"></div>
+          </figure>
+          <div class="story-copy">
+            <span class="story-number">Story 01 / Audience engagement</span>
+            <h3>Start a conversation</h3>
+            <p>The question “What’s your go-to matcha order?” invites followers to share their usual drink. The warm cup photo makes the prompt feel personal, while the direct question encourages replies and gives the brand a better sense of audience preferences.</p>
+          </div>
+        </article>
+        <article class="story-card">
+          <figure class="story-phone">
+            <div class="story-screen"><img src="images/story2.jpg" alt="Matcha Tea Club Slow Sunday story featuring matcha cookie and pastry, with Sunday hours" loading="lazy"></div>
+          </figure>
+          <div class="story-copy">
+            <span class="story-number">Story 02 / Promotional content</span>
+            <h3>Give them a reason to visit</h3>
+            <p>“Slow Sunday at the club” turns the matcha cookie and treat pairing into a relaxed weekend invitation. The Sunday hours and “Bring a friend. Stay a while.” message make the promotion useful, while keeping the brand’s calm, welcoming personality.</p>
+          </div>
+        </article>
+        <article class="story-card">
+          <figure class="story-phone">
+            <div class="story-screen"><img src="images/story3.jpg" alt="Matcha Tea Club iced or hot story with a question sticker for audience preferences" loading="lazy"></div>
+          </figure>
+          <div class="story-copy">
+            <span class="story-number">Story 03 / Interactive prompt</span>
+            <h3>Make it easy to respond</h3>
+            <p>The iced-or-hot question uses two clear product visuals and an Instagram question sticker to make participation simple. It encourages quick responses, reveals what followers prefer, and gives the brand a natural opening for future drink-focused content.</p>
+          </div>
+        </article>
+      </div>
+      <div class="stories-goal">
+        <strong>The goal</strong>
+        <p>Use Stories for lightweight, everyday interaction: learn what the audience likes, promote a timely visit, and keep the brand present between feed posts.</p>
+      </div>
+    </section>
     <div class="future-anchor" id="notion-workspace"></div>
     <div class="future-anchor" id="range"></div>
   </main>
