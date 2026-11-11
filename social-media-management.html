@@ -64,7 +64,7 @@
     .car-layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;width:100%}
     .phone{--img-h:clamp(300px,calc(100svh - 215px),720px);--ratio:.75;width:calc(var(--img-h) * var(--ratio));min-width:270px;background:var(--surface);border:1px solid var(--line);border-radius:30px;padding:14px 0 16px;box-shadow:0 30px 60px -34px rgba(20,20,20,.35)}
     .ig-head{display:flex;align-items:center;gap:10px;padding:2px 16px 12px}
-    .ig-avatar{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;background:var(--sage);color:#fff;font-family:var(--display);font-size:.8rem;letter-spacing:.02em}
+    .ig-avatar{display:block;width:34px;height:34px;flex:none;border-radius:50%;padding:3px;background:#fff;object-fit:contain;border:1px solid var(--line)}
     .ig-user{display:grid;line-height:1.25}
     .ig-user strong{font-size:.8rem;font-weight:700}
     .ig-user span{color:var(--muted);font-size:.68rem}
@@ -184,7 +184,7 @@
       <div class="car-layout">
         <div class="phone" id="phone" aria-label="Matcha Tea Club carousel preview">
           <div class="ig-head">
-            <span class="ig-avatar" aria-hidden="true">M</span>
+            <img class="ig-avatar" src="images/logo.png" alt="Matcha Tea Club logo">
             <span class="ig-user"><strong>thematchateaclub</strong><span>Matcha Tea Club</span></span>
           </div>
           <div class="ig-view">
@@ -215,20 +215,20 @@
             <h2 class="section-title" id="carousel-title">Carousel</h2>
           </div>
           <button class="slide-note is-active" type="button" data-from="1" data-to="1">
-            <span class="note-head"><span class="note-number">Slide 01</span><h3>Stop the scroll</h3></span>
-            <span class="note-copy">The first slide has one job: make a tired student pause. It speaks to the study break itself, so the viewer recognizes their own day before reading anything else.</span>
+            <span class="note-head"><span class="note-number">Slide 01</span><h3>The coffee vs. matcha question</h3></span>
+            <span class="note-copy">The opening introduces a familiar choice between two study drinks. It gives coffee drinkers and matcha fans a reason to pause and consider which one fits their routine.</span>
           </button>
           <button class="slide-note" type="button" data-from="2" data-to="5">
-            <span class="note-head"><span class="note-number">Slides 02 to 05</span><h3>Keep them swiping</h3></span>
-            <span class="note-copy">Each slide carries one idea, with short text and plenty of space, so it reads in a couple of seconds. Layout, colors, and type stay the same so the set feels like one piece.</span>
+            <span class="note-head"><span class="note-number">Slides 02 to 05</span><h3>Compare the everyday differences</h3></span>
+            <span class="note-copy">The middle slides build the coffee-versus-matcha comparison one point at a time. They help viewers weigh the two drinks through the lens of a study break, without overwhelming them with too much information at once.</span>
           </button>
           <button class="slide-note" type="button" data-from="6" data-to="6">
-            <span class="note-head"><span class="note-number">Slide 06</span><h3>Say what to do next</h3></span>
-            <span class="note-copy">The closing slide lands the main point and ends on one simple takeaway. One clear idea is easier to remember than three.</span>
+            <span class="note-head"><span class="note-number">Slide 06</span><h3>Make your pick</h3></span>
+            <span class="note-copy">The final slide turns the comparison into a simple choice for the audience. It leaves viewers with a clear takeaway and an easy prompt to share which drink they would choose.</span>
           </button>
           <div class="feed-goal">
             <span class="goal-label">The goal</span>
-            <p>A carousel that is easy to finish, save, and share, while keeping the brand calm and consistent with the feed.</p>
+            <p>Make the coffee-versus-matcha comparison easy to follow and give viewers a simple way to join the conversation by choosing their study-break drink.</p>
           </div>
         </div>
       </div>
