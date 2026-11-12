@@ -163,6 +163,23 @@
     @media(max-width:760px){.feed-layout{grid-template-columns:1fr}.feed-art{max-width:460px}.feed-art img{max-height:52vh}.feed-notes{gap:18px}}
     @media(max-width:680px){.intro{padding-top:36px}.intro-rule{grid-template-columns:1fr;gap:42px}h1{font-size:clamp(4rem,17vw,7rem)}.page-nav{gap:12px 16px}.section-title{margin-bottom:26px}}
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+
+    /* Notion client workspace */
+    .notion-section{padding-block:clamp(68px,9vw,112px);border-top:1px solid var(--line);scroll-margin-top:28px}
+    .notion-intro{max-width:700px;margin:-12px 0 14px;color:#514B4E;font-size:clamp(.96rem,1.35vw,1.08rem);line-height:1.9}
+    .notion-disclaimer{margin:0 0 38px;color:var(--muted);font-size:.75rem;font-weight:600;letter-spacing:.02em}
+    .notion-feature{margin:0 0 26px;background:var(--surface);border:1px solid var(--line)}
+    .notion-feature .notion-image{padding:clamp(10px,1.5vw,18px);background:#F0ECEB;border-bottom:1px solid var(--line)}
+    .notion-image img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain;object-position:top center}
+    .notion-caption{padding:clamp(20px,3vw,32px)}
+    .notion-caption h3{margin:0 0 8px;font-family:var(--display);font-size:clamp(1.55rem,2.6vw,2.25rem);font-weight:400;line-height:1.05;text-transform:uppercase}
+    .notion-caption p{max-width:720px;margin:0;color:#514B4E;font-size:.9rem;line-height:1.8}
+    .notion-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:26px}
+    .notion-card{min-width:0;margin:0;background:var(--surface);border:1px solid var(--line)}
+    .notion-card .notion-image{display:flex;align-items:center;justify-content:center;min-height:220px;padding:12px;background:#F0ECEB;border-bottom:1px solid var(--line)}
+    .notion-card .notion-image img{width:100%;max-height:520px;object-fit:contain;object-position:top center}
+    .notion-card .notion-caption{padding:22px 24px 26px}
+    @media(max-width:680px){.notion-grid{grid-template-columns:1fr}.notion-card .notion-image{min-height:0}.notion-intro{margin-top:-8px}}
   </style>
 </head>
 <body>
@@ -195,6 +212,7 @@
       <a href="#carousel">Carousel</a>
       <a href="#stories">Stories</a>
       <a href="#range">Range</a>
+      <a href="#notion-workspace">Notion workspace</a>
       <a href="#page-cta">Contact</a>
     </nav>
 
@@ -431,9 +449,69 @@
       <p class="range-intro" style="margin:24px 0 0">Different brand, different voice. Same consistent process.</p>
     </section>
 
+
+    <section class="notion-section wrap" id="notion-workspace" aria-labelledby="notion-title">
+      <p class="section-kicker">06 / Client workflow</p>
+      <h2 class="section-title" id="notion-title">Notion workspace</h2>
+      <p class="notion-intro">Every client gets their own Notion space. You can see what’s planned, review posts, leave feedback, and check monthly summaries. Everything stays organized in one place instead of getting lost in DMs and chat threads.</p>
+      <p class="notion-disclaimer">Built with the Matcha Tea Club practice project. Sample data only.</p>
+
+      <figure class="notion-feature">
+        <div class="notion-image">
+          <img src="images/dashboard.png" alt="Matcha Tea Club client dashboard in Notion, showing the welcome page and client workspace overview" loading="lazy">
+        </div>
+        <figcaption class="notion-caption">
+          <h3>Client dashboard</h3>
+          <p>Your dedicated space for updates, content planning, post reviews, and monthly reports, all in one place.</p>
+        </figcaption>
+      </figure>
+
+      <div class="notion-grid">
+        <figure class="notion-card">
+          <div class="notion-image">
+            <img src="images/calendar.png" alt="Matcha Tea Club content calendar database in Notion showing post titles, publishing dates, platforms, and statuses" loading="lazy">
+          </div>
+          <figcaption class="notion-caption">
+            <h3>Content calendar</h3>
+            <p>Every planned post, its publishing date, platform, and status in one organized view.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="notion-card">
+          <div class="notion-image">
+            <img src="images/post.png" alt="An individual Matcha Tea Club post brief in Notion with objective, creative direction, caption, hashtags, and call to action" loading="lazy">
+          </div>
+          <figcaption class="notion-caption">
+            <h3>Post brief</h3>
+            <p>Each post has its own page with the content idea, objective, caption, hashtags, call to action, and creative direction.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="notion-card">
+          <div class="notion-image">
+            <img src="images/review.png" alt="Matcha Tea Club client review portal in Notion showing posts marked Under Review" loading="lazy">
+          </div>
+          <figcaption class="notion-caption">
+            <h3>Client review portal</h3>
+            <p>A dedicated view of posts awaiting your review, with space to leave comments and feedback.</p>
+          </figcaption>
+        </figure>
+
+        <figure class="notion-card">
+          <div class="notion-image">
+            <img src="images/report.png" alt="October 2026 sample monthly social media report for Matcha Tea Club in Notion" loading="lazy">
+          </div>
+          <figcaption class="notion-caption">
+            <h3>Monthly report <span style="font-family:var(--body);font-size:.55em;letter-spacing:.08em;color:var(--muted)">(sample)</span></h3>
+            <p>A look at content performance, what worked, what needs improvement, and what we’ll focus on next month.</p>
+          </figcaption>
+        </figure>
+      </div>
+    </section>
+
     <section class="page-cta" id="page-cta">
       <div class="wrap">
-        <p class="section-kicker">06 / Next step</p>
+        <p class="section-kicker">07 / Next step</p>
         <h2>Need a hand with your content?</h2>
         <p>Tell me what your brand needs and let’s figure out how I can help keep your content moving.</p>
         <a href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
