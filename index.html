@@ -542,6 +542,8 @@
     }
     .about-fact dt { color: var(--muted); font-size: .68rem; }
     .about-fact dd { margin: 0; color: var(--text); font-size: .75rem; font-weight: 600; text-align: right; }
+    .contact-actions { display:flex; flex-wrap:wrap; gap:10px; margin-top:28px; }
+    .contact-backup-label { display:block; margin-bottom:15px; color:var(--muted); font-size:.62rem; font-weight:800; letter-spacing:.15em; }
 
     /* WHAT I LOVE DOING. This section's content and layout are retained. */
     .love { overflow: hidden; border-top: 1px solid var(--line); }
@@ -651,7 +653,18 @@
       font-size: .86rem;
       line-height: 1.75;
     }
-    .service-card--social p { max-width: 520px; }
+    .service-card--social p { max-width: 760px; }
+    .service-card .service-includes { margin-top: 12px; font-size: .78rem; }
+    .service-card .service-includes strong { color: var(--text); }
+    .service-process { margin-top: 28px; padding-top: 19px; border-top: 1px solid var(--line); }
+    .service-process-label { display: block; margin-bottom: 14px; color: var(--muted); font-size: .6rem; font-weight: 800; letter-spacing: .16em; }
+    .service-process ol { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 14px; margin: 0; padding: 0; list-style: none; }
+    .service-process li { display: grid; gap: 5px; align-content: start; }
+    .service-process li strong { font-size: .72rem; font-weight: 800; }
+    .service-process li span { color: var(--muted); font-size: .68rem; line-height: 1.5; }
+    .services-rate-note { margin: 26px 0 0; padding-top: 20px; border-top: 1px solid var(--line); color: var(--muted); font-size: .84rem; }
+    @media (max-width: 760px) { .service-process ol { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 18px; } }
+    @media (max-width: 460px) { .service-process ol { grid-template-columns: 1fr; } }
     .service-card--link:hover {
       transform: translateY(-3px);
       border-color: var(--accent);
@@ -1748,7 +1761,8 @@
     .bio-goal-task>div{display:grid;gap:4px}
     .bio-detail-label,.bio-result-label{color:var(--muted);font-size:.62rem;font-weight:800;letter-spacing:.16em}
     .bio-goal-task p{margin:0;color:#514B4E;font-size:.83rem;line-height:1.55}
-    .bio-result-label{margin-top:25px;color:var(--text)}
+    .bio-intro-note{max-width:440px;margin:24px 0 0;color:var(--muted);font-size:.82rem;line-height:1.65}
+    .bio-result-label{margin-top:14px;color:var(--text)}
     .bio-features{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 14px;max-width:460px;margin:17px 0 0;padding:0;list-style:none}
     .bio-features li{display:flex;flex-direction:column;align-items:center;gap:10px;color:#2A2628;font-size:.72rem;font-weight:700;line-height:1.3;text-align:center}
     .bio-icon{display:grid;place-items:center;width:58px;height:58px;border-radius:50%;background:var(--surface);border:1px solid rgba(20,20,20,.1);box-shadow:0 4px 12px rgba(20,20,20,.06)}
@@ -1814,6 +1828,7 @@
           <p class="hero-lede">Clean design. Consistent content. Reliable support.</p>
           <div class="hero-actions">
             <a class="button" href="#work">See my work <span aria-hidden="true">↗</span></a>
+            <a class="button button--outline" href="assets/beverlyn-manuel-resume.pdf" download>Download my resume ↓</a>
             <a class="button button--outline" href="#contact">Let's work together <span aria-hidden="true">↗</span></a>
           </div>
         </div>
@@ -1847,10 +1862,10 @@
             </div>
             <h2 id="about-facts-title">QUICK FACTS</h2>
             <dl class="about-fact-list">
-              <div class="about-fact"><dt>Location</dt><dd>Cagayan Valley, Philippines</dd></div>
-              <div class="about-fact"><dt>Education</dt><dd>Bachelor of Science in Information Technology</dd></div>
-              <div class="about-fact"><dt>Professional Focus</dt><dd>Graphic Design, Social Media, and Admin Support</dd></div>
-              <div class="about-fact"><dt>Work Setup</dt><dd>Remote / Work from Home</dd></div>
+              <div class="about-fact"><dt>Based in</dt><dd>Cagayan Valley, Philippines</dd></div>
+              <div class="about-fact"><dt>Work setup</dt><dd>Remote, work from home</dd></div>
+              <div class="about-fact"><dt>Education</dt><dd>BS Information Technology</dd></div>
+              <div class="about-fact"><dt>Languages</dt><dd>English, Tagalog, Ilocano</dd></div>
             </dl>
           </aside>
         </div>
@@ -2211,14 +2226,15 @@
               <div><span class="bio-detail-label">GOAL</span><p>Enhance attendance accuracy and efficiency through automated fingerprint verification.</p></div>
               <div><span class="bio-detail-label">TASK</span><p>Design and develop employee registration, fingerprint verification, time-in/out tracking, leave management, and daily time record generation.</p></div>
             </div>
-            <div class="bio-result-label">RESULT</div>
+            <p class="bio-intro-note">Also built: a technical project that shows I can handle systems, structure, and detail.</p>
+            <div class="bio-result-label">FEATURES</div>
             <ul class="bio-features" aria-label="System features">
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Scan</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Fingerprint scan</span></li>
               <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 2.8 7.4 7 9 4.2-1.6 7-4.8 7-9V6z"/><path d="m8.8 12 2.4 2.4 4.2-4.6"/></svg></span><span>Verify</span></li>
               <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 2"/></svg></span><span>Time in and out</span></li>
               <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M8 9h8M8 12.5h8M8 16h5"/></svg></span><span>Employee records</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span>Database</span></li>
-              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR reports</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v6c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/><path d="M5 12v6c0 1.7 3.1 3 7 3s7-1.3 7-3v-6"/></svg></span><span>Leave management</span></li>
+              <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR report generation</span></li>
             </ul>
             <div class="bio-tech" aria-label="Technologies used">
               <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
@@ -2240,17 +2256,28 @@
       <div class="wrap services-wrap">
         <div class="eyebrow services-kicker">SOCIAL · CREATIVE · ADMIN SUPPORT</div>
         <div class="services-intro">
-          <h2 class="services-title">WHAT I BRING<br>TO HELP YOU<span>.</span></h2>
+          <h2 class="services-title">SERVICES<span>.</span></h2>
         </div>
         <div class="services-layout">
-          <a class="service-card service-card--social" href="social-media-management.html" aria-label="Explore Social Media Management practice project">
+          <a class="service-card service-card--social" href="social-media-management.html" aria-label="Explore Social Media Management service and process">
             <div class="service-card-top">
               <span class="service-number">01 / SOCIAL PLATFORMS</span>
               <span class="service-card-arrow" aria-hidden="true">↗</span>
             </div>
             <div class="service-card-copy">
               <h3>Social Media Management</h3>
-              <p>Content planning, social media strategy, content calendars, and platform management.</p>
+              <p>Content planning, caption writing, post design, and scheduling to help small brands maintain an active and consistent social media presence.</p>
+              <p class="service-includes"><strong>Includes:</strong> Monthly content calendar, content strategy, post designs, captions, and scheduling.</p>
+              <div class="service-process">
+                <span class="service-process-label">MY PROCESS</span>
+                <ol>
+                  <li><strong>01 Discover</strong><span>Brand, goals, and audience</span></li>
+                  <li><strong>02 Strategize</strong><span>Content pillars and direction</span></li>
+                  <li><strong>03 Create</strong><span>Visuals and captions</span></li>
+                  <li><strong>04 Manage</strong><span>Calendar and scheduling</span></li>
+                  <li><strong>05 Analyze</strong><span>Insights and improvements</span></li>
+                </ol>
+              </div>
             </div>
           </a>
           <article class="service-card service-card--content service-card--static">
@@ -2260,7 +2287,8 @@
             </div>
             <div class="service-card-copy">
               <h3>Graphic Design</h3>
-              <p>Visual content and brand assets.</p>
+              <p>Clean, on-brand visuals for social media and digital products.</p>
+              <p class="service-includes"><strong>Includes:</strong> Social media posts and carousels, e-book layouts, and editable Canva templates.</p>
             </div>
           </article>
           <article class="service-card service-card--admin service-card--static">
@@ -2270,31 +2298,33 @@
             </div>
             <div class="service-card-copy">
               <h3>Virtual Assistance</h3>
-              <p>Organization, admin support, and workflows.</p>
+              <p>Admin support that keeps your day running smoothly.</p>
+              <p class="service-includes"><strong>Includes:</strong> Inbox and follow-up support, Google Sheets and Forms setup, data entry, and documentation.</p>
             </div>
           </article>
         </div>
+        <p class="services-rate-note">Rates depend on scope. Message me what you need and I’ll send a quote within 24 hours.</p>
       </div>
     </section>
 
 <section class="contact section-space" id="contact">
       <div class="wrap">
-        <a class="contact-quote" href="mailto:beverlyn.manuel19@gmail.com?subject=Project%20Inquiry">
-          <span>MESSAGE ME FOR A QUOTE</span><span aria-hidden="true">↗</span>
-        </a>
         <div class="contact-grid">
           <div>
             <div class="eyebrow">LET'S CONNECT</div>
             <h2>LET'S<br>WORK<br><span>TOGETHER.</span></h2>
-            <p class="contact-main-intro">Whether it's a project, an opportunity, or a question, I'd be happy to hear from you.</p>
+            <p class="contact-main-intro">Have a project or need a hand with your content? Send me a message and tell me what you’re working on. I’ll get back to you soon.</p>
+            <div class="contact-actions">
+              <a class="button" href="mailto:beverlyn.manuel19@gmail.com?subject=Book%20a%20call">Book a call <span aria-hidden="true">↗</span></a>
+              <a class="button button--outline" href="mailto:beverlyn.manuel19@gmail.com?subject=Project%20Inquiry">Email me <span aria-hidden="true">↗</span></a>
+            </div>
           </div>
           <div class="contact-side">
-              <div class="contact-links" aria-label="Contact information">
-              <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">01 · EMAIL</span><span>beverlyn.manuel19@gmail.com</span></a>
-              <a href="tel:+639687585016"><span class="contact-link-label">02 · PHONE</span><span>+63 968 758 5016</span></a>
-              <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">03 · TELEGRAM</span><span>@bevysm</span></a>
-              <a href="https://www.instagram.com/bevy.sm/" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">04 · INSTAGRAM</span><span>@bevy.sm</span></a>
-              <a href="https://wa.me/639687585016" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">05 · WHATSAPP</span><span>@bevy.sm</span></a>
+            <span class="contact-backup-label">OTHER WAYS TO REACH ME</span>
+            <div class="contact-links" aria-label="Other contact options">
+              <a href="mailto:beverlyn.manuel19@gmail.com"><span class="contact-link-label">EMAIL</span><span>beverlyn.manuel19@gmail.com</span></a>
+              <a href="https://www.instagram.com/bevy.sm/" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">INSTAGRAM</span><span>@bevy.sm</span></a>
+              <a href="https://t.me/bevysm" target="_blank" rel="noopener noreferrer"><span class="contact-link-label">TELEGRAM</span><span>@bevysm</span></a>
             </div>
           </div>
         </div>
