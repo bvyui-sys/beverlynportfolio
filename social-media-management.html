@@ -110,7 +110,10 @@
     @media(max-width:860px){.phone{--img-h:min(65svh,520px);border-radius:42px}}
 
     /* carousel: fits one laptop screen, no scrolling */
-    .car-section{display:flex;align-items:center;min-height:100vh;min-height:100svh;padding-block:24px;scroll-margin-top:0}
+    .car-section{display:flex;flex-direction:column;align-items:stretch;justify-content:center;min-height:100vh;min-height:100svh;padding-block:clamp(44px,6vw,72px);scroll-margin-top:0}
+    .car-heading{width:100%;margin:0 0 clamp(24px,3vw,38px)}
+    .car-heading .section-kicker{margin-bottom:14px}
+    .car-heading .section-title{margin:0;font-size:clamp(3.2rem,7vw,6.5rem)}
     .car-layout{display:grid;grid-template-columns:auto minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;width:100%}
     .phone{--img-h:clamp(300px,calc(100svh - 215px),720px);--ratio:.75;width:calc(var(--img-h) * var(--ratio));min-width:270px;background:var(--surface);border:1px solid var(--line);border-radius:30px;padding:14px 0 16px;box-shadow:0 30px 60px -34px rgba(20,20,20,.35)}
     .ig-head{display:flex;align-items:center;gap:10px;padding:2px 16px 12px}
@@ -150,10 +153,10 @@
     @media(max-height:720px){.car-copy .feed-goal{display:none}.slide-note{padding:12px 20px}}
     @media(max-width:860px){
       .car-section{display:block;min-height:0;padding-block:clamp(68px,9vw,112px)}
+      .car-heading{margin-bottom:28px}
       .car-layout{grid-template-columns:1fr;gap:32px;justify-items:center}
       .phone{--img-h:min(68svh,520px);max-width:100%}
-      .car-copy{order:-1;width:100%}
-      .car-layout .phone{order:0}
+      .car-copy{width:100%}
       .car-copy .feed-goal{display:block}
     }
     @media(prefers-reduced-motion:reduce){.ig-track{scroll-behavior:auto}}
@@ -232,6 +235,10 @@
     </section>
 
     <section class="car-section wrap" id="carousel" aria-labelledby="carousel-title">
+      <div class="car-heading">
+        <p class="section-kicker">03 / Carousel design</p>
+        <h2 class="section-title" id="carousel-title">Carousel</h2>
+      </div>
       <div class="car-layout">
         <div class="phone" id="phone" aria-label="Matcha Tea Club carousel preview">
           <div class="ig-head">
@@ -261,10 +268,6 @@
         </div>
 
         <div class="car-copy" id="slideNotes">
-          <div>
-            <p class="section-kicker">03 / Carousel design</p>
-            <h2 class="section-title" id="carousel-title">Carousel</h2>
-          </div>
           <button class="slide-note is-active" type="button" data-from="1" data-to="1">
             <span class="note-head"><span class="note-number">Slide 01</span><h3>The coffee vs. matcha question</h3></span>
             <span class="note-copy">Open with a familiar choice that gives viewers a reason to pause and pick a side.</span>
