@@ -171,6 +171,15 @@
     .notion-feature{margin:0 0 26px;background:var(--surface);border:1px solid var(--line)}
     .notion-feature .notion-image{padding:clamp(10px,1.5vw,18px);background:#F0ECEB;border-bottom:1px solid var(--line)}
     .notion-image img{display:block;width:100%;height:auto;max-height:680px;object-fit:contain;object-position:top center}
+    .notion-section .notion-image img{cursor:zoom-in;transition:transform .2s ease}
+    .notion-section .notion-image img:focus-visible{outline:3px solid var(--accent);outline-offset:4px}
+    .image-lightbox{position:fixed;z-index:200;inset:0;display:none;align-items:center;justify-content:center;padding:clamp(18px,4vw,56px);background:rgba(12,12,14,.94)}
+    .image-lightbox.is-open{display:flex}
+    .image-lightbox img{display:block;max-width:100%;max-height:calc(100svh - 56px);width:auto;height:auto;object-fit:contain;box-shadow:0 18px 70px rgba(0,0,0,.35)}
+    .image-lightbox-close{position:absolute;top:18px;right:22px;display:grid;width:44px;height:44px;place-items:center;border:1px solid rgba(255,255,255,.55);border-radius:50%;background:rgba(20,20,20,.45);color:#fff;font:inherit;font-size:1.6rem;line-height:1;cursor:pointer}
+    .image-lightbox-hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);margin:0;color:rgba(255,255,255,.72);font-size:.7rem;letter-spacing:.08em;text-align:center;white-space:nowrap}
+    body.lightbox-open{overflow:hidden}
+    @media(prefers-reduced-motion:reduce){.notion-section .notion-image img{transition:none}}
     .notion-caption{padding:clamp(20px,3vw,32px)}
     .notion-caption h3{margin:0 0 8px;font-family:var(--display);font-size:clamp(1.55rem,2.6vw,2.25rem);font-weight:400;line-height:1.05;text-transform:uppercase}
     .notion-caption p{max-width:720px;margin:0;color:#514B4E;font-size:.9rem;line-height:1.8}
@@ -518,5 +527,59 @@
       </div>
     </section>
   </main>
+
+  <div class="image-lightbox" id="notion-image-lightbox" role="dialog" aria-modal="true" aria-label="Expanded Notion workspace screenshot">
+    <button class="image-lightbox-close" type="button" aria-label="Close enlarged image">×</button>
+    <img src="" alt="">
+    <p class="image-lightbox-hint">Click outside the image or press ESC to close</p>
+  </div>
+  <script>
+    (() => {
+      const section = document.getElementById('notion-workspace');
+      const lightbox = document.getElementById('notion-image-lightbox');
+      if (!section || !lightbox) return;
+      const enlarged = lightbox.querySelector('img');
+      const closeButton = lightbox.querySelector('.image-lightbox-close');
+      let lastFocused = null;
+
+      function openImage(image) {
+        lastFocused = image;
+        enlarged.src = image.currentSrc || image.src;
+        enlarged.alt = image.alt || 'Enlarged Notion workspace screenshot';
+        lightbox.classList.add('is-open');
+        document.body.classList.add('lightbox-open');
+        closeButton.focus();
+      }
+
+      function closeImage() {
+        if (!lightbox.classList.contains('is-open')) return;
+        lightbox.classList.remove('is-open');
+        document.body.classList.remove('lightbox-open');
+        enlarged.src = '';
+        if (lastFocused) lastFocused.focus();
+      }
+
+      section.querySelectorAll('.notion-image img').forEach((image) => {
+        image.tabIndex = 0;
+        image.setAttribute('role', 'button');
+        image.setAttribute('aria-label', 'Enlarge image: ' + image.alt);
+        image.addEventListener('click', () => openImage(image));
+        image.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter' || event.key === ' ') {
+            event.preventDefault();
+            openImage(image);
+          }
+        });
+      });
+
+      closeButton.addEventListener('click', closeImage);
+      lightbox.addEventListener('click', (event) => {
+        if (event.target === lightbox) closeImage();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeImage();
+      });
+    })();
+  </script>
 </body>
 </html>
