@@ -448,7 +448,7 @@
     .tech-stack-row.tool-row-reveal {
       opacity: 0;
       transform: translateY(22px);
-      transition: opacity 1.15s ease, transform 1.15s cubic-bezier(.2,.7,.2,1);
+      transition: opacity .55s ease, transform .55s cubic-bezier(.2,.7,.2,1);
     }
     .tech-stack-row.tool-row-reveal.is-visible {
       opacity: 1;
@@ -2430,7 +2430,7 @@
     const toolRows = document.querySelectorAll(".tech-stack-rows .tech-stack-row");
     toolRows.forEach((row, index) => {
       row.classList.add("tool-row-reveal");
-      row.style.transitionDelay = (index * 320) + "ms";
+      row.style.transitionDelay = (index * 140) + "ms";
     });
     if ("IntersectionObserver" in window) {
       const toolRowsObserver = new IntersectionObserver((entries, observer) => {
