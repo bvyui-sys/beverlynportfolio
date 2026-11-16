@@ -1771,8 +1771,13 @@
       .tablet-screen span,.tablet-screen small { font-size:.35rem; }
       .mockup-disclaimer { max-width:65%; }
     }
-        /* Attendance Monitoring System: clean desktop-mockup layout */
-    .bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(28px,5vw,72px);padding:clamp(28px,4.5vw,64px);background:var(--panel);border:1px solid var(--line);overflow:hidden}
+        /* Additional IT project: visually secondary to the social and design work */
+    .additional-project{margin-top:clamp(58px,8vw,100px);padding-top:clamp(28px,4vw,48px);border-top:1px solid var(--line)}
+    .additional-project-heading{display:flex;align-items:baseline;justify-content:space-between;gap:24px;margin-bottom:22px}
+    .additional-project-heading span{color:var(--muted);font-size:.66rem;font-weight:800;letter-spacing:.16em;text-transform:uppercase}
+    .additional-project-heading p{max-width:440px;margin:0;color:var(--muted);font-size:.8rem;line-height:1.7}
+    /* Attendance Monitoring System: clean desktop-mockup layout */
+    .bio{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.05fr);align-items:center;gap:clamp(28px,5vw,72px);padding:clamp(28px,4.5vw,64px);background:var(--surface);border:1px solid var(--line);overflow:hidden}
     .bio-label{display:inline-flex;align-items:center;gap:12px;color:var(--muted);font-size:.66rem;font-weight:700;letter-spacing:.16em;text-transform:uppercase}
     .bio-label::before{content:"";width:23px;height:1px;background:var(--accent)}
     .bio-title{margin:18px 0 18px;font-family:var(--display);font-weight:400;font-size:clamp(3.4rem,6.2vw,6.2rem);line-height:.88;letter-spacing:-.015em;text-transform:uppercase}
@@ -1811,6 +1816,7 @@
     .bio-tablet img{display:block;width:100%;height:auto;aspect-ratio:4/3;object-fit:cover;border-radius:8px;background:#111}
     @media (max-width:900px){
       .bio{grid-template-columns:minmax(0,1fr)}
+      .additional-project-heading{display:grid;gap:8px}
       .bio-features{max-width:520px}
     }
     @media (max-width:640px){
@@ -2128,10 +2134,9 @@
             <p class="matcha-description">Self-initiated concept project for a mock matcha brand.</p>
             <div class="matcha-details">
               <p><strong>Audience:</strong> Students and young adults</p>
-              <p><strong>Idea:</strong> Matcha as the study-break drink, with product discovery, lifestyle content, and an interactive question to start conversations</p>
-              <p><strong>Goal:</strong> Comments, saves, and shares</p>
-              <p><strong>Style:</strong> Consistent visuals, short conversational copy, product-focused imagery</p>
-              <p><strong>Tools:</strong> Canva</p>
+              <p><strong>Content direction:</strong> Connect matcha with study breaks through product highlights, everyday routines, and relatable prompts.</p>
+              <p><strong>Content decisions:</strong> Use quick facts and menu features to introduce products, lifestyle posts to build familiarity, and questions like “Matcha vs. Coffee” to invite interaction.</p>
+              <p><strong>Purpose:</strong> Make the brand easier to recognize, give followers useful or relatable content to save and share, and create simple opportunities to respond.</p>
             </div>
           </div>
           <div class="matcha-stage" aria-label="Instagram post preview for The Matcha Tea Club">
@@ -2237,16 +2242,17 @@
           </div>
         </article>
 
-        <!-- PROJECT: BIOMETRIC DESKTOP SYSTEM -->
-        <article class="project bio" data-reveal>
+        <!-- ADDITIONAL PROJECT: IT & PROBLEM-SOLVING -->
+        <section class="additional-project" aria-labelledby="additional-project-title">
+          <div class="additional-project-heading">
+            <span>ADDITIONAL PROJECT · IT &amp; PROBLEM-SOLVING</span>
+            <p>A technical project that demonstrates systems thinking, interface design, and practical problem-solving beyond my content and design work.</p>
+          </div>
+          <article class="project bio" data-reveal>
           <div class="bio-copy">
-            <div class="bio-label">DESKTOP SYSTEM PROJECT</div>
+            <div class="bio-label">LOCAL GOVERNMENT UNIT OF LASAM</div>
             <h3 class="bio-title">Attendance<br>Monitoring<br>System</h3>
-            <p class="bio-desc">A fingerprint-based attendance system designed for the Local Government Unit of Lasam to improve employee timekeeping and attendance records.</p>
-            <div class="bio-goal-task">
-              <div><span class="bio-detail-label">GOAL</span><p>Enhance attendance accuracy and efficiency through automated fingerprint verification.</p></div>
-              <div><span class="bio-detail-label">TASK</span><p>Design and develop employee registration, fingerprint verification, time-in/out tracking, leave management, and daily time record generation.</p></div>
-            </div>
+            <p class="bio-desc">An attendance monitoring system developed to improve employee attendance tracking through fingerprint verification, automated time records, leave management, and DTR generation.</p>
             <div class="bio-result-label">FEATURES</div>
             <ul class="bio-features" aria-label="System features">
               <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 9a7 7 0 0 1 14 0"/><path d="M7.5 20c-.8-2-1-4-1-6a5.5 5.5 0 0 1 11 0c0 2.2-.3 4.2-1 6"/><path d="M12 12.5c0 3-.4 5-1.2 7.5"/><path d="M9 14.5c0 1.5-.2 3-.7 4.5"/></svg></span><span>Fingerprint scan</span></li>
@@ -2257,7 +2263,7 @@
               <li><span class="bio-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 15.5h5"/></svg></span><span>DTR report generation</span></li>
             </ul>
             <div class="bio-tech" aria-label="Technologies used">
-              <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Digital Persona U.are.U scanner</span>
+              <span>C#</span><span>.NET Framework</span><span>MySQL</span><span>Figma prototype</span><span>Digital Persona U.are.U scanner</span>
             </div>
           </div>
           <div class="bio-stage">
@@ -2268,7 +2274,8 @@
             </div>
             <div class="bio-tablet"><img src="images/biometric-ui2.png" alt="Fingerprint scanner interface of the Attendance Monitoring System" loading="lazy" decoding="async"></div>
           </div>
-        </article>
+          </article>
+        </section>
       </div>
     </section>
 
