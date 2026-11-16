@@ -798,7 +798,21 @@
       line-height: 1.4;
     }
     .project-pill--placeholder { color: var(--muted); font-style: italic; }
-    .project-digital .project-pill { color: #141414; }
+    .project-digital .project-pill-row { gap: 8px 12px; margin-top: 28px; padding: 15px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .project-digital .project-pill {
+      display: inline;
+      min-height: 0;
+      padding: 0;
+      border: 0;
+      border-radius: 0;
+      color: var(--muted);
+      font-size: .66rem;
+      font-weight: 700;
+      letter-spacing: .09em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+    .project-digital .project-pill:not(:last-child)::after { content: "/"; margin-left: 12px; color: var(--accent); }
     .tools-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
     .tool-badge {
       display: grid;
