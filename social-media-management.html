@@ -188,6 +188,15 @@
     .notion-card .notion-image img{width:100%;max-height:520px;object-fit:contain;object-position:top center}
     .notion-card .notion-caption{padding:22px 24px 26px}
     @media(max-width:680px){.notion-grid{grid-template-columns:1fr}.notion-card .notion-image{min-height:0}.notion-intro{margin-top:-8px}}
+  
+    .page-cta-links{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:30px}
+    .page-cta-links a{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:52px;padding:14px 22px;font-size:.76rem;font-weight:700;letter-spacing:.09em;text-decoration:none;text-transform:uppercase;transition:background .2s ease,color .2s ease,border-color .2s ease}
+    .page-cta-links .page-cta-primary{background:var(--text);border:1px solid var(--text);color:var(--surface)}
+    .page-cta-links .page-cta-primary:hover{background:var(--accent);border-color:var(--accent);color:var(--text)}
+    .page-cta-links .page-cta-secondary{border:1px solid var(--text);color:var(--text)}
+    .page-cta-links .page-cta-secondary:hover{background:var(--panel)}
+    @media(max-width:520px){.page-cta-links{align-items:stretch;flex-direction:column}.page-cta-links a{width:100%}}
+
   </style>
 </head>
 <body>
@@ -511,7 +520,10 @@
         <p class="section-kicker">06 / Next step</p>
         <h2>Need a hand with your content?</h2>
         <p>Tell me what your brand needs and let’s figure out how I can help keep your content moving.</p>
-        <a href="index.html#contact">Let’s talk <span aria-hidden="true">↗</span></a>
+        <div class="page-cta-links" aria-label="Get in touch">
+          <a class="page-cta-primary" href="https://docs.google.com/forms/d/e/1FAIpQLSeQKpGsEjmYfoaR5ai-V3tjqe15LP40JSnw8K667mpBDLiIgg/viewform" target="_blank" rel="noopener noreferrer">Start a Project <span aria-hidden="true">↗</span></a>
+          <a class="page-cta-secondary" href="https://calendly.com/beverlyn-manuel19/30min" target="_blank" rel="noopener noreferrer">Book a Discovery Call <span aria-hidden="true">↗</span></a>
+        </div>
       </div>
     </section>
   </main>
